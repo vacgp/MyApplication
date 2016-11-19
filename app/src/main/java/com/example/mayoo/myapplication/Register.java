@@ -38,6 +38,8 @@ public class Register extends AppCompatActivity {
             if (password_str.equals(confirm_str)) {
                 h.insertEntry(userName_str, password_str, "-", "-", "-");
                 h.close();
+                Toast.makeText(Register.this, "Registered", Toast.LENGTH_SHORT).show();
+
 
             } else {
                 Toast.makeText(Register.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
