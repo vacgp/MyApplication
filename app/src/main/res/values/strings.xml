@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="second_name">Second Name:</string>
+    <string name="gender">Gender:</string>
+    <string name="birthdate">Birth Date:</string>
+    <string name="first_name">First Name:</string>
+    <string name="add_a_photo">Add a photo:</string>
+    <string name="first_name_hint">first name</string>
+    <string name="second_name_hint">second name</string>
+    <string name="continue_btn1">Continue</string>
+    <string name="continue_btn">continue_btn</string>
+    <string name="log_in">log-in</string>
+    <string name="register">register</string>
+    <string name="enter_username">Enter username:</string>
+    <string name="enter_password">Enter password:</string>
+    <string name="child_name">Child Name:</string>
+    <string name="enter_child_name_hint">Enter child name</string>
 </resources>

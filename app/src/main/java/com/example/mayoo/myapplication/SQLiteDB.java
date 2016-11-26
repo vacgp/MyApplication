@@ -18,6 +18,8 @@ class SQLiteDB extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase _db)
     {
         _db.execSQL(Helper.DATABASE_CREATE);
+        _db.execSQL(ChildDB.DATABASE_CREATE);
+
     }
 
     // Called when there is a database version mismatch meaning that the version
@@ -27,7 +29,9 @@ class SQLiteDB extends SQLiteOpenHelper
     {
 
         // Drop the old table and create a new one.
-        _db.execSQL("DROP TABLE IF EXISTS " + "TEMPLATE");
+        _db.execSQL("DROP TABLE VAC IF EXISTS " + "TEMPLATE");
+        _db.execSQL("DROP TABLE CHILD IF EXISTS " + "TEMPLATE");
+
         // Create a new one.
         onCreate(_db);
     }

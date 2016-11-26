@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="@string/child_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addPhotoTxtView"
+            android:layout_alignLeft="@+id/addPhotoTxtView"
+            android:layout_alignStart="@+id/addPhotoTxtView"
+            android:layout_marginTop="38dp"
+            android:id="@+id/childFirstNameTextView"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:text="@string/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_marginTop="57dp"
+            android:id="@+id/textView4"
+            android:textSize="16sp"
+            />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:id="@+id/childPhotoBtn"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/addPhotoTxtView"
+            android:layout_toEndOf="@+id/addPhotoTxtView"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
+            android:onClick="child_image"
+            android:src="@drawable/userdefaultimage"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="9"
+            android:id="@+id/editText2"
+            android:hint="@string/enter_child_name_hint"
+            android:textSize="15sp"
+            android:layout_alignBaseline="@+id/childFirstNameTextView"
+            android:layout_alignBottom="@+id/childFirstNameTextView"
+            android:layout_alignLeft="@+id/childPhotoBtn"
+            android:layout_alignStart="@+id/childPhotoBtn" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="9"
+            android:id="@+id/birth_edit_text"
+            android:textSize="15sp"
+            android:layout_marginTop="70dp"
+            android:layout_below="@+id/editText2"
+            android:layout_alignLeft="@+id/editText2"
+            android:layout_alignStart="@+id/editText2" />
+
+        <TextView
+            android:text="@string/birthdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textSize="16sp"
+            android:layout_alignBaseline="@+id/birth_edit_text"
+            android:layout_alignBottom="@+id/birth_edit_text"
+            android:layout_alignLeft="@+id/childFirstNameTextView"
+            android:layout_alignStart="@+id/childFirstNameTextView" />
+
+        <TextView
+            android:text="@string/add_a_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginBottom="34dp"
+            android:id="@+id/addPhotoTxtView"
+            android:textSize="16sp"
+            android:layout_alignBottom="@+id/childPhotoBtn"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4"
+            android:layout_alignTop="@+id/button3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:text="Done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/textView3"
+            android:layout_alignEnd="@+id/textView3"
+            android:layout_marginBottom="43dp" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_toRightOf="@+id/button3"
+            android:layout_toEndOf="@+id/button3"
+            android:orientation="horizontal">
+
+
+        <RadioButton
+            android:text="Female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton2"
+             />
+
+        <RadioButton
+        android:text="Male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton"
+             />
+        </RadioGroup>
+
+
+    </RelativeLayout>
+</LinearLayout>

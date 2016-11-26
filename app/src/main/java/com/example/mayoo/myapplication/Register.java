@@ -1,5 +1,6 @@
 package com.example.mayoo.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -38,6 +39,10 @@ public class Register extends AppCompatActivity {
             if (password_str.equals(confirm_str)) {
                 h.insertEntry(userName_str, password_str, "-", "-", "-");
                 h.close();
+                Intent i = new Intent(Register.this, Home.class);
+                i.putExtra("username", userName_str); // (Key, Value)
+                startActivity(i);
+
 
 
             } else {
@@ -48,6 +53,8 @@ public class Register extends AppCompatActivity {
         } else {
             Toast.makeText(Register.this, "Already exists", Toast.LENGTH_SHORT).show();
         }
+
+
 
 
     }
