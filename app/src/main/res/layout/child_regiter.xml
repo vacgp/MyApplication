@@ -16,7 +16,7 @@
             android:layout_alignLeft="@+id/addPhotoTxtView"
             android:layout_alignStart="@+id/addPhotoTxtView"
             android:layout_marginTop="38dp"
-            android:id="@+id/childFirstNameTextView"
+            android:id="@+id/childNameTextView"
             android:textSize="16sp"
             />
 
@@ -24,17 +24,17 @@
             android:text="@string/gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView3"
-            android:layout_alignLeft="@+id/textView3"
-            android:layout_alignStart="@+id/textView3"
+            android:layout_below="@+id/birth_textView"
+            android:layout_alignLeft="@+id/birth_textView"
+            android:layout_alignStart="@+id/birth_textView"
             android:layout_marginTop="57dp"
-            android:id="@+id/textView4"
+            android:id="@+id/gender_textView"
             android:textSize="16sp"
             />
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginTop="13dp"
             android:id="@+id/childPhotoBtn"
             android:layout_alignParentTop="true"
@@ -50,11 +50,11 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="9"
-            android:id="@+id/editText2"
+            android:id="@+id/child_name_editText"
             android:hint="@string/enter_child_name_hint"
             android:textSize="15sp"
-            android:layout_alignBaseline="@+id/childFirstNameTextView"
-            android:layout_alignBottom="@+id/childFirstNameTextView"
+            android:layout_alignBaseline="@+id/childNameTextView"
+            android:layout_alignBottom="@+id/childNameTextView"
             android:layout_alignLeft="@+id/childPhotoBtn"
             android:layout_alignStart="@+id/childPhotoBtn" />
 
@@ -66,20 +66,20 @@
             android:id="@+id/birth_edit_text"
             android:textSize="15sp"
             android:layout_marginTop="70dp"
-            android:layout_below="@+id/editText2"
-            android:layout_alignLeft="@+id/editText2"
-            android:layout_alignStart="@+id/editText2" />
+            android:layout_below="@+id/child_name_editText"
+            android:layout_alignLeft="@+id/child_name_editText"
+            android:layout_alignStart="@+id/child_name_editText" />
 
         <TextView
             android:text="@string/birthdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3"
+            android:id="@+id/birth_textView"
             android:textSize="16sp"
             android:layout_alignBaseline="@+id/birth_edit_text"
             android:layout_alignBottom="@+id/birth_edit_text"
-            android:layout_alignLeft="@+id/childFirstNameTextView"
-            android:layout_alignStart="@+id/childFirstNameTextView" />
+            android:layout_alignLeft="@+id/childNameTextView"
+            android:layout_alignStart="@+id/childNameTextView" />
 
         <TextView
             android:text="@string/add_a_photo"
@@ -99,7 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button4"
-            android:layout_alignTop="@+id/button3"
+            android:layout_alignTop="@+id/done_button"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="12dp" />
 
@@ -107,20 +107,22 @@
             android:text="Done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button3"
+            android:id="@+id/done_button"
             android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/textView3"
-            android:layout_alignEnd="@+id/textView3"
-            android:layout_marginBottom="43dp" />
+            android:layout_alignRight="@+id/birth_textView"
+            android:layout_alignEnd="@+id/birth_textView"
+            android:layout_marginBottom="43dp"
+            android:onClick="Done"/>
 
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView4"
-            android:layout_alignBottom="@+id/textView4"
-            android:layout_toRightOf="@+id/button3"
-            android:layout_toEndOf="@+id/button3"
-            android:orientation="horizontal">
+            android:layout_alignBaseline="@+id/gender_textView"
+            android:layout_alignBottom="@+id/gender_textView"
+            android:layout_toRightOf="@+id/done_button"
+            android:layout_toEndOf="@+id/done_button"
+            android:orientation="horizontal"
+            android:id="@+id/gender_radio_group">
 
 
         <RadioButton

@@ -96,14 +96,14 @@ class Helper {
 
 
 
-    public void updateProducts(String product1, String product2, String product3, String userName) {
+    public void updateChild(String child1, String child2, String child3, String userName) {
 
         ContentValues updatedValues = new ContentValues();
 
         // Assign values for each row.
-        updatedValues.put("PRODUCT_1", product1);
-        updatedValues.put("PRODUCT_2", product2);
-        updatedValues.put("PRODUCT_3", product3);
+        updatedValues.put("CHILD_1", child1);
+        updatedValues.put("CHILD_2", child2);
+        updatedValues.put("CHILD_3", child3);
 
         String where = "USERNAME = ?";
 
