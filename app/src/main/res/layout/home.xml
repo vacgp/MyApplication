@@ -9,21 +9,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp">
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/nkn"
+            app:srcCompat="@drawable/nrecord"
             android:id="@+id/record_Button"
             android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
             android:onClick="records"/>
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/stat_notify_chat"
-            android:id="@+id/imageButton2"
+            app:srcCompat="@drawable/nvaccines"
+            android:id="@+id/vac_btn"
             android:layout_weight="1"/>
         </LinearLayout>
 
@@ -31,42 +38,63 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp">
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/ic_menu_edit"
-            android:id="@+id/imageButton3"
+            app:srcCompat="@drawable/nsafety"
+            android:id="@+id/safety_btn"
             android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center"
             />
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/ic_menu_compass"
-            android:id="@+id/imageButton4"
-            android:layout_weight="1"/>
+            app:srcCompat="@drawable/nask"
+            android:id="@+id/ask_doctor_btn"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:onClick="ask_a_doctor"
+
+            />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp">
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/ic_dialog_info"
+            app:srcCompat="@drawable/notesf"
             android:id="@+id/imageButton5"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"/>
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/ic_menu_zoom"
+            app:srcCompat="@drawable/aboutus"
             android:layout_weight="1"
-            android:id="@+id/imageButton6" />
+            android:id="@+id/about_btn" />
     </LinearLayout>
 
 </LinearLayout>

@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
+    android:layout_marginTop="10dp"
+
     >
 
     <ImageButton
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:srcCompat="@android:drawable/ic_menu_add"
         android:id="@+id/child_1_btn"
         android:layout_weight="0.06"
         android:visibility="gone"
@@ -17,7 +18,6 @@
     <ImageButton
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:srcCompat="@android:drawable/ic_menu_add"
         android:id="@+id/child_2_btn"
         android:layout_weight="0.06"
         android:visibility="gone"
@@ -25,17 +25,17 @@
     <ImageButton
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:srcCompat="@android:drawable/ic_menu_add"
         android:id="@+id/child_3_btn"
         android:layout_weight="0.06"
         android:visibility="gone"
         />
     <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:srcCompat="@android:drawable/ic_menu_add"
+        android:layout_width="100dp"
+        android:layout_height="110dp"
+        app:srcCompat="@drawable/addd"
         android:id="@+id/new_btn"
         android:layout_weight="0.06"
         android:onClick="new_record"
+        android:background="#00FFFFFF"
         />
 </LinearLayout>
