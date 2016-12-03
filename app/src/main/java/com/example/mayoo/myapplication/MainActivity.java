@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if(savedpw.equals(password_txt.getText().toString())){
                     Intent i = new Intent(MainActivity.this, Home.class);
+                    Toast.makeText(MainActivity.this,username_txt.getText().toString() , Toast.LENGTH_SHORT).show();
+
                     i.putExtra("username", username_txt.getText().toString()); // (Key, Value)
                     startActivity(i);
                 }else {

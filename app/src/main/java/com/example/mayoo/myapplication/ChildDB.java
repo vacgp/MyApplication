@@ -94,6 +94,21 @@ class ChildDB {
         db.update("LOGIN", updatedValues, where, new String[]{userName});
 
     }
+    public int getChildID(String childName) {
+        //Cursor cursor = db.query("LOGIN", null, where, new String[]{userName}, null, null, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE NAME='" + childName + "' ", null);
+        if (cursor.getCount() < 1) // UserName Not Exist
+        {
+            cursor.close();
+            return 0;
+        }
+
+        cursor.moveToFirst();
+        int childID = cursor.getInt(cursor.getColumnIndex("ID"));
+        cursor.close();
+
+        return childID;
+    }
 
 
 }

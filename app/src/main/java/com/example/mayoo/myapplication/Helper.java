@@ -94,8 +94,6 @@ class Helper {
     }
 
 
-
-
     public void updateChild(String child1, String child2, String child3, String userName) {
 
         ContentValues updatedValues = new ContentValues();
@@ -122,7 +120,15 @@ class Helper {
         return true;
     }
 
-
+    public byte[] getImage(String userName) {
+        // String s = Arrays.toString(b);
+        String where = "USERNAME = ?";
+        Cursor c = db.query("LOGIN", null, where, new String[]{userName}, null, null, null);
+        c.moveToFirst();
+        byte[] bb = c.getBlob(c.getColumnIndex("IMAGE"));
+        c.close();
+        return bb;
+    }
 
 
     public void updateImage(byte[] image, String userName) {
@@ -134,6 +140,36 @@ class Helper {
         String where = "USERNAME = ?";
 
         db.update("LOGIN", updatedValues, where, new String[]{userName});
+
+    }
+
+    public ArrayList<Integer> getChildID(String userName) {
+        //Cursor cursor = db.query("LOGIN", null, where, new String[]{userName}, null, null, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE USERNAME='" + userName + "' ", null);
+
+        cursor.moveToFirst();
+
+        String childID1 = cursor.getString(cursor.getColumnIndex("CHILD_1"));
+        String childID2 = cursor.getString(cursor.getColumnIndex("CHILD_2"));
+        String childID3 = cursor.getString(cursor.getColumnIndex("CHILD_3"));
+
+        ArrayList<Integer> childIDs = new ArrayList<Integer>();
+        if (!childID1.equals("-")) {
+            cursor.close();
+            childIDs.add(Integer.parseInt(childID1));
+        } else if (!childID2.equals("-")) {
+            cursor.close();
+            childIDs.add(Integer.parseInt(childID2));
+        } else if (!childID3.equals("-")) {
+            cursor.close();
+            childIDs.add(Integer.parseInt(childID3));
+        } else {
+            cursor.close();
+            return childIDs;
+        }
+
+        return childIDs;
+
 
     }
 

@@ -187,7 +187,7 @@ public class ChildRegister extends AppCompatActivity {
             gender_srt = "Male";
         }
 
-        Intent from_intent = new Intent();
+        Intent from_intent = getIntent();
         String username = from_intent.getStringExtra("username");
         int counter = from_intent.getIntExtra("child#", 0);
 
@@ -195,18 +195,23 @@ public class ChildRegister extends AppCompatActivity {
         ChildDB childDB_object = new ChildDB(ChildRegister.this);
         childDB_object.open();
         childDB_object.insertEntry(child_name_str, birth_str, gender_srt, imageByte_toDB);
+        int childID = childDB_object.getChildID(child_name_str);
+
         childDB_object.close();
 
         Helper helper_object = new Helper(ChildRegister.this);
         helper_object.open();
         if (counter==0){
-            helper_object.updateChild(child_name_str,"-", "-", username);
+            helper_object.updateChild(childID+"","-", "-", username);
+
+
         }
         else if (counter==1) {
-            helper_object.updateChild("-", child_name_str, "-", username);
+            helper_object.updateChild("-", childID+"", "-", username);
+
         }
         else if (counter==2){
-            helper_object.updateChild("-", "-", child_name_str, username);
+            helper_object.updateChild("-", "-", childID+"", username);
 
         }
         helper_object.close();

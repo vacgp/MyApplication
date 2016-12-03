@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 /**
  * Created by mayoo on 11/25/2016.
@@ -16,6 +17,11 @@ public class Record extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.record);
+        Intent from_intent =  getIntent();
+        String username = from_intent.getStringExtra("username");
+        Helper helper_object = new Helper(Record.this);
+
+
 
     }
 
@@ -35,10 +41,11 @@ public class Record extends AppCompatActivity {
         }
 
 
-        Intent from_intent = new Intent();
+        Intent from_intent =  getIntent();
         String username = from_intent.getStringExtra("username");
 
         Intent to_intent = new Intent(Record.this, ChildRegister.class);
+
         to_intent.putExtra("username", username); // (Key, Value)
         to_intent.putExtra("child#", counter);
 
