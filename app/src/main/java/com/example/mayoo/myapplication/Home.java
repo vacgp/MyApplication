@@ -26,7 +26,6 @@ public class Home  extends AppCompatActivity {
         Intent from_intent = getIntent();
         String username = from_intent.getStringExtra("username");
         Intent to_intent = new Intent(Home.this, Record.class);
-        Toast.makeText(Home.this,username, Toast.LENGTH_SHORT).show();
 
         to_intent.putExtra("username", username); // (Key, Value)
         startActivity(to_intent);

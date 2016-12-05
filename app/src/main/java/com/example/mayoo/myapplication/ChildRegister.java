@@ -110,8 +110,6 @@ public class ChildRegister extends AppCompatActivity {
     }
 
 
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -143,7 +141,7 @@ public class ChildRegister extends AppCompatActivity {
                 Toast.makeText(this, "You haven't picked a photo", Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong"+e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Something went wrong\n" + e.getMessage(), Toast.LENGTH_LONG).show();
             System.out.println(e.getMessage());
         }
 
@@ -151,7 +149,7 @@ public class ChildRegister extends AppCompatActivity {
 
     /**
      * Checks if the app has permission to write to device storage
-     *
+     * <p>
      * If the app does not has permission then the user will be prompted to grant permissions
      *
      * @param activity
@@ -181,7 +179,7 @@ public class ChildRegister extends AppCompatActivity {
         RadioGroup gender_radioGroup = (RadioGroup) findViewById(R.id.gender_radio_group);
         RadioButton gender_radioBtn = (RadioButton) findViewById(gender_radioGroup.getCheckedRadioButtonId());
         String gender_srt;
-        if (gender_radioBtn.getText().toString().equals("Female")){
+        if (gender_radioBtn.getText().toString().equals("Female")) {
             gender_srt = "Female";
         } else {
             gender_srt = "Male";
@@ -201,17 +199,15 @@ public class ChildRegister extends AppCompatActivity {
 
         Helper helper_object = new Helper(ChildRegister.this);
         helper_object.open();
-        if (counter==0){
-            helper_object.updateChild(childID+"","-", "-", username);
+        if (counter == 0) {
+            helper_object.updateChild(childID + "", 1, username);
 
 
-        }
-        else if (counter==1) {
-            helper_object.updateChild("-", childID+"", "-", username);
+        } else if (counter == 1) {
+            helper_object.updateChild(childID + "", 2, username);
 
-        }
-        else if (counter==2){
-            helper_object.updateChild("-", "-", childID+"", username);
+        } else if (counter == 2) {
+            helper_object.updateChild(childID + "", 3, username);
 
         }
         helper_object.close();

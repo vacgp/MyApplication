@@ -10,6 +10,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
 class ChildDB {
 
     private static final String DATABASE_NAME = "login.db";
@@ -29,7 +31,7 @@ class ChildDB {
     private SQLiteDB dbHelper;
 
     //connect to db
-    public ChildDB(Context _context) {
+    ChildDB(Context _context) {
         context = _context;
         dbHelper = new SQLiteDB(context, DATABASE_NAME, null, 1);
     }
@@ -41,16 +43,12 @@ class ChildDB {
     }
 
     //close db
-    public void close() {
+    void close() {
         db.close();
     }
 
-    public SQLiteDatabase getDatabaseInstance() {
-        return db;
-    }
 
-
-    public void insertEntry(String name, String birth, String gender,byte[] image) {
+    void insertEntry(String name, String birth, String gender, byte[] image) {
 
         ContentValues newValues = new ContentValues();
 
@@ -66,23 +64,6 @@ class ChildDB {
     }
 
 
-
-
-    public void updateProducts(String product1, String product2, String product3, String userName) {
-
-        ContentValues updatedValues = new ContentValues();
-
-        // Assign values for each row.
-        updatedValues.put("PRODUCT_1", product1);
-        updatedValues.put("PRODUCT_2", product2);
-        updatedValues.put("PRODUCT_3", product3);
-
-        String where = "USERNAME = ?";
-
-        db.update(tableName, updatedValues, where, new String[]{userName});
-    }
-
-
     public void updateImage(byte[] image, String userName) {
 
         ContentValues updatedValues = new ContentValues();
@@ -94,7 +75,9 @@ class ChildDB {
         db.update("LOGIN", updatedValues, where, new String[]{userName});
 
     }
-    public int getChildID(String childName) {
+
+    int getChildID(String childName) {
+        //query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy)
         //Cursor cursor = db.query("LOGIN", null, where, new String[]{userName}, null, null, null);
         Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE NAME='" + childName + "' ", null);
         if (cursor.getCount() < 1) // UserName Not Exist
@@ -108,6 +91,32 @@ class ChildDB {
         cursor.close();
 
         return childID;
+    }
+
+    public ArrayList<String> childInfo(int childID) {
+        Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE ID=" + childID + "", null);
+        ArrayList<String> getChildInfo = new ArrayList<String>();
+        if (cursor.getCount() < 1) {
+            cursor.close();
+            return getChildInfo;
+        }
+        cursor.moveToFirst();
+
+        getChildInfo.add(cursor.getString(1)); //NAME column
+        getChildInfo.add(cursor.getString(2)); //BIRTH column
+        getChildInfo.add(cursor.getString(3)); //GENDER column
+
+        cursor.close();
+        return getChildInfo;
+
+    }
+
+    byte[] gettingImage(int childID){
+        Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE ID=" + childID + "", null);
+        cursor.moveToFirst();
+        byte[] image_byteArray = cursor.getBlob(cursor.getColumnIndex("IMAGE"));
+        cursor.close();
+        return image_byteArray;
     }
 
 

@@ -38,7 +38,7 @@ class Helper {
     private SQLiteDB dbHelper;
 
     //connect to db
-    public Helper(Context _context) {
+    Helper(Context _context) {
         context = _context;
         dbHelper = new SQLiteDB(context, DATABASE_NAME, null, 1);
     }
@@ -50,16 +50,12 @@ class Helper {
     }
 
     //close db
-    public void close() {
+    void close() {
         db.close();
     }
 
-    public SQLiteDatabase getDatabaseInstance() {
-        return db;
-    }
 
-
-    public void insertEntry(String userName, String password, String child1, String child2, String child3) {
+    void insertEntry(String userName, String password, String child1, String child2, String child3) {
 
         ContentValues newValues = new ContentValues();
 
@@ -77,7 +73,7 @@ class Helper {
     }
 
 
-    public String getSingleEntry(String userName) {
+    String getSingleEntry(String userName) {
         //Cursor cursor = db.query("LOGIN", null, where, new String[]{userName}, null, null, null);
         Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE USERNAME='" + userName + "' ", null);
         if (cursor.getCount() < 1) // UserName Not Exist
@@ -94,14 +90,17 @@ class Helper {
     }
 
 
-    public void updateChild(String child1, String child2, String child3, String userName) {
+    void updateChild(String childID, int childNumber, String userName) {
 
         ContentValues updatedValues = new ContentValues();
 
-        // Assign values for each row.
-        updatedValues.put("CHILD_1", child1);
-        updatedValues.put("CHILD_2", child2);
-        updatedValues.put("CHILD_3", child3);
+        if (childNumber == 1) {
+            updatedValues.put("CHILD_1", childID);
+        } else if (childNumber == 2) {
+            updatedValues.put("CHILD_2", childID);
+        } else if (childNumber == 3) {
+            updatedValues.put("CHILD_3", childID);
+        }
 
         String where = "USERNAME = ?";
 
@@ -143,7 +142,7 @@ class Helper {
 
     }
 
-    public ArrayList<Integer> getChildID(String userName) {
+    ArrayList<Integer> getChildIDs(String userName) {
         //Cursor cursor = db.query("LOGIN", null, where, new String[]{userName}, null, null, null);
         Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE USERNAME='" + userName + "' ", null);
 
@@ -157,15 +156,14 @@ class Helper {
         if (!childID1.equals("-")) {
             cursor.close();
             childIDs.add(Integer.parseInt(childID1));
-        } else if (!childID2.equals("-")) {
+        }
+        if (!childID2.equals("-")) {
             cursor.close();
             childIDs.add(Integer.parseInt(childID2));
-        } else if (!childID3.equals("-")) {
+        }
+        if (!childID3.equals("-")) {
             cursor.close();
             childIDs.add(Integer.parseInt(childID3));
-        } else {
-            cursor.close();
-            return childIDs;
         }
 
         return childIDs;
