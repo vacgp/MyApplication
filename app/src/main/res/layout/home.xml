@@ -31,7 +31,8 @@
             android:layout_height="match_parent"
             app:srcCompat="@drawable/nvaccines"
             android:id="@+id/vac_btn"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="vaccines"/>
         </LinearLayout>
 
     <LinearLayout
@@ -54,6 +55,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginEnd="8dp"
             android:layout_gravity="center"
+            android:onClick="safety"
             />
 
         <ImageButton
@@ -94,7 +96,8 @@
             android:layout_height="match_parent"
             app:srcCompat="@drawable/aboutus"
             android:layout_weight="1"
-            android:id="@+id/about_btn" />
+            android:id="@+id/about_btn"
+            android:onClick="about"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 String savedpw = h.getSingleEntry(username_txt.getText().toString());
 
                 if(savedpw.equals(password_txt.getText().toString())){
+                    dialog.dismiss();
                     Intent i = new Intent(MainActivity.this, Home.class);
 
                     i.putExtra("username", username_txt.getText().toString()); // (Key, Value)

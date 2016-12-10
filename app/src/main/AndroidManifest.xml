@@ -31,6 +31,14 @@
         <activity
             android:name=".ChildRegister"
             android:label="New Record" />
+        <activity android:name=".ChildRecord"
+            android:label="Child Record" />
+        <activity android:name=".Safety"
+            android:label="Safety" />
+        <activity android:name=".About"
+            android:label="About Us" />
+        <activity android:name=".VaccinesList"
+            android:label="Vaccines" />
     </application>
 
 </manifest>

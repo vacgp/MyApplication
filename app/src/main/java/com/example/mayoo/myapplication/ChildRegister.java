@@ -46,6 +46,7 @@ public class ChildRegister extends AppCompatActivity {
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
     byte[] imageByte_toDB;
+    boolean img_added;
 
 
     // Storage Permissions
@@ -136,6 +137,8 @@ public class ChildRegister extends AppCompatActivity {
                 ImageHelper imageObject = new ImageHelper();
                 imageByte_toDB = imageObject.getBytes(BitmapFactory.decodeFile(imgDecodableString));
                 // imageView_Value = Arrays.toString(imageByte_toDB);
+                img_added = true;
+
 
             } else {
                 Toast.makeText(this, "You haven't picked a photo", Toast.LENGTH_LONG).show();
@@ -192,6 +195,11 @@ public class ChildRegister extends AppCompatActivity {
 
         ChildDB childDB_object = new ChildDB(ChildRegister.this);
         childDB_object.open();
+        if (!img_added){
+            Bitmap defaultImage_bitMap = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.kiddo);
+            ImageHelper imageHelper_object = new ImageHelper();
+            imageByte_toDB = imageHelper_object.getBytes(defaultImage_bitMap);
+        }
         childDB_object.insertEntry(child_name_str, birth_str, gender_srt, imageByte_toDB);
         int childID = childDB_object.getChildID(child_name_str);
 
@@ -211,6 +219,10 @@ public class ChildRegister extends AppCompatActivity {
 
         }
         helper_object.close();
+        Intent intent_to = new Intent(ChildRegister.this, ChildRecord.class);
+        intent_to.putExtra("childID", childID);
+        startActivity(intent_to);
+
     }
 }
 

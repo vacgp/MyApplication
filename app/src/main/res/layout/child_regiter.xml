@@ -25,13 +25,14 @@
 
         <ImageButton
             android:id="@+id/childPhotoBtn"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginLeft="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="25dp"
             android:onClick="child_image"
-            android:src="@drawable/kiddoz" />
+            android:background="#00FFFFFF"
+            android:src="@drawable/kiddo" />
 
     </LinearLayout>
 
@@ -149,13 +150,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Cancel"
-            android:textColor="#ff4081"
+            android:textColor="@color/purple"
             style="@style/Base.Widget.AppCompat.Button.Borderless"/>
 
         <Button
             android:id="@+id/done_button"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:textColor="#ff4081"
+            android:textColor="@color/purple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

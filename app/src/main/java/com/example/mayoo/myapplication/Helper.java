@@ -152,7 +152,7 @@ class Helper {
         String childID2 = cursor.getString(cursor.getColumnIndex("CHILD_2"));
         String childID3 = cursor.getString(cursor.getColumnIndex("CHILD_3"));
 
-        ArrayList<Integer> childIDs = new ArrayList<Integer>();
+        ArrayList<Integer> childIDs = new ArrayList<>();
         if (!childID1.equals("-")) {
             cursor.close();
             childIDs.add(Integer.parseInt(childID1));

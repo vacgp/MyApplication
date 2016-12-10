@@ -34,6 +34,23 @@ public class Home  extends AppCompatActivity {
     }
 
     public void ask_a_doctor(View view) {
+        Intent intent_browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.chop.edu/centers-programs/vaccine-education-center/contact-ask-the-vec"));
+        startActivity(intent_browser);
 
+    }
+
+    public void safety(View view) {
+        Intent intent_to = new Intent(Home.this, Safety.class);
+        startActivity(intent_to);
+    }
+
+    public void about(View view) {
+        Intent intent_to = new Intent(Home.this, About.class);
+        startActivity(intent_to);
+    }
+
+    public void vaccines(View view) {
+        Intent intent_to = new Intent(Home.this, VaccinesList.class);
+        startActivity(intent_to);
     }
 }

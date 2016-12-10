@@ -86,7 +86,7 @@ class ChildDB {
             return 0;
         }
 
-        cursor.moveToFirst();
+        cursor.moveToLast();
         int childID = cursor.getInt(cursor.getColumnIndex("ID"));
         cursor.close();
 

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="HEPATITIS A VACCINE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/blue"
+        android:id="@+id/textView" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:textColor="@color/darkGrey"
+        android:text="The hepatitis A vaccine is used to prevent hepatitis A."/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:textColor="#424d52"
+        android:text="Before the vaccine, every year about 70 people died from hepatitis A infections."
+        android:textStyle="bold|italic"
+        />
+    <TextView
+        android:text="TYPE OF VACCINE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/blue"
+        android:id="@+id/textView2" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:textColor="#424d52"
+        android:text="The hepatitis A vaccine is a killed viral vaccine."/>
+    <TextView
+        android:text="VACCINE SIDE EFFECTS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/blue"
+        android:id="@+id/textView3" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:textColor="#424d52"
+        android:text="• Pain, redness and tenderness at the injection site.
+• Headache.
+• Mild fever.
+• Feeling out of sorts.
+• Fatigue."/>
+    <TextView
+        android:text="REASONS TO GET THE HEPATITIS A VACCINE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/blue"
+        android:id="@+id/textView4" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:textColor="#424d52"
+        android:text="• It's hard to know who's contagious.
+• Eating at a restaurant can lead to hepatitis A infection.
+• Hepatitis A infections can be long-lasting.
+• Hepatitis A infections can cause death.
+• The hepatitis A vaccine is safe."/>
+
+</LinearLayout>

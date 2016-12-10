@@ -3,39 +3,113 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1"
     android:layout_marginTop="10dp"
+    android:weightSum="1"
 
     >
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/child_1_btn"
-        android:layout_weight="0.06"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
         android:visibility="gone"
-        />
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/child_2_btn"
-        android:layout_weight="0.06"
+        android:id="@+id/child_1_layout"
+        >
+
+        <ImageButton
+            android:onClick="child1"
+            android:id="@+id/child_1_btn"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0.06"
+            android:src="@drawable/kiddo"
+            android:background="#00FFFFFF"
+            />
+
+        <TextView
+            android:id="@+id/child_1_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#424d52"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+             />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/child_2_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
         android:visibility="gone"
-        />
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/child_3_btn"
-        android:layout_weight="0.06"
+>
+        <ImageButton
+            android:id="@+id/child_2_btn"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0.06"
+            android:src="@drawable/kiddo"
+            android:background="#00FFFFFF"
+            android:onClick="child2"
+            />
+
+        <TextView
+            android:id="@+id/child_2_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#424d52"
+            android:textSize="16sp"
+            android:layout_marginTop="5dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/child_3_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:visibility="gone"
-        />
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        >
+
+        <ImageButton
+            android:id="@+id/child_3_btn"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0.06"
+            android:src="@drawable/kiddo"
+            android:background="#00FFFFFF"
+            android:onClick="child3"
+            />
+
+        <TextView
+            android:id="@+id/child_3_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#424d52"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
     <ImageButton
+        android:id="@+id/new_btn"
         android:layout_width="100dp"
         android:layout_height="110dp"
-        app:srcCompat="@drawable/addd"
-        android:id="@+id/new_btn"
         android:layout_weight="0.06"
-        android:onClick="new_record"
         android:background="#00FFFFFF"
+        android:layout_marginTop="35dp"
+        android:onClick="new_record"
+        app:srcCompat="@drawable/addd"
         />
 </LinearLayout>

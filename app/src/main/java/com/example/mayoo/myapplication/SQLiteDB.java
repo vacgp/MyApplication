@@ -19,6 +19,8 @@ class SQLiteDB extends SQLiteOpenHelper
     {
         _db.execSQL(Helper.DATABASE_CREATE);
         _db.execSQL(ChildDB.DATABASE_CREATE);
+        _db.execSQL(Vaccines.DATABASE_CREATE);
+
 
     }
 
@@ -31,6 +33,8 @@ class SQLiteDB extends SQLiteOpenHelper
         // Drop the old table and create a new one.
         _db.execSQL("DROP TABLE VAC IF EXISTS " + "TEMPLATE");
         _db.execSQL("DROP TABLE CHILD IF EXISTS " + "TEMPLATE");
+        _db.execSQL("DROP TABLE VACCINES IF EXISTS " + "TEMPLATE");
+
 
         // Create a new one.
         onCreate(_db);
