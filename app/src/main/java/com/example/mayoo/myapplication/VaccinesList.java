@@ -3,8 +3,10 @@ package com.example.mayoo.myapplication;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +44,7 @@ public class VaccinesList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View arg1, int position, long row_id) {
 
-
+Log.d("ListView onItemClick", vacNames[position]);
             }
         });
     }

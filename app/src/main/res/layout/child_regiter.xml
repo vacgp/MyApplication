@@ -32,7 +32,7 @@
             android:layout_marginTop="25dp"
             android:onClick="child_image"
             android:background="#00FFFFFF"
-            android:src="@drawable/kiddo" />
+            android:src="@drawable/kiddoz" />
 
     </LinearLayout>
 

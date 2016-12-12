@@ -4,6 +4,9 @@
         android:radius="2dp"
         />
 
+    <solid
+        android:color="@color/transparent"
+        />
 
     <padding
         android:left="0dp"

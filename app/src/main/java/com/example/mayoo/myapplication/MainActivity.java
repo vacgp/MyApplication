@@ -2,12 +2,23 @@ package com.example.mayoo.myapplication;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.graphics.drawable.ColorDrawable;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +26,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //for changing the action bar's color per activity
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setBackgroundDrawable(new ColorDrawable(Color.DKGRAY));
+        }
     }
+
+
 
     public void Register(View view) {
         Intent i = new Intent(this, Register.class);
