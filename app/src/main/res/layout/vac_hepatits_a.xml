@@ -70,10 +70,10 @@
         android:layout_marginStart="8dp"
         android:textSize="14sp"
         android:textColor="#424d52"
-        android:text="• Pain, redness and tenderness at the injection site.
-• Headache.
-• Mild fever.
-• Feeling out of sorts.
+        android:text=" • Pain, redness and tenderness at the injection site.\n
+• Headache.\n
+• Mild fever.\n
+• Feeling out of sorts.\n
 • Fatigue."/>
     <TextView
         android:text="REASONS TO GET THE HEPATITIS A VACCINE"
@@ -93,10 +93,10 @@
         android:layout_marginStart="8dp"
         android:textSize="14sp"
         android:textColor="#424d52"
-        android:text="• It's hard to know who's contagious.
-• Eating at a restaurant can lead to hepatitis A infection.
-• Hepatitis A infections can be long-lasting.
-• Hepatitis A infections can cause death.
+        android:text=" • It's hard to know who's contagious.\n
+• Eating at a restaurant can lead to hepatitis A infection.\n
+• Hepatitis A infections can be long-lasting.\n
+• Hepatitis A infections can cause death.\n
 • The hepatitis A vaccine is safe."/>
 
 </LinearLayout>

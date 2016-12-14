@@ -40,7 +40,7 @@
         <activity android:name=".VaccinesList"
             android:label="Vaccines" />
         <activity android:name=".VacInfo"
-            android:label="Vaccines Information" />
+            android:label="Vaccine Information" />
     </application>
 
 </manifest>

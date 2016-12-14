@@ -17,7 +17,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-            android:text="INFLUENZA VACCINE"
+            android:text="DIPHTHERIA, TETANUS AND PERTUSSIS VACCINES"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -27,7 +27,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The influenza vaccine is used to prevent influenza."
+android:text="The diphtheria, tetanus and pertussis vaccines are used to prevent these diseases and are typically given in the U.S. in combined formulations."
             android:textColor="@color/darkGrey"
             android:textSize="14sp" />
 
@@ -39,7 +39,7 @@ android:text="The influenza vaccine is used to prevent influenza."
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="Before the polio vaccine, every year in the U.S. polio caused paralysis in tens of thousands of people and led to thousands of deaths."
+android:text="Before these vaccines, about 1,800 people died from diphtheria, about 500 died from tetanus and about 8,000 died from pertussis every year."
             android:textColor="#424d52"
             android:textSize="14sp"
             android:textStyle="bold|italic" />
@@ -61,7 +61,7 @@ android:text="Before the polio vaccine, every year in the U.S. polio caused para
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The polio vaccine used in the U.S. is given as a shot; it is a killed viral vaccine. In some countries an oral polio vaccine is used and is a live, weakened viral vaccine."
+android:text="The diphtheria, tetanus and pertussis vaccines are all inactivated toxoid vaccines."
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -82,8 +82,9 @@ android:text="The polio vaccine used in the U.S. is given as a shot; it is a kil
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:text="• Redness, hardness and pain at the injection site.
-• Fever (greater than 102°F)."
+            android:text=" • Pain, redness or swelling at the injection site.\n
+• Low-grade fever.\n
+• Drowsiness or crankiness ."
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -94,7 +95,7 @@ android:text="The polio vaccine used in the U.S. is given as a shot; it is a kil
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="REASONS TO GET THE PNEUMOCOCCAL VACCINE"
+android:text="REASONS TO GET THE DIPHTHERIA – TETANUS – PERTUSSIS VACCINES"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -107,11 +108,11 @@ android:text="The polio vaccine used in the U.S. is given as a shot; it is a kil
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
-            android:text="• Polio still exists.
-• Polio is highly contagious.
-• Paralytic polio, a severe and devastating disease, may occur.
-• A syndrome known as post-polio syndrome can occur later in life in people previously infected with polio.
-• The polio vaccine is safe."
+            android:text=" • Disease caused by diphtheria can make a comeback.\n
+• Tetanus is not transmitted from person-to-person, but rather from the soil, so even if everyone around you is immunized, your chance of getting tetanus does not decrease.\n
+• Pertussis is very common and often misdiagnosed or underdiagnosed.\n
+• Pertussis immunization protects babies who are too young to have been immunized and for whom the disease can be fatal.\n
+• The vaccines are safe."
             android:textColor="#424d52"
             android:textSize="14sp" />
     </LinearLayout>

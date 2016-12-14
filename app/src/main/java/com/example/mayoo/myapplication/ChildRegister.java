@@ -7,10 +7,13 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
@@ -60,6 +63,11 @@ public class ChildRegister extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.child_regiter);
+
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 135, 165)));
+        }
 
 
         editText = (EditText) findViewById(R.id.birth_edit_text);
@@ -195,8 +203,8 @@ public class ChildRegister extends AppCompatActivity {
 
         ChildDB childDB_object = new ChildDB(ChildRegister.this);
         childDB_object.open();
-        if (!img_added){
-            Bitmap defaultImage_bitMap = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.kiddo);
+        if (!img_added) {
+            Bitmap defaultImage_bitMap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.kiddo);
             ImageHelper imageHelper_object = new ImageHelper();
             imageByte_toDB = imageHelper_object.getBytes(defaultImage_bitMap);
         }
@@ -224,6 +232,11 @@ public class ChildRegister extends AppCompatActivity {
         startActivity(intent_to);
 
     }
+
+   /* public void cancel(View view) {
+        Intent intent_to = new Intent(ChildRegister.this, Record.class);
+        startActivity(intent_to);
+    }*/
 }
 
 

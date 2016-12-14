@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +33,11 @@ public class VaccinesList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vaccines);
+
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 145, 192)));
+        }
 
         Resources resources = getResources();
         vacNames = resources.getStringArray(R.array.vaccines);

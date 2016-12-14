@@ -17,7 +17,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-            android:text="PNEUMOCOCCAL VACCINE"
+            android:text="POLIO VACCINE"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -27,7 +27,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The pneumococcal vaccine is used to prevent pneumococcus."
+android:text="The polio vaccine is used to prevent polio."
             android:textColor="@color/darkGrey"
             android:textSize="14sp" />
 
@@ -39,7 +39,7 @@ android:text="The pneumococcal vaccine is used to prevent pneumococcus."
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="Before the vaccine, pneumococcus caused about 700 cases of meningitis, 17,000 cases of sepsis and 71,000 cases of pneumonia each year."
+android:text="Before the polio vaccine, every year in the U.S. polio caused paralysis in tens of thousands of people and led to thousands of deaths."
             android:textColor="#424d52"
             android:textSize="14sp"
             android:textStyle="bold|italic" />
@@ -61,7 +61,7 @@ android:text="Before the vaccine, pneumococcus caused about 700 cases of meningi
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The pneumococcal vaccine is a conjugate vaccine."
+android:text="The polio vaccine used in the U.S. is given as a shot; it is a killed viral vaccine. In some countries an oral polio vaccine is used and is a live, weakened viral vaccine."
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -82,11 +82,8 @@ android:text="The pneumococcal vaccine is a conjugate vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:text="• Pain and swelling at the injection site.
-• Fever (greater than 100.4°F).
-• High fever (greater than 102°F).
-• Decreased appetite
-• Irritability."
+            android:text=" • Redness, hardness and pain at the injection site.\n
+• Fever (greater than 102°F)."
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -97,7 +94,7 @@ android:text="The pneumococcal vaccine is a conjugate vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="REASONS TO GET THE PNEUMOCOCCAL VACCINE"
+            android:text="REASONS TO GET THE POLIO VACCINE"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -110,11 +107,11 @@ android:text="The pneumococcal vaccine is a conjugate vaccine."
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
-            android:text="• Pneumococcus causes infections every year in the U.S.
-• Pneumococcal infections can complicate other infections.
-• Some pneumococcal infections do not respond to antibiotics.
-• The pneumococcal vaccine works.
-• The pneumococcal vaccine is safe."
+            android:text=" • Polio still exists.\n
+• Polio is highly contagious.\n
+• Paralytic polio, a severe and devastating disease, may occur.\n
+• A syndrome known as post-polio syndrome can occur later in life in people previously infected with polio.\n
+• The polio vaccine is safe."
             android:textColor="#424d52"
             android:textSize="14sp" />
     </LinearLayout>

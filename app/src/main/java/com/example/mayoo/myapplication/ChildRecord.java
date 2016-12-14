@@ -6,7 +6,9 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -42,6 +44,11 @@ public class ChildRecord extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.child_record);
 
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 135, 165)));
+        }
+
         Intent intent_from = getIntent();
 
         int childID = intent_from.getIntExtra("childID", 0);
@@ -52,7 +59,7 @@ public class ChildRecord extends AppCompatActivity {
 
         TextView record_child_name = (TextView) findViewById(R.id.record_child_name);
         record_child_birth = (TextView) findViewById(R.id.record_child_birth);
-        TextView record_child_gender = (TextView) findViewById(R.id.record_child_gender);
+//        TextView record_child_gender = (TextView) findViewById(R.id.record_child_gender);
         ImageView record_child_img = (ImageView) findViewById(R.id.record_child_img);
 
 
@@ -63,7 +70,7 @@ public class ChildRecord extends AppCompatActivity {
 
         record_child_name.setText(child_info.get(0));
         record_child_birth.setText(child_info.get(1));
-        record_child_gender.setText(child_info.get(2));
+//        record_child_gender.setText(child_info.get(2));
 
         byte[] imageByte_fromDB = childDB_object.gettingImage(childID);
         Bitmap imageBitmap_fromByte;
@@ -90,46 +97,46 @@ public class ChildRecord extends AppCompatActivity {
                 switch (vacNames[position]) {
                     case "Hepatitis B #1":
                     case "Hepatitis B #2":
-                        intent_to.putExtra("layoutID", R.layout.hepatits_b);
+                        intent_to.putExtra("layoutID", R.layout.vac_hepatits_b);
                         break;
                     case "Rotavirus #1":
                     case "Rotavirus #2":
                     case "Rotavirus #3":
-                        intent_to.putExtra("layoutID", R.layout.rotavirus);
+                        intent_to.putExtra("layoutID", R.layout.vac_rotavirus);
                         break;
                     case "Diphtheria/Tetanus/Pertussis (DTaP) #1":
                     case "Diphtheria/Tetanus/Pertussis (DTaP) #2":
                     case "Diphtheria/Tetanus/Pertussis (DTaP) #3":
-                        intent_to.putExtra("layoutID", R.layout.dtap);
+                        intent_to.putExtra("layoutID", R.layout.vac_dtap);
                         break;
                     case "Haemophilus influenzae type b #1":
                     case "Haemophilus influenzae type b #2":
                     case "Haemophilus influenzae type b #3":
                     case "Haemophilus influenzae type b #4":
-                        intent_to.putExtra("layoutID", R.layout.hepatits_b);
+                        intent_to.putExtra("layoutID", R.layout.vac_hib);
                         break;
                     case "Pneumococcal #1":
                     case "Pneumococcal #2":
                     case "Pneumococcal #3":
                     case "Pneumococcal #4":
-                        intent_to.putExtra("layoutID", R.layout.pneumococcal);
+                        intent_to.putExtra("layoutID", R.layout.vac_pneumococcal);
                         break;
                     case "Polio #1":
                     case "Polio #2":
                     case "Polio #3":
-                        intent_to.putExtra("layoutID", R.layout.polio);
+                        intent_to.putExtra("layoutID", R.layout.vac_polio);
                         break;
                     case "Measles/Mumps/Rubella #1":
-                        intent_to.putExtra("layoutID", R.layout.mmr);
+                        intent_to.putExtra("layoutID", R.layout.vac_mmr);
                         break;
                     case "Chickenpox #1":
-                        intent_to.putExtra("layoutID", R.layout.chickenpox);
+                        intent_to.putExtra("layoutID", R.layout.vac_chickenpox);
                         break;
                     case "Hepatitis A":
-                        intent_to.putExtra("layoutID", R.layout.hepatits_a);
+                        intent_to.putExtra("layoutID", R.layout.vac_hepatits_a);
                         break;
                     case "Influenza":
-                        intent_to.putExtra("layoutID", R.layout.influenza);
+                        intent_to.putExtra("layoutID", R.layout.vac_influenza);
                         break;
 
                     default:

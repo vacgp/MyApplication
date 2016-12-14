@@ -26,7 +26,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_weight="0.06"
-            android:src="@drawable/kiddoz"
+            android:src="@drawable/kiddo"
             android:background="#00FFFFFF"
             />
 
@@ -55,7 +55,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_weight="0.06"
-            android:src="@drawable/kiddoz"
+            android:src="@drawable/kiddo"
             android:background="#00FFFFFF"
             android:onClick="child2"
             />
@@ -86,7 +86,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_weight="0.06"
-            android:src="@drawable/kiddoz"
+            android:src="@drawable/kiddo"
             android:background="#00FFFFFF"
             android:onClick="child3"
             />
