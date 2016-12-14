@@ -55,7 +55,6 @@ public class ChildRegister extends AppCompatActivity {
     // Storage Permissions
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
-            Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
 
@@ -111,7 +110,8 @@ public class ChildRegister extends AppCompatActivity {
 
 
     public void child_image(View view) {
-        verifyStoragePermissions(this);
+        verifyStoragePermissions(ChildRegister.this);
+
         //Create intent to Open ImageHelper applications like Gallery, Google Photos
         Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         // Start the Intent
@@ -152,8 +152,7 @@ public class ChildRegister extends AppCompatActivity {
                 Toast.makeText(this, "You haven't picked a photo", Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong\n" + e.getMessage(), Toast.LENGTH_LONG).show();
-            System.out.println(e.getMessage());
+            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
         }
 
     }
@@ -165,18 +164,14 @@ public class ChildRegister extends AppCompatActivity {
      *
      * @param activity
      */
-    public static void verifyStoragePermissions(Activity activity) {
+    public void verifyStoragePermissions(Activity activity) {
         // Check if we have write permission
         int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
 
             // We don't have permission so prompt the user
-            ActivityCompat.requestPermissions(
-                    activity,
-                    PERMISSIONS_STORAGE,
-                    REQUEST_EXTERNAL_STORAGE
-            );
+            ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
         }
     }
 
