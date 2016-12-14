@@ -1,6 +1,9 @@
 package com.example.mayoo.myapplication;
 
+import android.app.ActivityManager;
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBar;
@@ -13,12 +16,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.graphics.drawable.ColorDrawable;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,9 +29,8 @@ public class MainActivity extends AppCompatActivity {
         if (ab != null) {
             ab.setBackgroundDrawable(new ColorDrawable(Color.DKGRAY));
         }
+
     }
-
-
 
     public void Register(View view) {
         Intent i = new Intent(this, Register.class);

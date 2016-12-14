@@ -24,6 +24,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -146,28 +147,12 @@ public class ChildRecord extends AppCompatActivity {
 
         Context context;
         String[] vacNames_adapter;
-
+        Double months;
 
         listAdapter(Context c, String[] vacNames) {
             super(c, R.layout.child_vac_list, R.id.child_vac_list, vacNames);
             this.context = c;
             this.vacNames_adapter = vacNames;
-
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-
-            if (convertView == null) {
-                LayoutInflater inflater = (LayoutInflater) ChildRecord.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                convertView = inflater.inflate(R.layout.child_vac_list, parent, false);
-            }
-
-            TextView userName_searchResult = (TextView) convertView.findViewById(R.id.child_vac_list);
-
-            userName_searchResult.setText(vacNames_adapter[position]);
-
-            convertView.setBackgroundResource(R.color.transparent);
 
             SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
             String currentDateandTime = sdf.format(new Date());
@@ -187,112 +172,30 @@ public class ChildRecord extends AppCompatActivity {
 
             long diffInMillies = date2.getTime() - date1.getTime();
             long dateDiff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-            Log.d("dateDiff", dateDiff + ", "+currentDateandTime+", "+record_child_birth.getText().toString());
+            Log.d("dateDiff", dateDiff + ", " + currentDateandTime + ", " + record_child_birth.getText().toString());
 
-            Double months = dateDiff / 30.0;
-           // Log.d("months", months + "");
+            months = dateDiff / 30.0;
 
+        }
 
-            //BIRTH
-            if (months < 1) {
-                Log.d("BIRTH", months + ", " + vacNames_adapter[position]);
-                if (vacNames_adapter[position].equals("Hepatitis B #1")) {
-                    convertView.setBackgroundResource(R.color.purple);
-                }
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
 
-                //1-2 MONTHS
-            } else if (months >= 1 && months < 2) {
-                Log.d("1_2", months + ", " + vacNames_adapter[position]);
-                if (vacNames_adapter[position].equals("Hepatitis B #2")) {
-
-                    convertView.setBackgroundResource(R.color.purple);
-                }
-
-                //2 MONTHS
-            } else if (months >= 2 && months < 3) {
-                Log.d("2MONTHS", months + ", " + vacNames_adapter[position]);
-                if (
-                        vacNames_adapter[position].equals("Rotavirus #1")
-                                ||
-                                vacNames_adapter[position].equals("Diphtheria/Tetanus/Pertussis (DTaP) #1")
-                                ||
-                                vacNames_adapter[position].equals("Haemophilus influenzae type b #1")
-                                ||
-                                vacNames_adapter[position].equals("Pneumococcal #1")
-                                ||
-                                vacNames_adapter[position].equals("Polio #1")) {
-                    Log.d("2MONTHS_color", months + ", " + vacNames_adapter[position]+" == "+ position);
-
-                    convertView.setBackgroundResource(R.color.purple);
-                }
-
-                //4 MONTHS
-            } else if (months >= 4 && months < 5) {
-                Log.d("4months", months + ", " + vacNames_adapter[position]);
-                if (vacNames_adapter[position].equals("Rotavirus #2")
-                        ||
-                        vacNames_adapter[position].equals("Diphtheria/Tetanus/Pertussis (DTaP) #2")
-                        ||
-                        vacNames_adapter[position].equals("Haemophilus influenzae type b #2")
-                        ||
-                        vacNames_adapter[position].equals("Pneumococcal #2")
-                        ||
-                        vacNames_adapter[position].equals("Polio #2")) {
-                    convertView.setBackgroundResource(R.color.purple);
-                }
-
-                //6-12 MONTHS
-            } else if (months >= 6 && months < 12) {
-
-                //6 MONTHS
-                if (months >= 6 && months < 7) {
-                    Log.d("6months", months + ", " + vacNames_adapter[position]);
-                    if (vacNames_adapter[position].equals("Rotavirus #3")
-                            ||
-                            vacNames_adapter[position].equals("Diphtheria/Tetanus/Pertussis (DTaP) #3")
-                            ||
-                            vacNames_adapter[position].equals("Haemophilus influenzae type b #3")
-                            ||
-                            vacNames_adapter[position].equals("Pneumococcal #3")
-                            ||
-                            vacNames_adapter[position].equals("Influenza")) {
-                        convertView.setBackgroundResource(R.color.purple);
-                    }
-                }
-
-                Log.d("6_12", months + ", " + vacNames_adapter[position]);
-                if (vacNames_adapter[position].equals("Hepatitis B #3") || vacNames_adapter[position].equals("Polio #3")) {
-                    convertView.setBackgroundResource(R.color.purple);
-                }
-
-                //12-15 months
-            } else if (months >= 12 && months < 15) {
-                Log.d("12_15", months + ", " + vacNames_adapter[position]);
-                if (vacNames_adapter[position].equals("Measles/Mumps/Rubella #1")
-                        ||
-                        vacNames_adapter[position].equals("Chickenpox #1")
-
-                        ||
-                        vacNames_adapter[position].equals("Haemophilus influenzae type b #4")
-                        ||
-                        vacNames_adapter[position].equals("Pneumococcal #4")) {
-                    convertView.setBackgroundResource(R.color.purple);
-                }
-
-                //15-18 MONTHS
-            } else if (months >= 15 && months < 18) {
-                Log.d("15_18", months + ", " + vacNames_adapter[position]);
-                if (vacNames_adapter[position].equals("Diphtheria/Tetanus/Pertussis (DTaP) #4")) {
-                    convertView.setBackgroundResource(R.color.purple);
-                }
-
-                //18-23 MONTHS
-            } else if (months >= 18 && months < 23) {
-                Log.d("18_23", months + ", " + vacNames_adapter[position]);
-                if (vacNames_adapter[position].equals("Hepatitis A")) {
-                    convertView.setBackgroundResource(R.color.purple);
-                }
+            if (convertView == null) {
+                LayoutInflater inflater = (LayoutInflater) ChildRecord.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = inflater.inflate(R.layout.child_vac_list, parent, false);
             }
+
+            TextView userName_searchResult = (TextView) convertView.findViewById(R.id.child_vac_list);
+
+            userName_searchResult.setText(vacNames_adapter[position]);
+
+            convertView.setBackgroundResource(R.color.transparent);
+
+            doneVacs(convertView, vacNames_adapter[position], months);
+
+            currentVacs(convertView, vacNames_adapter[position], months);
+
 
             return convertView;
         }
@@ -300,18 +203,174 @@ public class ChildRecord extends AppCompatActivity {
 
     }
 
-    /**
-     * Get a diff between two dates
-     *
-     * @param date1    the oldest date
-     * @param date2    the newest date
-     * @param timeUnit the unit in which you want the diff
-     * @return the diff value, in the provided unit
-     */
-    public static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
-        long diffInMillies = date2.getTime() - date1.getTime();
-        Log.d("getDateDiff", timeUnit.convert(diffInMillies, TimeUnit.MILLISECONDS) + "");
-        return timeUnit.convert(diffInMillies, TimeUnit.MILLISECONDS);
+    private void doneVacs(View convertView, String vacName, Double mMonths) {
+        Log.d("doneVacs", mMonths+"");
+
+        ArrayList<String> doneVacs_list = new ArrayList<>();
+
+        if (mMonths >= 1) {
+            Log.d("BIRTH", mMonths + ", " + vacName);
+            doneVacs_list.add("Hepatitis B #1");
+
+        }
+
+        if (mMonths >= 2) {
+            Log.d("1_2", mMonths + ", " + vacName);
+            doneVacs_list.add("Hepatitis B #2");
+
+
+        }
+
+        if (mMonths >= 3) {
+            Log.d("2mMonths", mMonths + ", " + vacName);
+            doneVacs_list.addAll(Arrays.asList("Rotavirus #1", "Diphtheria/Tetanus/Pertussis (DTaP) #1",
+                    "Haemophilus influenzae type b #1", "Pneumococcal #1", "Polio #1"));
+
+        }
+
+        if (mMonths >= 5) {
+            Log.d("4mMonths", mMonths + ", " + vacName);
+            doneVacs_list.addAll(Arrays.asList("Rotavirus #2", "Diphtheria/Tetanus/Pertussis (DTaP) #2",
+                    "Haemophilus influenzae type b #2", "Pneumococcal #2", "Polio #2"));
+
+
+        }
+
+        if (mMonths >= 7) {
+            Log.d("6mMonths", mMonths + ", " + vacName);
+            doneVacs_list.addAll(Arrays.asList("Rotavirus #3", "Diphtheria/Tetanus/Pertussis (DTaP) #3",
+                    "Haemophilus influenzae type b #3", "Pneumococcal #3", "Influenza"));
+        }
+
+        if (mMonths >= 12) {
+            Log.d("6_12", mMonths + ", " + vacName);
+            doneVacs_list.addAll(Arrays.asList("Hepatitis B #3", "Polio #3"));
+        }
+
+        if (mMonths >= 15) {
+            Log.d("12_15", mMonths + ", " + vacName);
+            doneVacs_list.addAll(Arrays.asList("Measles/Mumps/Rubella #1", "Chickenpox #1", "Haemophilus influenzae type b #4",
+                    "Pneumococcal #4"));
+        }
+
+        if (mMonths >= 18) {
+            Log.d("15_18", mMonths + ", " + vacName);
+            doneVacs_list.add("Diphtheria/Tetanus/Pertussis (DTaP) #4");
+        }
+
+        if (mMonths >= 23) {
+            Log.d("18_23", mMonths + ", " + vacName);
+            doneVacs_list.add("Hepatitis A");
+        }
+
+        for (int i = 0; i < doneVacs_list.size(); i++) {
+            if (doneVacs_list.get(i).equals(vacName)) {
+                convertView.setBackgroundResource(R.color.lightGrey);
+            }
+        }
+    }
+
+    private void currentVacs(View convertView, String vacName, Double mMonths) {
+        Log.d("currentVacs", mMonths+"");
+        //BIRTH
+        if (mMonths < 1) {
+            Log.d("BIRTH", mMonths + ", " + vacName);
+            if (vacName.equals("Hepatitis B #1")) {
+                convertView.setBackgroundResource(R.color.purple);
+            }
+
+            //1-2 mMonths
+        } else if (mMonths >= 1 && mMonths < 2) {
+            Log.d("1_2", mMonths + ", " + vacName);
+            if (vacName.equals("Hepatitis B #2")) {
+
+                convertView.setBackgroundResource(R.color.purple);
+            }
+
+            //2 mMonths
+        } else if (mMonths >= 2 && mMonths < 3) {
+            Log.d("2mMonths", mMonths + ", " + vacName);
+            if (
+                    vacName.equals("Rotavirus #1")
+                            ||
+                            vacName.equals("Diphtheria/Tetanus/Pertussis (DTaP) #1")
+                            ||
+                            vacName.equals("Haemophilus influenzae type b #1")
+                            ||
+                            vacName.equals("Pneumococcal #1")
+                            ||
+                            vacName.equals("Polio #1")) {
+
+                convertView.setBackgroundResource(R.color.purple);
+            }
+
+            //4 mMonths
+        } else if (mMonths >= 4 && mMonths < 5) {
+            Log.d("4mMonths", mMonths + ", " + vacName);
+            if (vacName.equals("Rotavirus #2")
+                    ||
+                    vacName.equals("Diphtheria/Tetanus/Pertussis (DTaP) #2")
+                    ||
+                    vacName.equals("Haemophilus influenzae type b #2")
+                    ||
+                    vacName.equals("Pneumococcal #2")
+                    ||
+                    vacName.equals("Polio #2")) {
+                convertView.setBackgroundResource(R.color.purple);
+            }
+
+            //6-12 mMonths
+        } else if (mMonths >= 6 && mMonths < 12) {
+
+            //6 mMonths
+            if (mMonths >= 6 && mMonths < 7) {
+                Log.d("6mMonths", mMonths + ", " + vacName);
+                if (vacName.equals("Rotavirus #3")
+                        ||
+                        vacName.equals("Diphtheria/Tetanus/Pertussis (DTaP) #3")
+                        ||
+                        vacName.equals("Haemophilus influenzae type b #3")
+                        ||
+                        vacName.equals("Pneumococcal #3")
+                        ||
+                        vacName.equals("Influenza")) {
+                    convertView.setBackgroundResource(R.color.purple);
+                }
+            }
+
+            Log.d("6_12", mMonths + ", " + vacName);
+            if (vacName.equals("Hepatitis B #3") || vacName.equals("Polio #3")) {
+                convertView.setBackgroundResource(R.color.purple);
+            }
+
+            //12-15 mMonths
+        } else if (mMonths >= 12 && mMonths < 15) {
+            Log.d("12_15", mMonths + ", " + vacName);
+            if (vacName.equals("Measles/Mumps/Rubella #1")
+                    ||
+                    vacName.equals("Chickenpox #1")
+
+                    ||
+                    vacName.equals("Haemophilus influenzae type b #4")
+                    ||
+                    vacName.equals("Pneumococcal #4")) {
+                convertView.setBackgroundResource(R.color.purple);
+            }
+
+            //15-18 mMonths
+        } else if (mMonths >= 15 && mMonths < 18) {
+            Log.d("15_18", mMonths + ", " + vacName);
+            if (vacName.equals("Diphtheria/Tetanus/Pertussis (DTaP) #4")) {
+                convertView.setBackgroundResource(R.color.purple);
+            }
+
+            //18-23 mMonths
+        } else if (mMonths >= 18 && mMonths < 23) {
+            Log.d("18_23", mMonths + ", " + vacName);
+            if (vacName.equals("Hepatitis A")) {
+                convertView.setBackgroundResource(R.color.purple);
+            }
+        }
     }
 
 
