@@ -63,16 +63,29 @@ class ChildDB {
         db.insert(tableName, null, newValues);
     }
 
+    void updateChildInfo(int childID, String childName, String childBrith, String childGender) {
 
-    public void updateImage(byte[] image, String userName) {
+        ContentValues updatedValues = new ContentValues();
+
+        updatedValues.put("NAME", childName);
+        updatedValues.put("BIRTH", childBrith);
+        updatedValues.put("GENDER", childGender);
+
+
+        String where = "ID = " + childID;
+
+        db.update(tableName, updatedValues, where, null);
+    }
+
+    public void updateImage(byte[] image, int childID) {
 
         ContentValues updatedValues = new ContentValues();
 
         updatedValues.put("IMAGE", image);
 
-        String where = "USERNAME = ?";
+        String where = "ID = " + childID;
 
-        db.update("LOGIN", updatedValues, where, new String[]{userName});
+        db.update(tableName, updatedValues, where, null);
 
     }
 
@@ -111,12 +124,17 @@ class ChildDB {
 
     }
 
-    byte[] gettingImage(int childID){
+    byte[] gettingImage(int childID) {
         Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE ID=" + childID + "", null);
         cursor.moveToFirst();
         byte[] image_byteArray = cursor.getBlob(cursor.getColumnIndex("IMAGE"));
         cursor.close();
         return image_byteArray;
+    }
+
+    public boolean deleteRecord(int childID){
+        return db.delete(tableName,"ID="+childID,null) >0;
+
     }
 
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="10dp"
-    android:weightSum="1"
+    android:weightSum="0.6"
 
     >
 
@@ -14,17 +14,17 @@
         android:orientation="vertical"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
         android:visibility="gone"
         android:id="@+id/child_1_layout"
         >
 
-        <ImageButton
+        <ImageView
             android:onClick="child1"
             android:id="@+id/child_1_btn"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_weight="0.06"
             android:src="@drawable/kiddo"
             android:background="#00FFFFFF"
@@ -46,14 +46,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginRight="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
         android:visibility="gone"
 >
-        <ImageButton
+        <ImageView
             android:id="@+id/child_2_btn"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_weight="0.06"
             android:src="@drawable/kiddo"
             android:background="#00FFFFFF"
@@ -81,10 +81,10 @@
         android:layout_marginEnd="5dp"
         >
 
-        <ImageButton
+        <ImageView
             android:id="@+id/child_3_btn"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_weight="0.06"
             android:src="@drawable/kiddo"
             android:background="#00FFFFFF"
@@ -104,11 +104,11 @@
 
     <ImageButton
         android:id="@+id/new_btn"
-        android:layout_width="100dp"
+        android:layout_width="90dp"
         android:layout_height="110dp"
         android:layout_weight="0.06"
         android:background="#00FFFFFF"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="27dp"
         android:onClick="new_record"
         app:srcCompat="@drawable/addd"
         />

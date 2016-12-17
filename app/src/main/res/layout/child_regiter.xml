@@ -88,8 +88,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginStart="15dp"
-            android:inputType="textPersonName"
-            android:textSize="15sp" />
+            android:inputType="none"
+            android:editable="false"
+            android:textSize="15sp"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -121,7 +123,7 @@
 
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/female_radioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
@@ -132,7 +134,7 @@
                 />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/male_radioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

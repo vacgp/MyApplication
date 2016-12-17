@@ -1,5 +1,6 @@
 package com.example.mayoo.myapplication;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,6 +29,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -39,11 +42,16 @@ public class ChildRecord extends AppCompatActivity {
 
     listAdapter listAdapter_object;
     TextView record_child_birth;
+    int childID;
+    ArrayList<String> child_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.child_record);
+
+        /*finish();
+        startActivity(getIntent());*/
 
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
@@ -52,7 +60,7 @@ public class ChildRecord extends AppCompatActivity {
 
         Intent intent_from = getIntent();
 
-        int childID = intent_from.getIntExtra("childID", 0);
+        childID = intent_from.getIntExtra("childID", 0);
         Log.d("ChildRecord", childID + "");
 
         ChildDB childDB_object = new ChildDB(ChildRecord.this);
@@ -60,18 +68,52 @@ public class ChildRecord extends AppCompatActivity {
 
         TextView record_child_name = (TextView) findViewById(R.id.record_child_name);
         record_child_birth = (TextView) findViewById(R.id.record_child_birth);
-//        TextView record_child_gender = (TextView) findViewById(R.id.record_child_gender);
+        ImageView record_child_gender = (ImageView) findViewById(R.id.record_child_gender_btn);
         ImageView record_child_img = (ImageView) findViewById(R.id.record_child_img);
 
 
-        ArrayList<String> child_info = new ArrayList<>();
+        child_info = new ArrayList<>();
         if (childID != 0) {
             child_info = childDB_object.childInfo(childID);
         }
 
         record_child_name.setText(child_info.get(0));
-        record_child_birth.setText(child_info.get(1));
-//        record_child_gender.setText(child_info.get(2));
+
+        Log.d("mk",Integer.parseInt(childBirthCalc()[1])+"");
+        if ((int)(Double.parseDouble(childBirthCalc()[0])) <= 1) {
+            if (Integer.parseInt(childBirthCalc()[1])%30 == 0 && (int)(Double.parseDouble(childBirthCalc()[0])) == 0) {
+                record_child_birth.setText("Born today");
+            } else {
+                if ((int)(Double.parseDouble(childBirthCalc()[0])) == 1) {
+
+                    if (Integer.parseInt(childBirthCalc()[1])%30 == 0){
+                        record_child_birth.setText("1 month ");
+
+                    }else {
+                        record_child_birth.setText("1 month, " + (Integer.parseInt(childBirthCalc()[1]) % 30 == 1 ?
+                                Integer.parseInt(childBirthCalc()[1]) % 30 + (" day") : Integer.parseInt(childBirthCalc()[1]) % 30 + " days"));
+                    }
+                } else
+                    record_child_birth.setText(Integer.parseInt(childBirthCalc()[1])%30 == 1 ?
+                            Integer.parseInt(childBirthCalc()[1])%30+(" day") : Integer.parseInt(childBirthCalc()[1])%30+" days");
+            }
+        } else {
+            if (Integer.parseInt(childBirthCalc()[1])%30 == 0){
+                record_child_birth.setText((int)(Double.parseDouble(childBirthCalc()[0])) + " months");
+
+            } else
+                record_child_birth.setText((int)(Double.parseDouble(childBirthCalc()[0])) + " months, " + (Integer.parseInt(childBirthCalc()[1])%30 == 1 ?
+                        Integer.parseInt(childBirthCalc()[1])%30+(" day") : Integer.parseInt(childBirthCalc()[1])%30+" days"));
+        }
+
+        int child_img_res;
+        if (child_info.get(2).equals("Female")) {
+            child_img_res = R.drawable.female;
+        } else {
+            child_img_res = R.drawable.male;
+        }
+        record_child_gender.setImageResource(child_img_res);
+
 
         byte[] imageByte_fromDB = childDB_object.gettingImage(childID);
         Bitmap imageBitmap_fromByte;
@@ -150,6 +192,64 @@ public class ChildRecord extends AppCompatActivity {
         });
     }
 
+    public void edit(View view) {
+        Intent intent_to = new Intent(ChildRecord.this, ChildRegister.class);
+        Log.d("ChildRecord", childID+"");
+        intent_to.putExtra("childID", childID);
+        intent_to.putExtra("Edit", 1);
+        finish();
+        startActivity(intent_to);
+
+    }
+
+    public void delete(View view) {
+        Intent intent_from = getIntent();
+        final String username = intent_from.getStringExtra("username");
+        final int childNumber = intent_from.getIntExtra("child#", 0);
+
+
+        final Dialog dialog = new Dialog(ChildRecord.this);
+        dialog.getWindow();
+        dialog.setContentView(R.layout.delete_record);
+        dialog.show();
+
+
+
+        Button yes_btn = (Button) dialog.findViewById(R.id.yes_btn);
+        yes_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChildDB childDB_obj = new ChildDB(ChildRecord.this);
+                childDB_obj.open();
+                childDB_obj.deleteRecord(childID);
+                childDB_obj.close();
+
+
+                Helper helper_obj = new Helper(ChildRecord.this);
+                helper_obj.open();
+                Log.d("kdd", childNumber+", "+username);
+                helper_obj.updateChild("-",childNumber,username);
+                helper_obj.close();
+                dialog.dismiss();
+                finish();
+                Intent intent_to = new Intent(ChildRecord.this, Record.class);
+                intent_to.putExtra("username", username);
+                startActivity(intent_to);
+            }
+        });
+
+        Button no_btn = (Button) dialog.findViewById(R.id.no_btn);
+        no_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+
+
+    }
+
     public class listAdapter extends ArrayAdapter<String> {
 
         Context context;
@@ -161,27 +261,7 @@ public class ChildRecord extends AppCompatActivity {
             this.context = c;
             this.vacNames_adapter = vacNames;
 
-            SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-            String currentDateandTime = sdf.format(new Date());
-
-
-            String choldBirth = record_child_birth.getText().toString();
-            DateFormat format = new SimpleDateFormat("MM-dd-yyyy");
-            Date date1 = null, date2 = null;
-            try {
-                date1 = format.parse(choldBirth);
-                date2 = format.parse(currentDateandTime);
-
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-
-            long diffInMillies = date2.getTime() - date1.getTime();
-            long dateDiff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-            Log.d("dateDiff", dateDiff + ", " + currentDateandTime + ", " + record_child_birth.getText().toString());
-
-            months = dateDiff / 30.0;
+            months = Double.parseDouble(childBirthCalc()[0]);
 
         }
 
@@ -211,7 +291,7 @@ public class ChildRecord extends AppCompatActivity {
     }
 
     private void doneVacs(View convertView, String vacName, Double mMonths) {
-        Log.d("doneVacs", mMonths+"");
+        Log.d("doneVacs", mMonths + "");
 
         ArrayList<String> doneVacs_list = new ArrayList<>();
 
@@ -275,10 +355,12 @@ public class ChildRecord extends AppCompatActivity {
                 convertView.setBackgroundResource(R.color.lightGrey);
             }
         }
+        TextView vac_left = (TextView) findViewById(R.id.vac_left);
+        vac_left.setText(26 - doneVacs_list.size() + "");
     }
 
     private void currentVacs(View convertView, String vacName, Double mMonths) {
-        Log.d("currentVacs", mMonths+"");
+        Log.d("currentVacs", mMonths + "");
         //BIRTH
         if (mMonths < 1) {
             Log.d("BIRTH", mMonths + ", " + vacName);
@@ -380,7 +462,30 @@ public class ChildRecord extends AppCompatActivity {
         }
     }
 
+    public String[] childBirthCalc() {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+        // String currentDateandTime = sdf.format(new Date());
+        String currentDateandTime = sdf.format(Calendar.getInstance().getTime());
 
+
+        String childBirth = child_info.get(1);//record_child_birth.getText().toString();
+        DateFormat format = new SimpleDateFormat("MM-dd-yyyy");
+        Date date1 = null, date2 = null;
+        try {
+            date1 = format.parse(childBirth);
+            date2 = format.parse(currentDateandTime);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        long diffInMillies = date2.getTime() - date1.getTime();
+        long dateDiff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+        Log.d("dateDiff", dateDiff + ", " + currentDateandTime + ", " + record_child_birth.getText().toString());
+
+        return new String[]{dateDiff / 30.0 + "", dateDiff + ""};
+    }
 }
 
 

@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,9 +32,11 @@
             android:label="Records" />
         <activity
             android:name=".ChildRegister"
-            android:label="New Record" />
+            android:label="New Record"
+            android:noHistory="true"/>
         <activity android:name=".ChildRecord"
-            android:label="Child Record" />
+            android:label="Child Record"
+            android:parentActivityName=".Record"/>
         <activity android:name=".Safety"
             android:label="Safety" />
         <activity android:name=".About"
@@ -41,7 +44,7 @@
         <activity android:name=".VaccinesList"
             android:label="Vaccines" />
         <activity android:name=".VacInfo"
-            android:label="Vaccines Information" />
+            android:label="Vaccine Information" />
 
     </application>
 

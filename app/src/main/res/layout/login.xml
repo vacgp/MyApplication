@@ -68,7 +68,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:onClick="cancel"
-                android:text="Cancel"
+                android:text="CANCEL"
                 style="@style/Widget.AppCompat.Button.Borderless"/>
 
             <Button
@@ -79,7 +79,7 @@
                 android:layout_marginEnd="10dp"
 
                 android:layout_weight="1"
-                android:text="log-in"
+                android:text="LOG-IN"
                 style="@style/Widget.AppCompat.Button.Borderless"/>
         </LinearLayout>
 

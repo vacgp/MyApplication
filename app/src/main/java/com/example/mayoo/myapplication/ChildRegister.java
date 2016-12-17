@@ -15,11 +15,14 @@ import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.EditText;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import android.app.DatePickerDialog;
@@ -33,6 +36,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 
@@ -42,7 +46,10 @@ import java.util.Locale;
 
 public class ChildRegister extends AppCompatActivity {
 
-    EditText editText;
+    int childID_edit, childID_new;
+    ArrayList<String> child_info;
+
+    EditText birth_editText;
     Calendar myCalendar;
 
 
@@ -68,14 +75,72 @@ public class ChildRegister extends AppCompatActivity {
             ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 135, 165)));
         }
 
-
-        editText = (EditText) findViewById(R.id.birth_edit_text);
         myCalendar = Calendar.getInstance();
+
+        Intent editIntent_from = getIntent();
+
+        if (editIntent_from.getIntExtra("Edit", 0) == 1) {
+
+            Intent intent_from = getIntent();
+
+            childID_edit = intent_from.getIntExtra("childID", 0);
+            Log.d("ChildRecord", childID_edit + "");
+
+            ChildDB childDB_object = new ChildDB(ChildRegister.this);
+            childDB_object.open();
+
+            EditText child_name_editText = (EditText) findViewById(R.id.child_name_editText);
+            birth_editText = (EditText) findViewById(R.id.birth_edit_text);
+            RadioGroup gender_radioGroup = (RadioGroup) findViewById(R.id.gender_radio_group);
+            ImageView record_child_img = (ImageView) findViewById(R.id.childPhotoBtn);
+
+
+            child_info = new ArrayList<>();
+            if (childID_edit != 0) {
+                child_info = childDB_object.childInfo(childID_edit);
+            }
+
+
+           /* String childBirth = child_info.get(1);
+            DateFormat format = new SimpleDateFormat("MM-dd-yyyy");
+            Date date1 = null;
+            try {
+                 date1 = format.parse(childBirth);
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            if(date1 != null) {
+                myCalendar.set(Calendar.YEAR, date1.getYear());
+                myCalendar.set(Calendar.MONTH, date1.getMonth());
+                myCalendar.set(Calendar.DAY_OF_MONTH, date1.getDay());
+            }*/
+
+
+            child_name_editText.setText(child_info.get(0));
+            birth_editText.setText(child_info.get(1));
+            if (child_info.get(2).equals("Female")) {
+                gender_radioGroup.check(R.id.female_radioButton);
+            } else {
+                gender_radioGroup.check(R.id.male_radioButton);
+            }
+
+
+            byte[] imageByte_fromDB = childDB_object.gettingImage(childID_edit);
+            Bitmap imageBitmap_fromByte;
+            InputStream inputStream = new ByteArrayInputStream(imageByte_fromDB);
+            imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
+            record_child_img.setImageBitmap(imageBitmap_fromByte);
+        }
+
+
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                //Log.d("onDateSet", year+", "+(++monthOfYear)+", "+ dayOfMonth);
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
@@ -85,11 +150,24 @@ public class ChildRegister extends AppCompatActivity {
         };
 
 
-        editText.setOnTouchListener(new View.OnTouchListener() {
+        birth_editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus) {
+                    Log.d("onFocus", myCalendar.get(Calendar.YEAR)+", "+ myCalendar.get(Calendar.MONTH)+", "
+                            +myCalendar.get(Calendar.DAY_OF_MONTH));
+                    new DatePickerDialog(ChildRegister.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                            myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                }
+            }
+        });
+        birth_editText.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    Log.d("onFocus", myCalendar.get(Calendar.YEAR)+", "+ myCalendar.get(Calendar.MONTH)+", "
+                            +myCalendar.get(Calendar.DAY_OF_MONTH));
                     new DatePickerDialog(ChildRegister.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                             myCalendar.get(Calendar.DAY_OF_MONTH)).show();
                 }
@@ -102,10 +180,11 @@ public class ChildRegister extends AppCompatActivity {
 
     private void updateLabel() {
 
+        Log.d("updateLabel", "jghf");
         String myFormat = "MM-dd-yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
-        editText.setText(sdf.format(myCalendar.getTime()));
+        birth_editText.setText(sdf.format(myCalendar.getTime()));
     }
 
 
@@ -176,6 +255,7 @@ public class ChildRegister extends AppCompatActivity {
     }
 
     public void Done(View view) {
+
         EditText child_name_editText = (EditText) findViewById(R.id.child_name_editText);
         String child_name_str = child_name_editText.getText().toString();
 
@@ -195,43 +275,72 @@ public class ChildRegister extends AppCompatActivity {
         String username = from_intent.getStringExtra("username");
         int counter = from_intent.getIntExtra("child#", 0);
 
-
-        ChildDB childDB_object = new ChildDB(ChildRegister.this);
-        childDB_object.open();
         if (!img_added) {
             Bitmap defaultImage_bitMap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.kiddo);
             ImageHelper imageHelper_object = new ImageHelper();
             imageByte_toDB = imageHelper_object.getBytes(defaultImage_bitMap);
         }
+
+        Intent intent_to = new Intent(ChildRegister.this, ChildRecord.class);
+
+
+        Intent editIntent_from = getIntent();
+
+        if (editIntent_from.getIntExtra("Edit", 0) == 1) {
+            editChild(child_name_str, birth_str, gender_srt);
+            intent_to.putExtra("childID", childID_edit);
+
+        } else {
+            newChild(username, child_name_str, birth_str, gender_srt, counter);
+            intent_to.putExtra("childID", childID_new);
+        }
+
+
+        intent_to.putExtra("username", username);
+        intent_to.putExtra("child#", ++counter);
+        startActivity(intent_to);
+
+    }
+
+    private void newChild(String username, String child_name_str, String birth_str, String gender_srt, int counter) {
+        ChildDB childDB_object = new ChildDB(ChildRegister.this);
+        childDB_object.open();
         childDB_object.insertEntry(child_name_str, birth_str, gender_srt, imageByte_toDB);
-        int childID = childDB_object.getChildID(child_name_str);
+        childID_new = childDB_object.getChildID(child_name_str);
 
         childDB_object.close();
 
         Helper helper_object = new Helper(ChildRegister.this);
         helper_object.open();
         if (counter == 0) {
-            helper_object.updateChild(childID + "", 1, username);
+            helper_object.updateChild(childID_new + "", 1, username);
 
 
         } else if (counter == 1) {
-            helper_object.updateChild(childID + "", 2, username);
+            helper_object.updateChild(childID_new + "", 2, username);
 
         } else if (counter == 2) {
-            helper_object.updateChild(childID + "", 3, username);
+            helper_object.updateChild(childID_new + "", 3, username);
 
         }
         helper_object.close();
-        Intent intent_to = new Intent(ChildRegister.this, ChildRecord.class);
-        intent_to.putExtra("childID", childID);
-        startActivity(intent_to);
+    }
+
+    private void editChild( String child_name_str, String birth_str, String gender_srt) {
+        ChildDB childDB_object = new ChildDB(ChildRegister.this);
+        childDB_object.open();
+        childDB_object.updateChildInfo(childID_edit, child_name_str, birth_str, gender_srt);
+
+        childDB_object.updateImage(imageByte_toDB, childID_edit);
+        childDB_object.close();
 
     }
 
-   /* public void cancel(View view) {
-        Intent intent_to = new Intent(ChildRegister.this, Record.class);
-        startActivity(intent_to);
-    }*/
+
+    public void cancel(View view) {
+        finish();
+
+    }
 }
 
 

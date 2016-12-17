@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         //for changing the action bar's color per activity
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
-            ab.setBackgroundDrawable(new ColorDrawable(Color.DKGRAY));
+            //ab.setBackgroundDrawable(new ColorDrawable(Color.DKGRAY));
+
         }
 
     }
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(MainActivity.this, Home.class);
 
                     i.putExtra("username", username_txt.getText().toString()); // (Key, Value)
+                    finish();
                     startActivity(i);
                 }else {
                     Toast.makeText(MainActivity.this, "Wrong username or password", Toast.LENGTH_SHORT).show();

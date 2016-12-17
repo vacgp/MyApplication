@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">ChildVaccine</string>
     <string name="second_name">Second Name:</string>
     <string name="gender">Gender:</string>
     <string name="birthdate">Birth Date:</string>
