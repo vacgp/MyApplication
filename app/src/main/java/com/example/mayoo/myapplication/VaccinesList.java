@@ -1,6 +1,7 @@
 package com.example.mayoo.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -16,8 +17,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import dev.dworks.libs.astickyheader.SimpleSectionedListAdapter;
-import dev.dworks.libs.astickyheader.SimpleSectionedListAdapter.Section;
 
 import java.util.ArrayList;
 
@@ -31,7 +30,6 @@ public class VaccinesList extends AppCompatActivity {
 
     listAdapter listAdapter_object;
     ListView list;
-    private ArrayList<Section> sections = new ArrayList<Section>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,38 +41,89 @@ public class VaccinesList extends AppCompatActivity {
             ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 145, 192)));
         }
 
+
+
+        ArrayList<SimpleSectionedListAdapter.Section> sections = new ArrayList<SimpleSectionedListAdapter.Section>();
+
         Resources resources = getResources();
         vacNames = resources.getStringArray(R.array.vaccines);
         String[] headerNames = resources.getStringArray(R.array.vaccines_headers);
         Integer[] headerPositions = {0, 3, 5, 7, 8, 9, 11, 13, 15};
 
         list = (ListView)findViewById(R.id.list);
-        listAdapter_object = new listAdapter(getApplicationContext(), vacNames);
         for (int i = 0; i < headerPositions.length; i++) {
-            sections.add(new Section(headerPositions[i], headerNames[i]));
+            sections.add(new SimpleSectionedListAdapter.Section(headerPositions[i], headerNames[i]));
         }
-        SimpleSectionedListAdapter simpleSectionedGridAdapter = new SimpleSectionedListAdapter(this, listAdapter_object,
-                R.layout.list_item_header, R.id.header);
-        simpleSectionedGridAdapter.setSections(sections.toArray(new Section[0]));
-        list.setAdapter(simpleSectionedGridAdapter);
 
-
-
-       /* Resources resources = getResources();
-        vacNames = resources.getStringArray(R.array.vaccines);
         listAdapter_object = new listAdapter(getApplicationContext(), vacNames);
 
-        ListView lv = (ListView) findViewById(R.id.vac_list);
-        lv.setAdapter(listAdapter_object);
+        SimpleSectionedListAdapter simpleSectionedListAdapter = new SimpleSectionedListAdapter(this, listAdapter_object,
+                R.layout.list_item_header, R.id.header);
+        simpleSectionedListAdapter.setSections(sections.toArray(new SimpleSectionedListAdapter.Section[0]));
+        list.setAdapter(simpleSectionedListAdapter);
 
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View arg1, int position, long row_id) {
+                Log.d("ListView onItemClick", vacNames[position]);
 
-Log.d("ListView onItemClick", vacNames[position]);
+                Intent intent_to = new Intent(VaccinesList.this, VacInfo.class);
+
+                switch (vacNames[position]) {
+                    case "Hepatitis B #1":
+                    case "Hepatitis B #2":
+                        intent_to.putExtra("layoutID", R.layout.vac_hepatits_b);
+                        break;
+                    case "Rotavirus #1":
+                    case "Rotavirus #2":
+                    case "Rotavirus #3":
+                        intent_to.putExtra("layoutID", R.layout.vac_rotavirus);
+                        break;
+                    case "Diphtheria/Tetanus/Pertussis (DTaP) #1":
+                    case "Diphtheria/Tetanus/Pertussis (DTaP) #2":
+                    case "Diphtheria/Tetanus/Pertussis (DTaP) #3":
+                        intent_to.putExtra("layoutID", R.layout.vac_dtap);
+                        break;
+                    case "Haemophilus influenzae type b #1":
+                    case "Haemophilus influenzae type b #2":
+                    case "Haemophilus influenzae type b #3":
+                    case "Haemophilus influenzae type b #4":
+                        intent_to.putExtra("layoutID", R.layout.vac_hib);
+                        break;
+                    case "Pneumococcal #1":
+                    case "Pneumococcal #2":
+                    case "Pneumococcal #3":
+                    case "Pneumococcal #4":
+                        intent_to.putExtra("layoutID", R.layout.vac_pneumococcal);
+                        break;
+                    case "Polio #1":
+                    case "Polio #2":
+                    case "Polio #3":
+                        intent_to.putExtra("layoutID", R.layout.vac_polio);
+                        break;
+                    case "Measles/Mumps/Rubella #1":
+                        intent_to.putExtra("layoutID", R.layout.vac_mmr);
+                        break;
+                    case "Chickenpox #1":
+                        intent_to.putExtra("layoutID", R.layout.vac_chickenpox);
+                        break;
+                    case "Hepatitis A":
+                        intent_to.putExtra("layoutID", R.layout.vac_hepatits_a);
+                        break;
+                    case "Influenza":
+                        intent_to.putExtra("layoutID", R.layout.vac_influenza);
+                        break;
+
+                    default:
+                        break;
+                }
+
+                startActivity(intent_to);
+
             }
-        });*/
+        });
     }
 
     public class listAdapter extends ArrayAdapter<String> {
