@@ -2,41 +2,32 @@ package com.example.mayoo.myapplication;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.EditText;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Calendar;
-
-import android.app.DatePickerDialog;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Locale;
 
 
@@ -51,7 +42,6 @@ public class ChildRegister extends AppCompatActivity {
 
     EditText birth_editText;
     Calendar myCalendar;
-
 
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
@@ -70,12 +60,14 @@ public class ChildRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.child_regiter);
 
-        ActionBar ab = getSupportActionBar();
-        if (ab != null) {
-            ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 135, 165)));
-        }
+
 
         myCalendar = Calendar.getInstance();
+
+        EditText child_name_editText = (EditText) findViewById(R.id.child_name_editText);
+        birth_editText = (EditText) findViewById(R.id.birth_edit_text);
+        RadioGroup gender_radioGroup = (RadioGroup) findViewById(R.id.gender_radio_group);
+        ImageView record_child_img = (ImageView) findViewById(R.id.childPhotoBtn);
 
         Intent editIntent_from = getIntent();
 
@@ -88,11 +80,6 @@ public class ChildRegister extends AppCompatActivity {
 
             ChildDB childDB_object = new ChildDB(ChildRegister.this);
             childDB_object.open();
-
-            EditText child_name_editText = (EditText) findViewById(R.id.child_name_editText);
-            birth_editText = (EditText) findViewById(R.id.birth_edit_text);
-            RadioGroup gender_radioGroup = (RadioGroup) findViewById(R.id.gender_radio_group);
-            ImageView record_child_img = (ImageView) findViewById(R.id.childPhotoBtn);
 
 
             child_info = new ArrayList<>();
@@ -135,7 +122,6 @@ public class ChildRegister extends AppCompatActivity {
         }
 
 
-
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
@@ -149,30 +135,31 @@ public class ChildRegister extends AppCompatActivity {
 
         };
 
+        final DatePickerDialog datePickerDialog = new DatePickerDialog(ChildRegister.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                myCalendar.get(Calendar.DAY_OF_MONTH));
 
         birth_editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus) {
-                    Log.d("onFocus", myCalendar.get(Calendar.YEAR)+", "+ myCalendar.get(Calendar.MONTH)+", "
-                            +myCalendar.get(Calendar.DAY_OF_MONTH));
-                    new DatePickerDialog(ChildRegister.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                            myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                if (hasFocus && !datePickerDialog.isShowing()) {
+                    Log.d("onFocus", myCalendar.get(Calendar.YEAR) + ", " + myCalendar.get(Calendar.MONTH) + ", "
+                            + myCalendar.get(Calendar.DAY_OF_MONTH));
+                    datePickerDialog.show();
                 }
             }
-        });
-        birth_editText.setOnTouchListener(new View.OnTouchListener() {
 
+        });
+
+        birth_editText.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Log.d("onFocus", myCalendar.get(Calendar.YEAR)+", "+ myCalendar.get(Calendar.MONTH)+", "
-                            +myCalendar.get(Calendar.DAY_OF_MONTH));
-                    new DatePickerDialog(ChildRegister.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                            myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            public void onClick(View v) {
+                if(!datePickerDialog.isShowing()) {
+                    Log.d("onFocus", myCalendar.get(Calendar.YEAR) + ", " + myCalendar.get(Calendar.MONTH) + ", "
+                            + myCalendar.get(Calendar.DAY_OF_MONTH));
+                    datePickerDialog.show();
                 }
-                return false;
             }
+
         });
 
 
@@ -194,6 +181,8 @@ public class ChildRegister extends AppCompatActivity {
         //Create intent to Open ImageHelper applications like Gallery, Google Photos
         Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         // Start the Intent
+        Log.d("zzzzzzzzz", "child_image");
+
         startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
     }
 
@@ -202,6 +191,8 @@ public class ChildRegister extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         try {
+            Log.d("zzzzzzzzz", "onActivityResult");
+
             // When an ImageHelper is picked
             if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK && null != data) {
                 // Get the ImageHelper from data
@@ -246,9 +237,9 @@ public class ChildRegister extends AppCompatActivity {
     public void verifyStoragePermissions(Activity activity) {
         // Check if we have write permission
         int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        Log.d("zzzzzzzzz", "verifyStoragePermissions");
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
-
             // We don't have permission so prompt the user
             ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
         }
@@ -298,6 +289,7 @@ public class ChildRegister extends AppCompatActivity {
 
         intent_to.putExtra("username", username);
         intent_to.putExtra("child#", ++counter);
+        finish();
         startActivity(intent_to);
 
     }
@@ -326,7 +318,7 @@ public class ChildRegister extends AppCompatActivity {
         helper_object.close();
     }
 
-    private void editChild( String child_name_str, String birth_str, String gender_srt) {
+    private void editChild(String child_name_str, String birth_str, String gender_srt) {
         ChildDB childDB_object = new ChildDB(ChildRegister.this);
         childDB_object.open();
         childDB_object.updateChildInfo(childID_edit, child_name_str, birth_str, gender_srt);

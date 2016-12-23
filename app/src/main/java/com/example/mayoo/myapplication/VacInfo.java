@@ -20,9 +20,9 @@ public class VacInfo extends AppCompatActivity {
         Intent intent_from = getIntent();
         setContentView(intent_from.getIntExtra("layoutID", 0));
 
-        ActionBar ab = getSupportActionBar();
+        /*ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 145, 192)));
-        }
+        }*/
     }
 }

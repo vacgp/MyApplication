@@ -32,15 +32,12 @@
             android:label="Records" />
         <activity
             android:name=".ChildRegister"
-            android:label="New Record"
-            android:noHistory="true"/>
+            android:label="New Record">
+        </activity>
 
         <activity android:name=".ChildRecord"
             android:label="Child Record"
             android:parentActivityName=".Record">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Record"/>
         </activity>
 
         <activity android:name=".Safety"

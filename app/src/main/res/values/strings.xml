@@ -40,20 +40,20 @@
         <item>Chickenpox #1</item>
         <item>Haemophilus influenzae type b #4</item>
         <item>Pneumococcal #4</item>
-        <item>Hepatitis A</item>
         <item>Diphtheria/Tetanus/Pertussis (DTaP) #4</item>
+        <item>Hepatitis A</item>
     </string-array>
 
     <string-array name="vaccines_headers">
-        <item>BIRTH</item>
-        <item>1–2 MONTHS</item>
-        <item>2 MONTHS</item>
-        <item>4 MONTHS</item>
-        <item>6 MONTHS</item>
-        <item>6–12 MONTHS</item>
-        <item>12–15 MONTHS</item>
-        <item>15–18 MONTHS</item>
-        <item>18–23 MONTHS</item>
+        <item>At Birth</item>
+        <item>1–2 Months</item>
+        <item>2 Months</item>
+        <item>4 Months</item>
+        <item>6 Months</item>
+        <item>6–12 Months</item>
+        <item>12–15 Months</item>
+        <item>15–18 Months</item>
+        <item>18–23 Months</item>
     </string-array>
 
 </resources>

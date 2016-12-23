@@ -6,10 +6,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,10 +50,10 @@ public class ChildRecord extends AppCompatActivity {
         /*finish();
         startActivity(getIntent());*/
 
-        ActionBar ab = getSupportActionBar();
+        /*ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 135, 165)));
-        }
+        }*/
 
         Intent intent_from = getIntent();
 
@@ -192,12 +189,29 @@ public class ChildRecord extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent_from = getIntent();
+        Intent intent_to = new Intent(ChildRecord.this, Record.class);
+        intent_to.putExtra("username", intent_from.getStringExtra("username"));
+        intent_to.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent_to);
+        finish();
+
+        ChildRecord.super.onBackPressed();
+    }
+
     public void edit(View view) {
         Intent intent_to = new Intent(ChildRecord.this, ChildRegister.class);
         Log.d("ChildRecord", childID+"");
         intent_to.putExtra("childID", childID);
         intent_to.putExtra("Edit", 1);
-        finish();
+        Intent intent_from = getIntent();
+        intent_to.putExtra("username", intent_from.getStringExtra("username"));
+
+        // finish();
+
+
         startActivity(intent_to);
 
     }

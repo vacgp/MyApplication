@@ -3,11 +3,7 @@ package com.example.mayoo.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,10 +32,10 @@ public class VaccinesList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vaccines);
 
-        ActionBar ab = getSupportActionBar();
+        /*ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 145, 192)));
-        }
+        }*/
 
 
 
@@ -48,7 +44,7 @@ public class VaccinesList extends AppCompatActivity {
         Resources resources = getResources();
         vacNames = resources.getStringArray(R.array.vaccines);
         String[] headerNames = resources.getStringArray(R.array.vaccines_headers);
-        Integer[] headerPositions = {0, 3, 5, 7, 8, 9, 11, 13, 15};
+        Integer[] headerPositions = {0, 1, 2, 7, 12, 17, 19, 23, 24};
 
         list = (ListView)findViewById(R.id.list);
         for (int i = 0; i < headerPositions.length; i++) {
@@ -71,7 +67,7 @@ public class VaccinesList extends AppCompatActivity {
 
                 Intent intent_to = new Intent(VaccinesList.this, VacInfo.class);
 
-                switch (vacNames[position]) {
+                switch (vacNames[(int)row_id]) {
                     case "Hepatitis B #1":
                     case "Hepatitis B #2":
                         intent_to.putExtra("layoutID", R.layout.vac_hepatits_b);

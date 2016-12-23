@@ -192,7 +192,7 @@ public class PinnedSectionListView extends AutoScrollListView {
             pinnedShadow = new PinnedSection();
         // request new view using recycled view, if such
         View pinnedView = getAdapter().getView(position, pinnedShadow.view, PinnedSectionListView.this);
-        pinnedView.setBackgroundColor(Color.RED);
+        pinnedView.setBackgroundColor(getResources().getColor(R.color.lightBlue));
 
         // read layout parameters
         LayoutParams layoutParams = (LayoutParams) pinnedView.getLayoutParams();

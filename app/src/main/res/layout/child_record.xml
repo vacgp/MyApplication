@@ -3,186 +3,192 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical"
-       android:background="#FFFAFA"
-       android:paddingBottom="5dp"
-
-       >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:background="#FFFAFA"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+
         >
 
-        <ImageView
-            android:id="@+id/record_child_img"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginStart="5dp"
-            app:srcCompat="@drawable/kiddo" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="end">
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@drawable/edit"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:onClick="edit"
-                    />
-                <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:src="@drawable/delete"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                    android:onClick="delete"
-                />
-
-            </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/record_child_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#424d52"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                />
             <ImageView
-                android:id="@+id/record_child_gender_btn"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
+                android:id="@+id/record_child_img"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                />
-        </LinearLayout>
+                app:srcCompat="@drawable/kiddo" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:onClick="edit"
+                        android:src="@drawable/edit" />
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:onClick="delete"
+                        android:src="@drawable/delete" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/record_child_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#424d52"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/record_child_gender_btn"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+                </LinearLayout>
 
 
                 <TextView
-                android:id="@+id/record_child_birth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginStart="20dp"
-                android:textColor="#424d52"
-                android:textStyle="italic"
+                    android:id="@+id/record_child_birth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                />
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:textColor="#424d52"
+                    android:textStyle="italic" />
 
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@color/lightBlue"
+                    android:orientation="horizontal"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/vac_left"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginStart="3dp"
+                        android:text="vaccines left"
+                        android:textColor="@color/darkGrey"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/vac_left"
-                android:layout_width="45dp"
-                android:layout_height="40dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#fff"
-                android:background="@drawable/apptheme_btn_default_normal_holo_light"
-                />
-            <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_marginStart="3dp"
-                android:layout_marginLeft="3dp"
-                android:text="vaccines left"/>
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/lightGrey" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Expired Vaccines"
+                    android:textColor="#424d52" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginStart="80dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/purple" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pinned Vaccines "
+                    android:textColor="#424d52" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-        <ImageView
-            android:layout_width="11dp"
-            android:layout_height="11dp"
-            android:layout_marginTop="5dp"
-            android:background="@color/lightGrey" />
-
-
-            <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginStart="5dp"
-            android:text="Expired Vaccines"
-            android:textColor="#424d52" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp">
-
-        <ImageView
-            android:layout_width="11dp"
-            android:layout_height="11dp"
-            android:layout_marginTop="5dp"
-            android:background="@color/purple" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginStart="5dp"
-            android:text="Pinned Vaccines "
-            android:textColor="#424d52" />
-        </LinearLayout>
-    </LinearLayout>
-   </LinearLayout>
+        android:layout_height="2dp"
+        android:background="@color/darkGrey" />
 
     <ListView
         android:id="@+id/vac_listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/layout_border"
-        >
+        android:layout_height="match_parent">
 
     </ListView>
 

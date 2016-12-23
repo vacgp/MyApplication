@@ -6,10 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by mayoo on 11/14/2016.
@@ -58,7 +56,7 @@ public class Register extends AppCompatActivity {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 if (userName_editText.getText().toString().length() > 0) {
 
-                    if (userName_editText.getText().toString().length() >= 2) {
+                    if (userName_editText.getText().toString().length() <= 2) {
 
                         username_validation.setVisibility(View.GONE);
 
@@ -98,7 +96,7 @@ public class Register extends AppCompatActivity {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 if (password_editText.getText().toString().length() > 0) {
 
-                    if (password_editText.getText().toString().length() >= 5) {
+                    if (password_editText.getText().toString().length() <= 5) {
 
                         password_validation.setVisibility(View.GONE);
 

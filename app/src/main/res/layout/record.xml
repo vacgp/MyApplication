@@ -28,17 +28,31 @@
             android:layout_weight="0.06"
             android:src="@drawable/kiddo"
             android:background="#00FFFFFF"
+
             />
 
-        <TextView
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_gravity="center"
+           android:layout_marginTop="8dp"
+           >
+           <TextView
             android:id="@+id/child_1_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:textColor="#424d52"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
              />
+           <ImageView
+               android:id="@+id/record_child_gender_btn_1"
+               android:layout_width="14dp"
+               android:layout_height="14dp"
+               android:layout_marginTop="3dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginStart="5dp" />
+       </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -59,6 +73,13 @@
             android:background="#00FFFFFF"
             android:onClick="child2"
             />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            >
 
         <TextView
             android:id="@+id/child_2_txt"
@@ -67,8 +88,15 @@
             android:layout_gravity="center"
             android:textColor="#424d52"
             android:textSize="16sp"
-            android:layout_marginTop="5dp"
             />
+            <ImageView
+                android:id="@+id/record_child_gender_btn_2"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -90,16 +118,31 @@
             android:background="#00FFFFFF"
             android:onClick="child3"
             />
-
-        <TextView
-            android:id="@+id/child_3_txt"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:textColor="#424d52"
-            android:layout_marginTop="5dp"
-            android:textSize="16sp"
-            />
+            android:layout_marginTop="8dp"
+            >
+
+            <TextView
+                android:id="@+id/child_3_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#424d52"
+                android:textSize="16sp"
+                />
+            <ImageView
+                android:id="@+id/record_child_gender_btn_3"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <ImageButton
