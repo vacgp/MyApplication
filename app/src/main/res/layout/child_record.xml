@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
    <LinearLayout
        android:layout_width="match_parent"
@@ -60,7 +61,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginStart="20dp"
             android:orientation="horizontal">
@@ -95,6 +96,7 @@
                 android:layout_marginStart="20dp"
                 android:textColor="#424d52"
                 android:textStyle="italic"
+                    android:layout_marginBottom="5dp"
                 />
 
 
@@ -102,19 +104,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/vac_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#fff"
-                android:shadowColor="@color/lightGrey"
-                android:background="@color/mainBlue"
+                android:background="@drawable/apptheme_btn_default_normal_holo_light"
                 />
             <TextView
                 android:layout_width="wrap_content"

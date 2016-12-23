@@ -257,7 +257,7 @@ public class ChildRecord extends AppCompatActivity {
         Double months;
 
         listAdapter(Context c, String[] vacNames) {
-            super(c, R.layout.child_vac_list, R.id.child_vac_list, vacNames);
+            super(c, R.layout.child_vac_list, R.id.vac_name_list_item, vacNames);
             this.context = c;
             this.vacNames_adapter = vacNames;
 
@@ -273,9 +273,9 @@ public class ChildRecord extends AppCompatActivity {
                 convertView = inflater.inflate(R.layout.child_vac_list, parent, false);
             }
 
-            TextView userName_searchResult = (TextView) convertView.findViewById(R.id.child_vac_list);
+            TextView vac_name_list_item = (TextView) convertView.findViewById(R.id.vac_name_list_item);
 
-            userName_searchResult.setText(vacNames_adapter[position]);
+            vac_name_list_item.setText(vacNames_adapter[position]);
 
             convertView.setBackgroundResource(R.color.transparent);
 

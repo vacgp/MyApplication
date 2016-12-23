@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">ChildVaccine</string>
-    <string name="second_name">Second Name:</string>
+    <string name="app_name">تجربة</string>
+    <string name="second_name">تجربة</string>
     <string name="gender">Gender:</string>
     <string name="birthdate">Birth Date:</string>
     <string name="first_name">First Name:</string>
@@ -15,7 +15,7 @@
     <string name="enter_password">Enter password:</string>
     <string name="child_name">Child Name:</string>
     <string name="enter_child_name_hint">Enter child name</string>
-    <string name="register_label">Registration</string>
+    <string name="register_label">صفحة التسجيل</string>
     <string-array name="vaccines">
         <item>Hepatitis B #1</item>
         <item>Hepatitis B #2</item>
@@ -43,17 +43,4 @@
         <item>Hepatitis A</item>
         <item>Diphtheria/Tetanus/Pertussis (DTaP) #4</item>
     </string-array>
-
-    <string-array name="vaccines_headers">
-        <item>BIRTH</item>
-        <item>1–2 MONTHS</item>
-        <item>2 MONTHS</item>
-        <item>4 MONTHS</item>
-        <item>6 MONTHS</item>
-        <item>6–12 MONTHS</item>
-        <item>12–15 MONTHS</item>
-        <item>15–18 MONTHS</item>
-        <item>18–23 MONTHS</item>
-    </string-array>
-
 </resources>
