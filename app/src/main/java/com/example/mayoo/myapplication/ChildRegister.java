@@ -114,9 +114,11 @@ public class ChildRegister extends AppCompatActivity {
             }
 
 
-            byte[] imageByte_fromDB = childDB_object.gettingImage(childID_edit);
+            img_added = true;
+
+            imageByte_toDB = childDB_object.gettingImage(childID_edit);
             Bitmap imageBitmap_fromByte;
-            InputStream inputStream = new ByteArrayInputStream(imageByte_fromDB);
+            InputStream inputStream = new ByteArrayInputStream(imageByte_toDB);
             imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
             record_child_img.setImageBitmap(imageBitmap_fromByte);
         }

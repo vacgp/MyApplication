@@ -6,8 +6,10 @@
     <color name="blue">#0091c0</color>
     <color name="mainBlue">#0087A5</color>
     <color name="purple">#b682b5</color>
+    <color name="tranPurple">#ccb682b5</color>
     <color name="darkGrey">#424d52</color>
     <color name="lightGrey">#E0E0E0</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="lightBlue">#B3DEEC</color>
+    <color name="doneVac">#66000000</color>
 </resources>

@@ -366,7 +366,7 @@ public class ChildRecord extends AppCompatActivity {
 
         for (int i = 0; i < doneVacs_list.size(); i++) {
             if (doneVacs_list.get(i).equals(vacName)) {
-                convertView.setBackgroundResource(R.color.lightGrey);
+                convertView.setBackgroundResource(R.color.doneVac);
             }
         }
         TextView vac_left = (TextView) findViewById(R.id.vac_left);
@@ -379,7 +379,7 @@ public class ChildRecord extends AppCompatActivity {
         if (mMonths < 1) {
             Log.d("BIRTH", mMonths + ", " + vacName);
             if (vacName.equals("Hepatitis B #1")) {
-                convertView.setBackgroundResource(R.color.purple);
+                convertView.setBackgroundResource(R.color.tranPurple);
             }
 
             //1-2 mMonths
@@ -387,7 +387,7 @@ public class ChildRecord extends AppCompatActivity {
             Log.d("1_2", mMonths + ", " + vacName);
             if (vacName.equals("Hepatitis B #2")) {
 
-                convertView.setBackgroundResource(R.color.purple);
+                convertView.setBackgroundResource(R.color.tranPurple);
             }
 
             //2 mMonths
@@ -404,7 +404,7 @@ public class ChildRecord extends AppCompatActivity {
                             ||
                             vacName.equals("Polio #1")) {
 
-                convertView.setBackgroundResource(R.color.purple);
+                convertView.setBackgroundResource(R.color.tranPurple);
             }
 
             //4 mMonths
@@ -419,7 +419,7 @@ public class ChildRecord extends AppCompatActivity {
                     vacName.equals("Pneumococcal #2")
                     ||
                     vacName.equals("Polio #2")) {
-                convertView.setBackgroundResource(R.color.purple);
+                convertView.setBackgroundResource(R.color.tranPurple);
             }
 
             //6-12 mMonths
@@ -437,13 +437,13 @@ public class ChildRecord extends AppCompatActivity {
                         vacName.equals("Pneumococcal #3")
                         ||
                         vacName.equals("Influenza")) {
-                    convertView.setBackgroundResource(R.color.purple);
+                    convertView.setBackgroundResource(R.color.tranPurple);
                 }
             }
 
             Log.d("6_12", mMonths + ", " + vacName);
             if (vacName.equals("Hepatitis B #3") || vacName.equals("Polio #3")) {
-                convertView.setBackgroundResource(R.color.purple);
+                convertView.setBackgroundResource(R.color.tranPurple);
             }
 
             //12-15 mMonths
@@ -457,21 +457,21 @@ public class ChildRecord extends AppCompatActivity {
                     vacName.equals("Haemophilus influenzae type b #4")
                     ||
                     vacName.equals("Pneumococcal #4")) {
-                convertView.setBackgroundResource(R.color.purple);
+                convertView.setBackgroundResource(R.color.tranPurple);
             }
 
             //15-18 mMonths
         } else if (mMonths >= 15 && mMonths < 18) {
             Log.d("15_18", mMonths + ", " + vacName);
             if (vacName.equals("Diphtheria/Tetanus/Pertussis (DTaP) #4")) {
-                convertView.setBackgroundResource(R.color.purple);
+                convertView.setBackgroundResource(R.color.tranPurple);
             }
 
             //18-23 mMonths
         } else if (mMonths >= 18 && mMonths < 23) {
             Log.d("18_23", mMonths + ", " + vacName);
             if (vacName.equals("Hepatitis A")) {
-                convertView.setBackgroundResource(R.color.purple);
+                convertView.setBackgroundResource(R.color.tranPurple);
             }
         }
     }

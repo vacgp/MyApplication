@@ -7,11 +7,11 @@
     android:layout_height="wrap_content"
     android:text="Are you sure you want to delete this record?"
     android:textSize="18sp"
-    android:textColor="@color/darkGrey"
+    android:textColor="#000"
     android:layout_marginTop="15dp"
     android:layout_marginBottom="15dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginStart="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginStart="10dp"
     android:layout_marginRight="5dp"
     android:layout_marginEnd="5dp"/>
     <LinearLayout
@@ -25,17 +25,18 @@
             android:id="@+id/no_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000"
+            android:textColor="@color/darkGrey"
             android:text="NO"
             android:textSize="16sp"
             android:layout_weight="1"
             style="@style/Base.Widget.AppCompat.Button.Borderless"
             />
+
         <Button
             android:id="@+id/yes_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000"
+            android:textColor="@color/darkGrey"
             android:text="YES"
             android:textSize="16sp"
             android:layout_weight="1"

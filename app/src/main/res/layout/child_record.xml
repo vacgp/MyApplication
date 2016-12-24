@@ -105,22 +105,26 @@
                     android:layout_marginStart="15dp"
                     android:background="@color/lightBlue"
                     android:orientation="horizontal"
-                    android:paddingRight="5dp"
-                    android:paddingLeft="5dp">
+                    android:paddingRight="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp">
 
                     <TextView
                         android:id="@+id/vac_left"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textColor="@color/darkGrey"
-                        android:textSize="18sp"
+                        android:textSize="17sp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginStart="3dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginStart="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
                         android:text="vaccines left"
                         android:textColor="@color/darkGrey"
                         android:textSize="16sp" />
@@ -131,9 +135,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -144,7 +148,7 @@
                     android:layout_width="11dp"
                     android:layout_height="11dp"
                     android:layout_marginTop="5dp"
-                    android:background="@color/lightGrey" />
+                    android:background="@color/doneVac" />
 
 
                 <TextView
@@ -188,7 +192,8 @@
     <ListView
         android:id="@+id/vac_listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
     </ListView>
 
