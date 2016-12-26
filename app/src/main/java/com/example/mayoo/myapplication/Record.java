@@ -37,6 +37,18 @@ public class Record extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent_from = getIntent();
+        Intent intent_to = new Intent(Record.this, Home.class);
+        intent_to.putExtra("username", intent_from.getStringExtra("username"));
+        intent_to.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent_to);
+        finish();
+
+        Record.super.onBackPressed();
+    }
+
     public void new_record(View view) {
         int counter = 0;
         if (child_1_layout.getVisibility() == View.VISIBLE) {
@@ -175,6 +187,7 @@ public class Record extends AppCompatActivity {
         helper_object.close();
 
     }
+
     public void child1(View view) {
         Log.d("username", username);
         Intent intent_to = new Intent(Record.this, ChildRecord.class);

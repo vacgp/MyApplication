@@ -1,15 +1,21 @@
 package com.example.mayoo.myapplication;
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -28,6 +34,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -47,13 +55,22 @@ public class ChildRecord extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.child_record);
 
-        /*finish();
-        startActivity(getIntent());*/
+        String LOG_TAG = "ChildRecord";
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle != null) {
+            Set<String> keys = bundle.keySet();
+            Iterator<String> it = keys.iterator();
+            Log.e(LOG_TAG, "Dumping Intent start");
+            while (it.hasNext()) {
+                String key = it.next();
+                Log.e(LOG_TAG, "[" + key + "=" + bundle.get(key) + "]");
+            }
+            Log.e(LOG_TAG, "Dumping Intent end");
+        } else {
+            Log.e(LOG_TAG, "bundle is empty");
+        }
 
-        /*ActionBar ab = getSupportActionBar();
-        if (ab != null) {
-            ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 135, 165)));
-        }*/
 
         Intent intent_from = getIntent();
 
@@ -76,31 +93,31 @@ public class ChildRecord extends AppCompatActivity {
 
         record_child_name.setText(child_info.get(0));
 
-        Log.d("mk",Integer.parseInt(childBirthCalc()[1])+"");
-        if ((int)(Double.parseDouble(childBirthCalc()[0])) <= 1) {
-            if (Integer.parseInt(childBirthCalc()[1])%30 == 0 && (int)(Double.parseDouble(childBirthCalc()[0])) == 0) {
+        Log.d("mk", Integer.parseInt(childBirthCalc()[1]) + "");
+        if ((int) (Double.parseDouble(childBirthCalc()[0])) <= 1) {
+            if (Integer.parseInt(childBirthCalc()[1]) % 30 == 0 && (int) (Double.parseDouble(childBirthCalc()[0])) == 0) {
                 record_child_birth.setText("Born today");
             } else {
-                if ((int)(Double.parseDouble(childBirthCalc()[0])) == 1) {
+                if ((int) (Double.parseDouble(childBirthCalc()[0])) == 1) {
 
-                    if (Integer.parseInt(childBirthCalc()[1])%30 == 0){
+                    if (Integer.parseInt(childBirthCalc()[1]) % 30 == 0) {
                         record_child_birth.setText("1 month ");
 
-                    }else {
+                    } else {
                         record_child_birth.setText("1 month, " + (Integer.parseInt(childBirthCalc()[1]) % 30 == 1 ?
                                 Integer.parseInt(childBirthCalc()[1]) % 30 + (" day") : Integer.parseInt(childBirthCalc()[1]) % 30 + " days"));
                     }
                 } else
-                    record_child_birth.setText(Integer.parseInt(childBirthCalc()[1])%30 == 1 ?
-                            Integer.parseInt(childBirthCalc()[1])%30+(" day") : Integer.parseInt(childBirthCalc()[1])%30+" days");
+                    record_child_birth.setText(Integer.parseInt(childBirthCalc()[1]) % 30 == 1 ?
+                            Integer.parseInt(childBirthCalc()[1]) % 30 + (" day") : Integer.parseInt(childBirthCalc()[1]) % 30 + " days");
             }
         } else {
-            if (Integer.parseInt(childBirthCalc()[1])%30 == 0){
-                record_child_birth.setText((int)(Double.parseDouble(childBirthCalc()[0])) + " months");
+            if (Integer.parseInt(childBirthCalc()[1]) % 30 == 0) {
+                record_child_birth.setText((int) (Double.parseDouble(childBirthCalc()[0])) + " months");
 
             } else
-                record_child_birth.setText((int)(Double.parseDouble(childBirthCalc()[0])) + " months, " + (Integer.parseInt(childBirthCalc()[1])%30 == 1 ?
-                        Integer.parseInt(childBirthCalc()[1])%30+(" day") : Integer.parseInt(childBirthCalc()[1])%30+" days"));
+                record_child_birth.setText((int) (Double.parseDouble(childBirthCalc()[0])) + " months, " + (Integer.parseInt(childBirthCalc()[1]) % 30 == 1 ?
+                        Integer.parseInt(childBirthCalc()[1]) % 30 + (" day") : Integer.parseInt(childBirthCalc()[1]) % 30 + " days"));
         }
 
         int child_img_res;
@@ -187,7 +204,106 @@ public class ChildRecord extends AppCompatActivity {
 
             }
         });
+
+        setAlarm();
+
     }
+
+    public void setAlarm() {
+        long days = Long.parseLong(childBirthCalc()[1]);
+        double mMonths = Double.parseDouble(childBirthCalc()[0]);
+
+        Calendar cal = Calendar.getInstance();
+        Log.d("xfdf", cal.getTime().toString());
+
+        int childAge = setAlarm_1stTime(days, mMonths, cal);
+
+        Log.d("xfdf", cal.getTime().toString());
+
+        //18-23 mMonths
+
+
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
+
+        notificationIntent.putExtra("childID", childID);
+        notificationIntent.putExtra("username", getIntent().getStringExtra("username"));
+        notificationIntent.putExtra("child#", getIntent().getIntExtra("child#", 0));
+        notificationIntent.putExtra("childAge", childAge);
+
+
+        notificationIntent.addCategory("android.intent.category.VAC");
+
+        PendingIntent broadcast = PendingIntent.getBroadcast(this, childID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        if (mMonths < 18) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
+            } else {
+                alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
+            }
+        }
+    }
+
+    public int setAlarm_1stTime(long days, double mMonths, Calendar cal) {
+
+        //BIRTH
+        if (mMonths < 1) {
+            cal.add(Calendar.DAY_OF_MONTH, (int) (30 - days));
+            return 1;
+        }
+        //1-2 mMonths
+        if (mMonths >= 1 && mMonths < 2) {
+            cal.add(Calendar.DAY_OF_MONTH, (int) (60 - days));
+            return 2;
+
+            //2 mMonths
+        } else if (mMonths >= 2 && mMonths < 3) {
+            cal.add(Calendar.DAY_OF_MONTH, (int) (120 - days));
+            return 4;
+
+            //4 mMonths
+        } else if (mMonths >= 4 && mMonths < 5) {
+            cal.add(Calendar.DAY_OF_MONTH, (int) (180 - days));
+            return 6;
+
+            //6-12 mMonths
+        } else if (mMonths >= 6 && mMonths < 12) {
+            cal.add(Calendar.DAY_OF_MONTH, (int) (360 - days));
+            return 12;
+
+            //12-15 mMonths
+        } else if (mMonths >= 12 && mMonths < 15) {
+            cal.add(Calendar.DAY_OF_MONTH, (int) (450 - days));
+            return 15;
+
+            //15-18 mMonths
+        } else if (mMonths >= 15 && mMonths < 18) {
+            cal.add(Calendar.DAY_OF_MONTH, (int) (540 - days));
+            return 18;
+
+        } else {
+            return 0;
+        }
+    }
+
+    //region only used when the user is coming from the notification
+    /*
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                Log.d("onOptionsItemSelected", "yeeeeeeeeeeeeeeees");
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    */
+    //endregion
 
     @Override
     public void onBackPressed() {
@@ -203,7 +319,7 @@ public class ChildRecord extends AppCompatActivity {
 
     public void edit(View view) {
         Intent intent_to = new Intent(ChildRecord.this, ChildRegister.class);
-        Log.d("ChildRecord", childID+"");
+        Log.d("ChildRecord", childID + "");
         intent_to.putExtra("childID", childID);
         intent_to.putExtra("Edit", 1);
         Intent intent_from = getIntent();
@@ -228,7 +344,6 @@ public class ChildRecord extends AppCompatActivity {
         dialog.show();
 
 
-
         Button yes_btn = (Button) dialog.findViewById(R.id.yes_btn);
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -241,8 +356,8 @@ public class ChildRecord extends AppCompatActivity {
 
                 Helper helper_obj = new Helper(ChildRecord.this);
                 helper_obj.open();
-                Log.d("kdd", childNumber+", "+username);
-                helper_obj.updateChild("-",childNumber,username);
+                Log.d("kdd", childNumber + ", " + username);
+                helper_obj.updateChild("-", childNumber, username);
                 helper_obj.close();
                 dialog.dismiss();
                 finish();
@@ -259,7 +374,6 @@ public class ChildRecord extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-
 
 
     }

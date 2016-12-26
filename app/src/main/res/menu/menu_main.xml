@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appcompat="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/logOut"
+        android:title="Log out"
+        appcompat:showAsAction="ifRoom"
+        android:icon="@drawable/email"
+        />
+
+</menu>

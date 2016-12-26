@@ -37,7 +37,7 @@
 
         <activity android:name=".ChildRecord"
             android:label="Child Record"
-            android:parentActivityName=".Record">
+            >
         </activity>
 
         <activity android:name=".Safety"
@@ -52,7 +52,7 @@
         <receiver android:name=".AlarmReceiver">
             <intent-filter>
                 <action android:name="android.media.action.DISPLAY_NOTIFICATION" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VAC" />
             </intent-filter>
         </receiver>
 

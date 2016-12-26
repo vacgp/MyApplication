@@ -14,6 +14,9 @@ import android.widget.TextView;
  */
 
 public class Register extends AppCompatActivity {
+
+    UserSessionManager session;
+
     EditText userName_editText, password_editText, confirm_editText;
     TextView username_validation, password_validation, confirm_pw_validation;
 
@@ -21,6 +24,9 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
+
+        session = new UserSessionManager(this);
+
 
         userName_editText = (EditText) findViewById(R.id.username_editText);
         password_editText = (EditText) findViewById(R.id.password_editText);
@@ -178,6 +184,8 @@ public class Register extends AppCompatActivity {
 
                 if (h.userNameChecking(userName_str)) {
                     if (password_str.equals(confirm_str)) {
+                        session.createUserLoginSession(userName_str);
+
                         h.insertEntry(userName_str, password_str, "-", "-", "-");
                         h.close();
                         Intent i = new Intent(Register.this, Home.class);

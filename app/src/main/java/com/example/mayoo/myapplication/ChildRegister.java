@@ -61,7 +61,6 @@ public class ChildRegister extends AppCompatActivity {
         setContentView(R.layout.child_regiter);
 
 
-
         myCalendar = Calendar.getInstance();
 
         EditText child_name_editText = (EditText) findViewById(R.id.child_name_editText);
