@@ -106,6 +106,7 @@ class ChildDB {
         return childID;
     }
 
+
     public ArrayList<String> childInfo(int childID) {
         Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE ID=" + childID + "", null);
         ArrayList<String> getChildInfo = new ArrayList<String>();

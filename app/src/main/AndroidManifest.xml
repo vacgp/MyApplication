@@ -55,6 +55,7 @@
                 <category android:name="android.intent.category.VAC" />
             </intent-filter>
         </receiver>
+        <activity android:name=".WebViewTest" />
 
     </application>
 

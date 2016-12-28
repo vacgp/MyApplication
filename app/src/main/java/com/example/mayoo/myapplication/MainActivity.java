@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.graphics.drawable.ColorDrawable;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       // startActivity(new Intent(this, WebViewTest.class));
 
         session = new UserSessionManager(this);
 
@@ -99,12 +102,30 @@ public class MainActivity extends AppCompatActivity {
                 String savedpw = h.getSingleEntry(username_txt.getText().toString());
 
                 if(savedpw.equals(password_txt.getText().toString())){
+
+                    String username = username_txt.getText().toString();
+
+                    Helper helper_object = new Helper(MainActivity.this);
+                    helper_object.open();
+
+                    ArrayList<Integer> childIDs = helper_object.getChildIDs(username);
+
+                    if (!childIDs.isEmpty()) {
+                        ChildDB childDB_object = new ChildDB(getApplicationContext());
+                        childDB_object.open();
+                        for (int i = 0; i < childIDs.size(); i++) {
+                            ArrayList<String> child_info = childDB_object.childInfo(childIDs.get(i));
+                            setAlarm(childIDs.get(i), child_info.get(1), username, helper_object.getChildNumber(childIDs.get(i)+"",username));
+                        }
+                    }
+                    helper_object.close();
+
                     session.createUserLoginSession(username_txt.getText().toString());
 
                     dialog.dismiss();
                     Intent i = new Intent(MainActivity.this, Home.class);
 
-                    i.putExtra("username", username_txt.getText().toString()); // (Key, Value)
+                    i.putExtra("username", username); // (Key, Value)
                     finish();
                     startActivity(i);
                 }else {
@@ -126,6 +147,39 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void setAlarm(int childID, String childBirth,  String username, int childNumber) {
+        long days = Long.parseLong(ChildRecord.childBirthCalc(childBirth)[1]);
+        double mMonths = Double.parseDouble(ChildRecord.childBirthCalc(childBirth)[0]);
+
+        Calendar cal = Calendar.getInstance();
+        Log.d("xfdf", cal.getTime().toString());
+
+        int childAge = new ChildRecord().setCalender(days, mMonths, cal);
+
+        Log.d("xfdf", cal.getTime().toString());
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
+
+        notificationIntent.putExtra("childID", childID);
+        notificationIntent.putExtra("username", username);
+        notificationIntent.putExtra("child#", childNumber);
+        notificationIntent.putExtra("childAge", childAge);
+
+
+        notificationIntent.addCategory("android.intent.category.VAC");
+
+        PendingIntent broadcast = PendingIntent.getBroadcast(this, childID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        if (mMonths < 18) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
+            } else {
+                alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
+            }
+        }
+    }
 
 
 }

@@ -1,5 +1,8 @@
 package com.example.mayoo.myapplication;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -110,73 +113,92 @@ public class Record extends AppCompatActivity {
             for (int i = 0; i < childIDs.size(); i++) {
                 if (i == 0) {
                     child_1_id = childIDs.get(i);
-                    byte[] imageByte_fromDB = childDB_object.gettingImage(childIDs.get(i));
-                    Bitmap imageBitmap_fromByte;
-                    InputStream inputStream = new ByteArrayInputStream(imageByte_fromDB);
-                    imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
-
-                    child_1_btn.setImageBitmap(imageBitmap_fromByte);
                     ArrayList<String> child_info = childDB_object.childInfo(childIDs.get(i));
-                    child_1_txt.setText(child_info.get(0));
 
-                    int child_img_res;
-                    if (child_info.get(2).equals("Female")) {
-                        child_img_res = R.drawable.female;
-                    } else {
-                        child_img_res = R.drawable.male;
+                    if(Integer.parseInt(ChildRecord.childBirthCalc(child_info.get(1))[1]) >= 750){
+                        deleteRecord(child_1_id, username, helper_object.getChildNumber(child_1_id+"",username), child_1_layout);
+                        cancelAlarm(child_1_id, Record.this);
+                    }else {
+                        byte[] imageByte_fromDB = childDB_object.gettingImage(childIDs.get(i));
+                        Bitmap imageBitmap_fromByte;
+                        InputStream inputStream = new ByteArrayInputStream(imageByte_fromDB);
+                        imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
+
+                        child_1_btn.setImageBitmap(imageBitmap_fromByte);
+                        child_1_txt.setText(child_info.get(0));
+
+                        int child_img_res;
+                        if (child_info.get(2).equals("Female")) {
+                            child_img_res = R.drawable.female;
+                        } else {
+                            child_img_res = R.drawable.male;
+                        }
+                        record_child_gender_1.setImageResource(child_img_res);
+
+                        Log.d("size", child_info.size() + "");
+                        Log.d("child", child_info.get(0));
+                        child_1_layout.setVisibility(View.VISIBLE);
                     }
-                    record_child_gender_1.setImageResource(child_img_res);
-
-                    Log.d("size", child_info.size()+"");
-                    Log.d("child", child_info.get(0));
-                    child_1_layout.setVisibility(View.VISIBLE);
 
                 } else if (i == 1) {
                     child_2_id = childIDs.get(i);
-                    byte[] imageByte_fromDB = childDB_object.gettingImage(childIDs.get(i));
-                    Bitmap imageBitmap_fromByte;
-                    InputStream inputStream = new ByteArrayInputStream(imageByte_fromDB);
-                    imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
-
-                    child_2_btn.setImageBitmap(imageBitmap_fromByte);
                     ArrayList<String> child_info = childDB_object.childInfo(childIDs.get(i));
-                    child_2_txt.setText(child_info.get(0));
 
-                    int child_img_res;
-                    if (child_info.get(2).equals("Female")) {
-                        child_img_res = R.drawable.female;
-                    } else {
-                        child_img_res = R.drawable.male;
+                    if(Integer.parseInt(ChildRecord.childBirthCalc(child_info.get(1))[1]) >= 750){
+                        deleteRecord(child_2_id, username, helper_object.getChildNumber(child_2_id+"",username), child_2_layout);
+                        cancelAlarm(child_2_id, Record.this);
+                    }else {
+                        byte[] imageByte_fromDB = childDB_object.gettingImage(childIDs.get(i));
+                        Bitmap imageBitmap_fromByte;
+                        InputStream inputStream = new ByteArrayInputStream(imageByte_fromDB);
+                        imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
+
+                        child_2_btn.setImageBitmap(imageBitmap_fromByte);
+                        child_2_txt.setText(child_info.get(0));
+
+                        int child_img_res;
+                        if (child_info.get(2).equals("Female")) {
+                            child_img_res = R.drawable.female;
+                        } else {
+                            child_img_res = R.drawable.male;
+                        }
+                        record_child_gender_2.setImageResource(child_img_res);
+
+                        child_2_layout.setVisibility(View.VISIBLE);
                     }
-                    record_child_gender_2.setImageResource(child_img_res);
-
-                    child_2_layout.setVisibility(View.VISIBLE);
 
                 } else if (i == 2) {
 
                     child_3_id = childIDs.get(i);
-                    byte[] imageByte_fromDB = childDB_object.gettingImage(childIDs.get(i));
-                    Bitmap imageBitmap_fromByte;
-                    InputStream inputStream = new ByteArrayInputStream(imageByte_fromDB);
-                    imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
-
-                    child_3_btn.setImageBitmap(imageBitmap_fromByte);
                     ArrayList<String> child_info = childDB_object.childInfo(childIDs.get(i));
-                    child_3_txt.setText(child_info.get(0));
 
-                    int child_img_res;
-                    if (child_info.get(2).equals("Female")) {
-                        child_img_res = R.drawable.female;
-                    } else {
-                        child_img_res = R.drawable.male;
+                    Log.d("sdsdssd", child_3_id+" , "+username);
+                    if(Integer.parseInt(ChildRecord.childBirthCalc(child_info.get(1))[1]) >= 750){
+                        deleteRecord(child_3_id, username, helper_object.getChildNumber(child_3_id+"",username), child_3_layout);
+                        cancelAlarm(child_3_id, Record.this);
+                    }else {
+                        byte[] imageByte_fromDB = childDB_object.gettingImage(childIDs.get(i));
+                        Bitmap imageBitmap_fromByte;
+                        InputStream inputStream = new ByteArrayInputStream(imageByte_fromDB);
+                        imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
+
+                        child_3_btn.setImageBitmap(imageBitmap_fromByte);
+                        child_3_txt.setText(child_info.get(0));
+
+                        int child_img_res;
+                        if (child_info.get(2).equals("Female")) {
+                            child_img_res = R.drawable.female;
+                        } else {
+                            child_img_res = R.drawable.male;
+                        }
+                        record_child_gender_3.setImageResource(child_img_res);
+
+                        child_3_layout.setVisibility(View.VISIBLE);
+
+
+                        ImageButton new_imageButton = (ImageButton) findViewById(R.id.new_btn);
+                        new_imageButton.setVisibility(View.GONE);
                     }
-                    record_child_gender_3.setImageResource(child_img_res);
-
-                    child_3_layout.setVisibility(View.VISIBLE);
-
-
-                    ImageButton new_imageButton = (ImageButton) findViewById(R.id.new_btn);
-                    new_imageButton.setVisibility(View.GONE);
 
                 }
             }
@@ -186,6 +208,32 @@ public class Record extends AppCompatActivity {
 
         helper_object.close();
 
+    }
+
+    public void cancelAlarm(int childID, Context context){
+        Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
+        notificationIntent.addCategory("android.intent.category.VAC");
+
+        PendingIntent sender = PendingIntent.getBroadcast(context, childID, notificationIntent,  PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        alarmManager.cancel(sender);
+        sender.cancel();
+    }
+
+    public void deleteRecord(int childID, String username, int childNumber,  LinearLayout layout){
+        ChildDB childDB_obj = new ChildDB(Record.this);
+        childDB_obj.open();
+        childDB_obj.deleteRecord(childID);
+        childDB_obj.close();
+
+
+        Helper helper_obj = new Helper(Record.this);
+        helper_obj.open();
+        Log.d("kdd", childNumber + ", " + username);
+        helper_obj.updateChild("-", childNumber, username);
+        helper_obj.close();
+        layout.setVisibility(View.GONE);
     }
 
     public void child1(View view) {

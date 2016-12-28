@@ -3,7 +3,6 @@ package com.example.mayoo.myapplication;
 import android.app.AlarmManager;
 import android.app.Dialog;
 import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -11,11 +10,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -93,31 +90,31 @@ public class ChildRecord extends AppCompatActivity {
 
         record_child_name.setText(child_info.get(0));
 
-        Log.d("mk", Integer.parseInt(childBirthCalc()[1]) + "");
-        if ((int) (Double.parseDouble(childBirthCalc()[0])) <= 1) {
-            if (Integer.parseInt(childBirthCalc()[1]) % 30 == 0 && (int) (Double.parseDouble(childBirthCalc()[0])) == 0) {
+        int days = Integer.parseInt(childBirthCalc(child_info.get(1))[1]);
+        double months = Double.parseDouble(childBirthCalc(child_info.get(1))[0]);
+
+        Log.d("mk", days + "");
+        if ((int) months <= 1) {
+            if (days % 30 == 0 && (int) months == 0) {
                 record_child_birth.setText("Born today");
             } else {
-                if ((int) (Double.parseDouble(childBirthCalc()[0])) == 1) {
+                if ((int) months == 1) {
 
-                    if (Integer.parseInt(childBirthCalc()[1]) % 30 == 0) {
+                    if (days % 30 == 0) {
                         record_child_birth.setText("1 month ");
 
                     } else {
-                        record_child_birth.setText("1 month, " + (Integer.parseInt(childBirthCalc()[1]) % 30 == 1 ?
-                                Integer.parseInt(childBirthCalc()[1]) % 30 + (" day") : Integer.parseInt(childBirthCalc()[1]) % 30 + " days"));
+                        record_child_birth.setText("1 month, " + (days % 30 == 1 ? days % 30 + (" day") : days % 30 + " days"));
                     }
                 } else
-                    record_child_birth.setText(Integer.parseInt(childBirthCalc()[1]) % 30 == 1 ?
-                            Integer.parseInt(childBirthCalc()[1]) % 30 + (" day") : Integer.parseInt(childBirthCalc()[1]) % 30 + " days");
+                    record_child_birth.setText(days % 30 == 1 ? days % 30 + (" day") : days % 30 + " days");
             }
         } else {
-            if (Integer.parseInt(childBirthCalc()[1]) % 30 == 0) {
-                record_child_birth.setText((int) (Double.parseDouble(childBirthCalc()[0])) + " months");
+            if (days % 30 == 0) {
+                record_child_birth.setText((int) (months) + " months");
 
             } else
-                record_child_birth.setText((int) (Double.parseDouble(childBirthCalc()[0])) + " months, " + (Integer.parseInt(childBirthCalc()[1]) % 30 == 1 ?
-                        Integer.parseInt(childBirthCalc()[1]) % 30 + (" day") : Integer.parseInt(childBirthCalc()[1]) % 30 + " days"));
+                record_child_birth.setText((int) (months) + " months, " + (days % 30 == 1 ? days % 30 + (" day") : days % 30 + " days"));
         }
 
         int child_img_res;
@@ -219,31 +216,30 @@ public class ChildRecord extends AppCompatActivity {
             }
         });
 
-        setAlarm();
+        setAlarm(childID, child_info.get(1), getIntent().getStringExtra("username"), getIntent().getIntExtra("child#", 0));
 
     }
 
-    public void setAlarm() {
-        long days = Long.parseLong(childBirthCalc()[1]);
-        double mMonths = Double.parseDouble(childBirthCalc()[0]);
+    public void setAlarm(int childID, String childBirth,  String username, int childNumber) {
+        long days = Long.parseLong(childBirthCalc(childBirth)[1]);
+        double mMonths = Double.parseDouble(childBirthCalc(childBirth)[0]);
 
         Calendar cal = Calendar.getInstance();
         Log.d("xfdf", cal.getTime().toString());
 
-        int childAge = setAlarm_1stTime(days, mMonths, cal);
+        int childAge = setCalender(days, mMonths, cal);
 
         Log.d("xfdf", cal.getTime().toString());
 
         //18-23 mMonths
-
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
 
         notificationIntent.putExtra("childID", childID);
-        notificationIntent.putExtra("username", getIntent().getStringExtra("username"));
-        notificationIntent.putExtra("child#", getIntent().getIntExtra("child#", 0));
+        notificationIntent.putExtra("username", username);
+        notificationIntent.putExtra("child#", childNumber);
         notificationIntent.putExtra("childAge", childAge);
 
 
@@ -260,7 +256,7 @@ public class ChildRecord extends AppCompatActivity {
         }
     }
 
-    public int setAlarm_1stTime(long days, double mMonths, Calendar cal) {
+    public int setCalender(long days, double mMonths, Calendar cal) {
 
         //BIRTH
         if (mMonths < 1) {
@@ -348,6 +344,8 @@ public class ChildRecord extends AppCompatActivity {
     }
 
     public void delete(View view) {
+
+
         Intent intent_from = getIntent();
         final String username = intent_from.getStringExtra("username");
         final int childNumber = intent_from.getIntExtra("child#", 0);
@@ -404,7 +402,7 @@ public class ChildRecord extends AppCompatActivity {
             this.context = c;
             this.vacNames_adapter = vacNames;
 
-            months = Double.parseDouble(childBirthCalc()[0]);
+            months = Double.parseDouble(childBirthCalc(child_info.get(1))[0]);
 
         }
 
@@ -665,13 +663,13 @@ public class ChildRecord extends AppCompatActivity {
         }
     }
 
-    public String[] childBirthCalc() {
+    public static String[] childBirthCalc(String childBirth) {
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
         // String currentDateandTime = sdf.format(new Date());
         String currentDateandTime = sdf.format(Calendar.getInstance().getTime());
 
 
-        String childBirth = child_info.get(1);//record_child_birth.getText().toString();
+        //String childBirth = child_info.get(1);//record_child_birth.getText().toString();
         DateFormat format = new SimpleDateFormat("MM-dd-yyyy");
         Date date1 = null, date2 = null;
         try {
@@ -685,7 +683,7 @@ public class ChildRecord extends AppCompatActivity {
 
         long diffInMillies = date2.getTime() - date1.getTime();
         long dateDiff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-        Log.d("dateDiff", dateDiff + ", " + currentDateandTime + ", " + record_child_birth.getText().toString());
+        //Log.d("dateDiff", dateDiff + ", " + currentDateandTime + ", " + record_child_birth.getText().toString());
 
         return new String[]{dateDiff / 30.0 + "", dateDiff + ""};
     }

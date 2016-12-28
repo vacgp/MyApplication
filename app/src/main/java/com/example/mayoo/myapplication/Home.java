@@ -1,6 +1,9 @@
 package com.example.mayoo.myapplication;
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -61,6 +65,7 @@ public class Home extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.logOut:
 
+                Log.d("dfddfdf", getApplicationContext()+"");
                 final Dialog dialog = new Dialog(Home.this);
                 dialog.getWindow();
                 dialog.setContentView(R.layout.delete_record);
@@ -71,16 +76,25 @@ public class Home extends AppCompatActivity {
                 yes_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //// TODO: 12/27/2016 cancel her children's alarms
-                        /*
-                        //for-loop
-                        Intent intent = new Intent(this, AlarmReceiver.class);
-                        PendingIntent sender = PendingIntent.getBroadcast(this, childIDs, intent,  PendingIntent.FLAG_CANCEL_CURRENT);
-                        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-                        alarmManager.cancel(sender);
-                        sender.cancel();
-                        * */
+                        Helper helper_object = new Helper(Home.this);
+
+                        helper_object.open();
+
+                        ArrayList<Integer> childIDs = helper_object.getChildIDs(getIntent().getStringExtra("username"));
+
+                        if (!childIDs.isEmpty()) {
+                            ChildDB childDB_object = new ChildDB(getApplicationContext());
+                            childDB_object.open();
+                            for (int i = 0; i < childIDs.size(); i++) {
+                                cancelAlarm(childIDs.get(i), Home.this);
+                            }
+                        }
+                        helper_object.close();
+
+
+
+
                         session.logoutUser();
 
                         dialog.dismiss();
@@ -103,6 +117,17 @@ public class Home extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void cancelAlarm(int childID, Context context){
+        Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
+        notificationIntent.addCategory("android.intent.category.VAC");
+
+        PendingIntent sender = PendingIntent.getBroadcast(context, childID, notificationIntent,  PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        alarmManager.cancel(sender);
+        sender.cancel();
     }
 
     public void records(View view) {

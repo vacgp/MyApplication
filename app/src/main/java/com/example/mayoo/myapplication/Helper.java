@@ -108,6 +108,39 @@ class Helper {
         db.update(tableName, updatedValues, where, new String[]{userName});
     }
 
+    public int getChildNumber(String childID, String userName) {
+        Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE USERNAME='" + userName + "' ", null);
+        if (cursor.getCount() < 1) // UserName Not Exist
+        {
+            Log.d("getChildNumber", "jfgdx");
+
+            cursor.close();
+        }
+        cursor.moveToFirst();
+        Log.d("getChildIDs", userName);
+        String childID1 = cursor.getString(cursor.getColumnIndex("CHILD_1"));
+        String childID2 = cursor.getString(cursor.getColumnIndex("CHILD_2"));
+        String childID3 = cursor.getString(cursor.getColumnIndex("CHILD_3"));
+
+        if (childID1.equals(childID)) {
+            cursor.close();
+            Log.d("getChildNumber", 1+"");
+            return 1;
+        } else if (childID2.equals(childID)) {
+            cursor.close();
+            Log.d("getChildNumber", 2+"");
+            return 2;
+        } else if (childID3.equals(childID)) {
+            cursor.close();
+            Log.d("getChildNumber", 3+"");
+            return 3;
+        } else {
+            Log.d("getChildNumber", 0+"");
+
+            return 0;
+        }
+    }
+
 
     boolean userNameChecking(String userName) {
         String where = "USERNAME = ?";
@@ -153,7 +186,6 @@ class Helper {
 
 
     }
-
 
 
 }
