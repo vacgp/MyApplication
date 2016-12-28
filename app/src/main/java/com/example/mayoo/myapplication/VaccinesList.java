@@ -1,5 +1,7 @@
 package com.example.mayoo.myapplication;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -37,16 +39,74 @@ public class VaccinesList extends AppCompatActivity {
             ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 145, 192)));
         }*/
 
+        //region At Birth
+   /* <item>BCG</item>
+    <item>Hepatitis B #1</item>*/
+        //endregion
 
+        //region 2 Months
+   /* <item>Polio #1</item>
+    <item>Diphtheria/Tetanus/Pertussis (DTaP) #1</item>
+    <item>Hepatitis B #2</item>
+    <item>Haemophilus influenzae type b #1</item>
+    <item>Pneumococcal #1</item>
+    <item>Rotavirus #1</item>*/
+        //endregion
+
+        //region 4 Months
+    /*<item>Polio #2</item>
+        <item>Diphtheria/Tetanus/Pertussis (DTaP) #2</item>
+        <item>Hepatitis B #3</item>
+        <item>Haemophilus influenzae type b #2</item>
+        <item>Pneumococcal #2</item>
+        <item>Rotavirus #2</item>*/
+        //endregion
+
+        //region 6 Months
+   /* <item>Polio #3</item>
+    <item>Diphtheria/Tetanus/Pertussis (DTaP) #3</item>
+    <item>Hepatitis B #4</item>
+    <item>Haemophilus influenzae type b #3</item>
+    <item>Pneumococcal #3</item>*/
+        //endregion
+
+        //region 9 Months
+/*
+    <item>Measles/Mumps/Rubella #1</item>
+    <item>MCV4 #1</item>*/
+        //endregion
+
+        //region 12 Months
+  /*  <item>Polio #4</item>
+    <item>Measles/Mumps/Rubella #2</item>
+    <item>Pneumococcal #4</item>
+    <item>MCV4 #2</item>*/
+        //endregion
+
+        //region 18 Months
+  /*  <item>Polio #5</item>
+    <item>Diphtheria/Tetanus/Pertussis (DTaP) #4</item>
+    <item>Haemophilus influenzae type b #4</item>
+    <item>Measles/Mumps/Rubella #3</item>
+    <item>Hepatitis A #1</item>
+    <item>Chickenpox</item>*/
+
+        //endregion
+
+        //region 24 Months
+/*
+    <item>Hepatitis A #2</item>
+*/
+        //endregion
 
         ArrayList<SimpleSectionedListAdapter.Section> sections = new ArrayList<SimpleSectionedListAdapter.Section>();
 
         Resources resources = getResources();
         vacNames = resources.getStringArray(R.array.vaccines);
         String[] headerNames = resources.getStringArray(R.array.vaccines_headers);
-        Integer[] headerPositions = {0, 1, 2, 7, 12, 17, 19, 23, 24};
+        Integer[] headerPositions = {0, 2, 8, 14, 19, 21, 25, 31};
 
-        list = (ListView)findViewById(R.id.list);
+        list = (ListView) findViewById(R.id.list);
         for (int i = 0; i < headerPositions.length; i++) {
             sections.add(new SimpleSectionedListAdapter.Section(headerPositions[i], headerNames[i]));
         }
@@ -63,23 +123,25 @@ public class VaccinesList extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View arg1, int position, long row_id) {
-                Log.d("ListView onItemClick", vacNames[position]);
+                Log.d("ListView onItemClick", vacNames[(int)row_id]);
 
                 Intent intent_to = new Intent(VaccinesList.this, VacInfo.class);
 
                 switch (vacNames[(int)row_id]) {
                     case "Hepatitis B #1":
                     case "Hepatitis B #2":
+                    case "Hepatitis B #3":
+                    case "Hepatitis B #4":
                         intent_to.putExtra("layoutID", R.layout.vac_hepatits_b);
                         break;
                     case "Rotavirus #1":
                     case "Rotavirus #2":
-                    case "Rotavirus #3":
                         intent_to.putExtra("layoutID", R.layout.vac_rotavirus);
                         break;
                     case "Diphtheria/Tetanus/Pertussis (DTaP) #1":
                     case "Diphtheria/Tetanus/Pertussis (DTaP) #2":
                     case "Diphtheria/Tetanus/Pertussis (DTaP) #3":
+                    case "Diphtheria/Tetanus/Pertussis (DTaP) #4":
                         intent_to.putExtra("layoutID", R.layout.vac_dtap);
                         break;
                     case "Haemophilus influenzae type b #1":
@@ -97,18 +159,30 @@ public class VaccinesList extends AppCompatActivity {
                     case "Polio #1":
                     case "Polio #2":
                     case "Polio #3":
+                    case "Polio #4":
+                    case "Polio #5":
                         intent_to.putExtra("layoutID", R.layout.vac_polio);
                         break;
                     case "Measles/Mumps/Rubella #1":
+                    case "Measles/Mumps/Rubella #2":
+                    case "Measles/Mumps/Rubella #3":
+
                         intent_to.putExtra("layoutID", R.layout.vac_mmr);
                         break;
-                    case "Chickenpox #1":
+                    case "Chickenpox":
                         intent_to.putExtra("layoutID", R.layout.vac_chickenpox);
                         break;
-                    case "Hepatitis A":
+                    case "Hepatitis A #1":
+                    case "Hepatitis A #2":
                         intent_to.putExtra("layoutID", R.layout.vac_hepatits_a);
                         break;
-                    case "Influenza":
+
+                    //// TODO: 12/28/2016
+                    case "BCG":
+                        intent_to.putExtra("layoutID", R.layout.vac_influenza);
+                        break;
+                    case "MCV4 #1":
+                    case "MCV4 #2":
                         intent_to.putExtra("layoutID", R.layout.vac_influenza);
                         break;
 

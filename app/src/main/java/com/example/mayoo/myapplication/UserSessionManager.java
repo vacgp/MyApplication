@@ -82,11 +82,8 @@ public class UserSessionManager {
 
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-
-        // No animation
-        i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         _context.startActivity(i);
+
         /*
         // Closing all the Activities
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

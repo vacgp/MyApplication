@@ -85,8 +85,9 @@ public class Home extends AppCompatActivity {
 
                         dialog.dismiss();
                         finish();
+                        /*finish();
                         Intent intent_to = new Intent(Home.this, MainActivity.class);
-                        startActivity(intent_to);
+                        startActivity(intent_to);*/
                     }
                 });
 

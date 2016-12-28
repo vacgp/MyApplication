@@ -17,43 +17,56 @@
     <string name="enter_child_name_hint">Enter child name</string>
     <string name="register_label">Registration</string>
     <string-array name="vaccines">
+        <item>BCG</item>
         <item>Hepatitis B #1</item>
-        <item>Hepatitis B #2</item>
-        <item>Rotavirus #1</item>
+
+        <item>Polio #1</item>
         <item>Diphtheria/Tetanus/Pertussis (DTaP) #1</item>
+        <item>Hepatitis B #2</item>
         <item>Haemophilus influenzae type b #1</item>
         <item>Pneumococcal #1</item>
-        <item>Polio #1</item>
-        <item>Rotavirus #2</item>
+        <item>Rotavirus #1</item>
+
+        <item>Polio #2</item>
         <item>Diphtheria/Tetanus/Pertussis (DTaP) #2</item>
+        <item>Hepatitis B #3</item>
         <item>Haemophilus influenzae type b #2</item>
         <item>Pneumococcal #2</item>
-        <item>Polio #2</item>
-        <item>Rotavirus #3</item>
+        <item>Rotavirus #2</item>
+
+        <item>Polio #3</item>
         <item>Diphtheria/Tetanus/Pertussis (DTaP) #3</item>
+        <item>Hepatitis B #4</item>
         <item>Haemophilus influenzae type b #3</item>
         <item>Pneumococcal #3</item>
-        <item>Influenza</item>
-        <item>Hepatitis B #3</item>
-        <item>Polio #3</item>
+
         <item>Measles/Mumps/Rubella #1</item>
-        <item>Chickenpox #1</item>
-        <item>Haemophilus influenzae type b #4</item>
+        <item>MCV4 #1</item>
+
+        <item>Polio #4</item>
+        <item>Measles/Mumps/Rubella #2</item>
         <item>Pneumococcal #4</item>
+        <item>MCV4 #2</item>
+
+        <item>Polio #5</item>
         <item>Diphtheria/Tetanus/Pertussis (DTaP) #4</item>
-        <item>Hepatitis A</item>
+        <item>Haemophilus influenzae type b #4</item>
+        <item>Measles/Mumps/Rubella #3</item>
+        <item>Hepatitis A #1</item>
+        <item>Chickenpox</item>
+
+        <item>Hepatitis A #2</item>
     </string-array>
 
     <string-array name="vaccines_headers">
         <item>At Birth</item>
-        <item>1–2 Months</item>
         <item>2 Months</item>
         <item>4 Months</item>
         <item>6 Months</item>
-        <item>6–12 Months</item>
-        <item>12–15 Months</item>
-        <item>15–18 Months</item>
-        <item>18–23 Months</item>
+        <item>9 Months</item>
+        <item>12 Months</item>
+        <item>18 Months</item>
+        <item>24 Months</item>
     </string-array>
 
 </resources>
