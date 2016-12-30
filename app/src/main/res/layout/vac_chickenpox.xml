@@ -17,7 +17,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-            android:text="CHICKENPOX (VARICELLA) VACCINE"
+            android:text="@string/chickenpox_varicella_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -27,7 +27,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The chickenpox vaccine is used to prevent chickenpox."
+android:text="@string/the_chickenpox_vaccine_is_used_to_prevent_chickenpox"
             android:textColor="@color/darkGrey"
             android:textSize="14sp" />
 
@@ -39,7 +39,7 @@ android:text="The chickenpox vaccine is used to prevent chickenpox."
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="Before the chickenpox vaccine, one or two children in the U.S. died every week from chickenpox."
+android:text="@string/before_the_chickenpox_vaccine_one_or_two_children_in_the_u_s_died_every_week_from_chickenpox"
             android:textColor="#424d52"
             android:textSize="14sp"
             android:textStyle="bold|italic" />
@@ -51,7 +51,7 @@ android:text="Before the chickenpox vaccine, one or two children in the U.S. die
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="TYPE OF VACCINE"
+            android:text="@string/type_of_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -61,7 +61,7 @@ android:text="Before the chickenpox vaccine, one or two children in the U.S. die
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The chickenpox vaccine is a live, weakened viral vaccine."
+android:text="@string/the_chickenpox_vaccine_is_a_live_weakened_viral_vaccine"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -72,7 +72,7 @@ android:text="The chickenpox vaccine is a live, weakened viral vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="VACCINE SIDE EFFECTS"
+            android:text="@string/vaccine_side_effects"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -82,9 +82,7 @@ android:text="The chickenpox vaccine is a live, weakened viral vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:text=" • Pain, redness, swelling or soreness at the injection site.\n
-• Low-grade fever.\n
-• Rash with fewer than 10 blisters around the area of the shot or on other parts of the body."
+            android:text="@string/chickenpoxinfo"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -97,7 +95,7 @@ android:text="The chickenpox vaccine is a live, weakened viral vaccine."
             android:layout_marginTop="25dp"
             android:layout_marginRight="5dp"
             android:layout_marginEnd="5dp"
-            android:text="REASONS TO GET THE CHICKENPOX VACCINE"
+            android:text="@string/reasons_to_get_the_chickenpox_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -110,11 +108,7 @@ android:text="The chickenpox vaccine is a live, weakened viral vaccine."
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
-            android:text=" • Chickenpox still exists.\n
-• Chickenpox can sometimes cause severe complications and even death.\n
-• Some people can't get the chickenpox vaccine and require protection from others.\n
-• Getting the chickenpox vaccine can offer protection from shingles as an adult.\n
-• The chickenpox vaccine is safe."
+            android:text="@string/chickenpox_still_exists_n_chickenpox_can_sometimes_cause_severe_complications_and_even_death_n_some_people_can_t_get_the_chickenpox_vaccine_and_require_protection_from_others_n_getting_the_chickenpox_vaccine_can_offer_protection_from_shingles_as_an_adult_n_the_chickenpox_vaccine_is_safe"
             android:textColor="#424d52"
             android:textSize="14sp" />
     </LinearLayout>

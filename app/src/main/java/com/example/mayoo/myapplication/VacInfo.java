@@ -1,15 +1,10 @@
 package com.example.mayoo.myapplication;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
-/**
- * Created by AbdulRahman on 12/12/2016.
- */
+
 
 public class VacInfo extends AppCompatActivity {
 
@@ -19,10 +14,5 @@ public class VacInfo extends AppCompatActivity {
 
         Intent intent_from = getIntent();
         setContentView(intent_from.getIntExtra("layoutID", 0));
-
-        /*ActionBar ab = getSupportActionBar();
-        if (ab != null) {
-            ab.setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 145, 192)));
-        }*/
     }
 }

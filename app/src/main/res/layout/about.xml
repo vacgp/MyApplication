@@ -27,7 +27,7 @@
             android:layout_marginStart="33dp"
             android:textSize="18sp"
             android:textColor="#424d52"
-            android:text="Child Vaccine helps you track your baby's vaccinations and provides you with reminders and notification for vaccination due dates . Simple and easy to use ,simply enter your baby's date of birth and the schedule is set for you!"
+            android:text="@string/aboutw"
 />
     </LinearLayout>
 
@@ -40,8 +40,8 @@
 
         <ImageView
             android:id="@+id/twitter_img"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginLeft="80dp"
             android:layout_marginStart="80dp"
             app:srcCompat="@drawable/ntwitter"
@@ -65,8 +65,8 @@
 
         <ImageView
             android:id="@+id/email_img"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginLeft="80dp"
             android:layout_marginStart="80dp"
             app:srcCompat="@drawable/nemail" />

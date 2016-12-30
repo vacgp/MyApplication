@@ -27,7 +27,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:inputType="textPersonName"
                 android:textSize="16sp"
                 android:fontFamily="sans-serif"
@@ -44,7 +44,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:textSize="16sp"
                 android:fontFamily="sans-serif"
@@ -68,7 +68,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:onClick="cancel"
-                android:text="CANCEL"
+                android:text="@string/cancel"
                 style="@style/Widget.AppCompat.Button.Borderless"/>
 
             <Button
@@ -79,7 +79,7 @@
                 android:layout_marginEnd="10dp"
 
                 android:layout_weight="1"
-                android:text="LOG-IN"
+                android:text="@string/log_in"
                 style="@style/Widget.AppCompat.Button.Borderless"/>
         </LinearLayout>
 

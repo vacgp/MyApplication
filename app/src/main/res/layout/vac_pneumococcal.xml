@@ -17,7 +17,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-            android:text="PNEUMOCOCCAL VACCINE"
+            android:text="@string/pneumococcal_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -27,7 +27,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The pneumococcal vaccine is used to prevent pneumococcus."
+android:text="@string/the_pneumococcal_vaccine_is_used_to_prevent_pneumococcus"
             android:textColor="@color/darkGrey"
             android:textSize="14sp" />
 
@@ -39,7 +39,7 @@ android:text="The pneumococcal vaccine is used to prevent pneumococcus."
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="Before the vaccine, pneumococcus caused about 700 cases of meningitis, 17,000 cases of sepsis and 71,000 cases of pneumonia each year."
+android:text="@string/before_the_vaccine_pneumococcus_caused_about_700_cases_of_meningitis_17_000_cases_of_sepsis_and_71_000_cases_of_pneumonia_each_year"
             android:textColor="#424d52"
             android:textSize="14sp"
             android:textStyle="bold|italic" />
@@ -51,7 +51,7 @@ android:text="Before the vaccine, pneumococcus caused about 700 cases of meningi
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="TYPE OF VACCINE"
+            android:text="@string/type_of_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -61,7 +61,7 @@ android:text="Before the vaccine, pneumococcus caused about 700 cases of meningi
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The pneumococcal vaccine is a conjugate vaccine."
+android:text="@string/the_pneumococcal_vaccine_is_a_conjugate_vaccine"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -72,7 +72,7 @@ android:text="The pneumococcal vaccine is a conjugate vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="VACCINE SIDE EFFECTS"
+            android:text="@string/vaccine_side_effects"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -82,11 +82,7 @@ android:text="The pneumococcal vaccine is a conjugate vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:text=" • Pain and swelling at the injection site.\n
-• Fever (greater than 100.4°F).\n
-• High fever (greater than 102°F).\n
-• Decreased appetite
-• Irritability."
+            android:text="@string/pain_and_swelling_at_the_injection_site_n_fever_greater_than_100_4_f_n_high_fever_greater_than_102_f_n_decreased_appetite_irritability"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -97,7 +93,7 @@ android:text="The pneumococcal vaccine is a conjugate vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="REASONS TO GET THE PNEUMOCOCCAL VACCINE"
+            android:text="@string/reasons_to_get_the_pneumococcal_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -110,11 +106,7 @@ android:text="The pneumococcal vaccine is a conjugate vaccine."
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
-            android:text=" • Pneumococcus causes infections every year in the U.S.\n
-• Pneumococcal infections can complicate other infections.\n
-• Some pneumococcal infections do not respond to antibiotics.\n
-• The pneumococcal vaccine works.\n
-• The pneumococcal vaccine is safe."
+            android:text="@string/pninfo"
             android:textColor="#424d52"
             android:textSize="14sp" />
     </LinearLayout>

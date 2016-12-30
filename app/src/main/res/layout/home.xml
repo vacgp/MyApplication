@@ -85,11 +85,12 @@
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/notesf"
+            app:srcCompat="@drawable/stats"
             android:id="@+id/imageButton5"
             android:layout_weight="1"
             android:layout_marginRight="8dp"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginEnd="8dp"
+            android:onClick="statistics"/>
 
         <ImageButton
             android:layout_width="match_parent"

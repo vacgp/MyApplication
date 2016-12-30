@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -103,6 +102,7 @@ public class Record extends AppCompatActivity {
         username = from_intent.getStringExtra("username");
         Helper helper_object = new Helper(Record.this);
 
+        Log.d("asssss", username);
         helper_object.open();
 
         ArrayList<Integer> childIDs = helper_object.getChildIDs(username);
@@ -115,6 +115,7 @@ public class Record extends AppCompatActivity {
                     child_1_id = childIDs.get(i);
                     ArrayList<String> child_info = childDB_object.childInfo(childIDs.get(i));
 
+                    Log.d("asssss", childIDs.get(i)+"");
                     if(Integer.parseInt(ChildRecord.childBirthCalc(child_info.get(1))[1]) >= 750){
                         deleteRecord(child_1_id, username, helper_object.getChildNumber(child_1_id+"",username), child_1_layout);
                         cancelAlarm(child_1_id, Record.this);
@@ -196,7 +197,7 @@ public class Record extends AppCompatActivity {
                         child_3_layout.setVisibility(View.VISIBLE);
 
 
-                        ImageButton new_imageButton = (ImageButton) findViewById(R.id.new_btn);
+                        LinearLayout new_imageButton = (LinearLayout) findViewById(R.id.new_btn);
                         new_imageButton.setVisibility(View.GONE);
                     }
 
@@ -231,7 +232,7 @@ public class Record extends AppCompatActivity {
         Helper helper_obj = new Helper(Record.this);
         helper_obj.open();
         Log.d("kdd", childNumber + ", " + username);
-        helper_obj.updateChild("-", childNumber, username);
+        helper_obj.shiftingChildIDs(username, childID);
         helper_obj.close();
         layout.setVisibility(View.GONE);
     }

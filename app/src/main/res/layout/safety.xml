@@ -13,7 +13,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:text="ALLERGIES AND ASTHMA"
+                android:text="@string/allergies_and_asthma"
                 android:textSize="18sp"
                 android:textColor="#99cc00"
                 android:layout_width="match_parent"
@@ -32,9 +32,9 @@
                 android:layout_marginEnd="10dp"
                 android:textSize="15sp"
                 android:textColor="#424d52"
-                android:text="Because vaccines do not prevent most childhood infections, they are not likely to alter the balance of cells that mediate allergic responses. In fact, several large, well-controlled studies have shown that children who receive vaccines are not at greater risk of having allergies or asthma."/>
+                android:text="@string/safety1"/>
             <TextView
-                android:text="SICK CHILDREN"
+                android:text="@string/sick_children"
                 android:textSize="18sp"
                 android:textColor="#99cc00"
                 android:layout_width="match_parent"
@@ -53,11 +53,9 @@
                 android:layout_marginEnd="10dp"
                 android:textSize="15sp"
                 android:textColor="#424d52"
-                android:text="Children with mild illnesses, such as fever, diarrhea, ear infections or upper respiratory infections, are typically able to receive vaccines. Studies have shown that children with mild illnesses are not at greater risk of experiencing side effects than healthy children who get vaccinated and the level of protection provided by the immunization is equivalent.
-
-In contrast, children with severe illnesses should not be vaccinated to avoid questions related to the cause of any symptoms that might occur."/>
+                android:text="@string/safety2"/>
             <TextView
-                android:text="AUTISM"
+                android:text="@string/autism"
                 android:textSize="18sp"
                 android:textColor="#99cc00"
                 android:layout_width="match_parent"
@@ -76,14 +74,9 @@ In contrast, children with severe illnesses should not be vaccinated to avoid qu
                 android:layout_marginEnd="10dp"
                 android:textSize="15sp"
                 android:textColor="#424d52"
-                android:text="The MMR vaccine, thimerosal in vaccines and receiving too many vaccines at one time have all been accused of causing autism. However, numerous large, well-controlled scientific studies have shown:
-
-Children who receive the MMR vaccine are not at increased risk of autism.
-The chance of getting autism is the same in children who received vaccines containing thimerosal and children who received vaccines without thimerosal.
-An alternative vaccination schedule does not reduce the risk of autism.
-These studies have proven that autism is not caused by the MMR vaccine, thimerosal in vaccines, or receiving too many vaccines at one time."/>
+                android:text="@string/safety3"/>
             <TextView
-                android:text="CHRONIC DISEASES"
+                android:text="@string/chronic_diseases"
                 android:textSize="18sp"
                 android:textColor="#99cc00"
                 android:layout_width="match_parent"
@@ -103,7 +96,7 @@ These studies have proven that autism is not caused by the MMR vaccine, thimeros
                 android:layout_marginBottom="20dp"
                 android:textSize="15sp"
                 android:textColor="#424d52"
-                android:text="Some have suggested that vaccines cause chronic diseases, such as diabetes, multiple sclerosis or arthritis. However, vaccines do not induce an immune response vigorous enough to cause autoimmunity; studies have shown no link between vaccines and diabetes, multiple sclerosis, arthritis, or other autoimmune diseases."/>
+                android:text="@string/safety4"/>
         </LinearLayout>
 
 

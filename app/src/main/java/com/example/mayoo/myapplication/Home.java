@@ -68,7 +68,7 @@ public class Home extends AppCompatActivity {
                 Log.d("dfddfdf", getApplicationContext()+"");
                 final Dialog dialog = new Dialog(Home.this);
                 dialog.getWindow();
-                dialog.setContentView(R.layout.delete_record);
+                dialog.setContentView(R.layout.logout);
                 dialog.show();
 
 
@@ -124,7 +124,7 @@ public class Home extends AppCompatActivity {
         notificationIntent.addCategory("android.intent.category.VAC");
 
         PendingIntent sender = PendingIntent.getBroadcast(context, childID, notificationIntent,  PendingIntent.FLAG_CANCEL_CURRENT);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
 
         alarmManager.cancel(sender);
         sender.cancel();
@@ -159,6 +159,11 @@ public class Home extends AppCompatActivity {
 
     public void vaccines(View view) {
         Intent intent_to = new Intent(Home.this, VaccinesList.class);
+        startActivity(intent_to);
+    }
+
+    public void statistics(View view) {
+        Intent intent_to = new Intent(Home.this, Statistics.class);
         startActivity(intent_to);
     }
 }

@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter username:"
+            android:text="@string/enter_username"
             android:textColor="@color/darkGrey"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
@@ -42,14 +42,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="8dp"
                 android:textColor="@color/purple"
                 android:visibility="gone"/>
         </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter password:"
+            android:text="@string/enter_password"
             android:textColor="@color/darkGrey"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
@@ -74,10 +74,10 @@
             android:id="@+id/password_validation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password must be 6 digits or more"
+            android:text="@string/password_must_be_6_digits_or_more"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="8dp"
             android:textColor="@color/purple"
             android:visibility="gone"/>
         </LinearLayout>
@@ -85,7 +85,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Confirm password:"
+            android:text="@string/confirm_password"
             android:textColor="@color/darkGrey"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
@@ -112,7 +112,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/purple"
-                android:text="Passwords don't match"
+                android:text="@string/passwords_don_t_match"
                 android:visibility="gone"/>
         </LinearLayout>
 
@@ -124,7 +124,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="55dp"
             android:onClick="register"
-            android:text="REGISTER"
+            android:text="@string/register"
             android:textAlignment="center"
             android:textColor="#fff" />
     </LinearLayout>

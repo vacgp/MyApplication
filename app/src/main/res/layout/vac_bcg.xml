@@ -17,7 +17,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-            android:text="INFLUENZA VACCINE"
+            android:text="@string/bcg_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -27,7 +27,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The influenza vaccine is used to prevent influenza."
+            android:text="@string/bcg_vaccine_is_a_vaccine_primarily_used_against_tuberculosis"
             android:textColor="@color/darkGrey"
             android:textSize="14sp" />
 
@@ -39,7 +39,7 @@ android:text="The influenza vaccine is used to prevent influenza."
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:text="Circulating strains of influenza virus may change each year, leading to almost annual changes to the influenza vaccine."
+android:text="@string/among_children_it_prevents_about_20_from_getting_infected_and_among_those_who_do_get_infected_it_protects_half_from_developing_disease"
             android:textColor="#424d52"
             android:textSize="14sp"
             android:textStyle="bold|italic" />
@@ -51,7 +51,7 @@ android:text="The influenza vaccine is used to prevent influenza."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="TYPE OF VACCINE"
+            android:text="@string/type_of_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -61,7 +61,7 @@ android:text="The influenza vaccine is used to prevent influenza."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:text="The influenza vaccine given as a shot is a killed viral vaccine. A newer version of influenza vaccine, also given as a shot, is made using recombinant DNA technology."
+android:text="@string/the_bcg_vaccine_is_made_from_a_weakened_strain_of_tb_bacteria"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -72,7 +72,7 @@ android:text="The influenza vaccine is used to prevent influenza."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="VACCINE SIDE EFFECTS"
+            android:text="@string/vaccine_side_effects"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -82,10 +82,7 @@ android:text="The influenza vaccine is used to prevent influenza."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:text=" • Redness, soreness or hardening at the injection site.\n
-• Muscle aches.\n
-• Headache.\n
-• Low-grade fever."
+android:text="@string/injection_scar_n_allergy_to_the_bcg_vaccine"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -96,7 +93,7 @@ android:text="The influenza vaccine is used to prevent influenza."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="REASONS TO GET THE INFLUENZA VACCINE"
+android:text="@string/reasons_to_get_the_bcg_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -109,12 +106,7 @@ android:text="The influenza vaccine is used to prevent influenza."
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
-            android:text=" • Influenza is a common infection.
-• Children can easily spread influenza.
-• Influenza viruses often change each year, so getting the vaccine one year doesn'€™t mean you'€™ll be protected the next year.
-• A syndrome known as post-polio syndrome can occur later in life in people previously infected with polio.
-• Influenza can lead to other infections like pneumonia.
-• The influenza vaccine is safe."
+android:text="@string/bcginfo"
             android:textColor="#424d52"
             android:textSize="14sp" />
     </LinearLayout>

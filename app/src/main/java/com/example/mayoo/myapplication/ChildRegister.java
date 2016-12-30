@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -70,8 +71,14 @@ public class ChildRegister extends AppCompatActivity {
 
         Intent editIntent_from = getIntent();
 
+        ActionBar actionBar = getSupportActionBar();
+
+
         if (editIntent_from.getIntExtra("Edit", 0) == 1) {
 
+            if (actionBar != null){
+                actionBar.setTitle(R.string.edit_record);
+            }
             Intent intent_from = getIntent();
 
             childID_edit = intent_from.getIntExtra("childID", 0);
@@ -120,6 +127,10 @@ public class ChildRegister extends AppCompatActivity {
             InputStream inputStream = new ByteArrayInputStream(imageByte_toDB);
             imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
             record_child_img.setImageBitmap(imageBitmap_fromByte);
+        } else {
+            if (actionBar != null){
+                actionBar.setTitle(R.string.new_record_label);
+            }
         }
 
 
@@ -255,43 +266,50 @@ public class ChildRegister extends AppCompatActivity {
         String birth_str = birth_editText.getText().toString();
 
         RadioGroup gender_radioGroup = (RadioGroup) findViewById(R.id.gender_radio_group);
+        int checked = gender_radioGroup.getCheckedRadioButtonId();
+        Log.d("sdssdsds", checked+"");
         RadioButton gender_radioBtn = (RadioButton) findViewById(gender_radioGroup.getCheckedRadioButtonId());
         String gender_srt;
-        if (gender_radioBtn.getText().toString().equals("Female")) {
-            gender_srt = "Female";
-        } else {
-            gender_srt = "Male";
+
+
+        if(!child_name_str.isEmpty() || !birth_str.isEmpty() || checked != -1 ){
+
+            if (gender_radioBtn.getText().toString().equals("Female")) {
+                gender_srt = "Female";
+            } else {
+                gender_srt = "Male";
+            }
+            Intent from_intent = getIntent();
+            String username = from_intent.getStringExtra("username");
+            int counter = from_intent.getIntExtra("child#", 0);
+
+            if (!img_added) {
+                Bitmap defaultImage_bitMap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.kiddo);
+                ImageHelper imageHelper_object = new ImageHelper();
+                imageByte_toDB = imageHelper_object.getBytes(defaultImage_bitMap);
+            }
+
+            Intent intent_to = new Intent(ChildRegister.this, ChildRecord.class);
+
+
+            Intent editIntent_from = getIntent();
+
+            if (editIntent_from.getIntExtra("Edit", 0) == 1) {
+                editChild(child_name_str, birth_str, gender_srt);
+                intent_to.putExtra("childID", childID_edit);
+
+            } else {
+                newChild(username, child_name_str, birth_str, gender_srt, counter);
+                intent_to.putExtra("childID", childID_new);
+            }
+
+
+            intent_to.putExtra("username", username);
+            intent_to.putExtra("child#", ++counter);
+            finish();
+            startActivity(intent_to);
         }
 
-        Intent from_intent = getIntent();
-        String username = from_intent.getStringExtra("username");
-        int counter = from_intent.getIntExtra("child#", 0);
-
-        if (!img_added) {
-            Bitmap defaultImage_bitMap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.kiddo);
-            ImageHelper imageHelper_object = new ImageHelper();
-            imageByte_toDB = imageHelper_object.getBytes(defaultImage_bitMap);
-        }
-
-        Intent intent_to = new Intent(ChildRegister.this, ChildRecord.class);
-
-
-        Intent editIntent_from = getIntent();
-
-        if (editIntent_from.getIntExtra("Edit", 0) == 1) {
-            editChild(child_name_str, birth_str, gender_srt);
-            intent_to.putExtra("childID", childID_edit);
-
-        } else {
-            newChild(username, child_name_str, birth_str, gender_srt, counter);
-            intent_to.putExtra("childID", childID_new);
-        }
-
-
-        intent_to.putExtra("username", username);
-        intent_to.putExtra("child#", ++counter);
-        finish();
-        startActivity(intent_to);
 
     }
 

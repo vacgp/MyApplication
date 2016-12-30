@@ -17,7 +17,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-            android:text="MMR VACCINE"
+            android:text="@string/mmr_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -27,7 +27,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The MMR vaccine is only available in the U.S. as a combination vaccine and is used to prevent measles, mumps and rubella."
+android:text="@string/the_mmr_vaccine_is_only_available_in_the_u_s_as_a_combination_vaccine_and_is_used_to_prevent_measles_mumps_and_rubella"
             android:textColor="@color/darkGrey"
             android:textSize="14sp" />
 
@@ -39,7 +39,7 @@ android:text="The MMR vaccine is only available in the U.S. as a combination vac
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="Before the vaccines, measles, mumps and rubella were very damaging to pregnant women."
+android:text="@string/before_the_vaccines_measles_mumps_and_rubella_were_very_damaging_to_pregnant_women"
             android:textColor="#424d52"
             android:textSize="14sp"
             android:textStyle="bold|italic" />
@@ -51,7 +51,7 @@ android:text="Before the vaccines, measles, mumps and rubella were very damaging
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="TYPE OF VACCINE"
+            android:text="@string/type_of_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -61,7 +61,7 @@ android:text="Before the vaccines, measles, mumps and rubella were very damaging
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The MMR vaccine is a live, “weakened” viral vaccine."
+android:text="@string/the_mmr_vaccine_is_a_live_weakened_viral_vaccine"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -72,7 +72,7 @@ android:text="The MMR vaccine is a live, “weakened” viral vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="VACCINE SIDE EFFECTS"
+            android:text="@string/vaccine_side_effects"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -82,10 +82,7 @@ android:text="The MMR vaccine is a live, “weakened” viral vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:text=" • Low-grade fever.\n
-• Non-contagious measles-like rash.\n
-• Fever above 103°F.\n
-• Short-lived arthritis or joint inflammation."
+            android:text="@string/low_grade_fever_n_non_contagious_measles_like_rash_n_fever_above_103_f_n_short_lived_arthritis_or_joint_inflammation"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -96,7 +93,7 @@ android:text="The MMR vaccine is a live, “weakened” viral vaccine."
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="REASONS TO GET THE MMR VACCINE"
+            android:text="@string/reasons_to_get_the_mmr_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -109,11 +106,7 @@ android:text="The MMR vaccine is a live, “weakened” viral vaccine."
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
-            android:text=" • Measles and mumps still occur in the United States.
-• Mumps can cause deafness and in rare cases, sterility in males.
-• Complications caused by measles include subacute sclerosing panencephalitis (SSPE), a rare, progressive fatal neurological disorder.
-• Measles, mumps and rubella can be harmful to a developing fetus if pregnant women are infected.
-• The MMR vaccine is safe."
+            android:text="@string/mmrinfo"
             android:textColor="#424d52"
             android:textSize="14sp" />
     </LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginStart="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/world_immunization_coverage"
+            android:textColor="@color/darkGrey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            android:src="@drawable/statsch"/>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/causes_of_child_deaths_in_low_income_countries"
+        android:textColor="@color/darkGrey"
+            android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:src="@drawable/causes_under_5_child_deaths"/>
+
+
+
+</LinearLayout>
+    </ScrollView>

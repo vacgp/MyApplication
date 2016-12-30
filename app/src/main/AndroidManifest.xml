@@ -26,28 +26,35 @@
             android:label="@string/register_label" />
         <activity
             android:name=".Home"
-            android:label="Home" />
+            android:label="@string/home_label" />
         <activity
             android:name=".Record"
-            android:label="Records" />
+            android:label="@string/records_label" />
+
         <activity
             android:name=".ChildRegister"
-            android:label="New Record">
+            android:label="@string/new_record_label">
         </activity>
 
         <activity android:name=".ChildRecord"
-            android:label="Child Record"
+            android:label="@string/child_record_label"
             >
         </activity>
 
         <activity android:name=".Safety"
-            android:label="Safety" />
+            android:label="@string/safety_label" />
+
         <activity android:name=".About"
-            android:label="About Us" />
+            android:label="@string/about_label" />
+
         <activity android:name=".VaccinesList"
-            android:label="Vaccines" />
+            android:label="@string/vaccines_label" />
+
         <activity android:name=".VacInfo"
-            android:label="Vaccine Information" />
+            android:label="@string/vac_info_label" />
+
+        <activity android:name=".Statistics"
+            android:label="@string/stat_label"/>
 
         <receiver android:name=".AlarmReceiver">
             <intent-filter>
@@ -55,7 +62,6 @@
                 <category android:name="android.intent.category.VAC" />
             </intent-filter>
         </receiver>
-        <activity android:name=".WebViewTest" />
 
     </application>
 

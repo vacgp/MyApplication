@@ -11,12 +11,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 class Helper {
@@ -108,6 +104,7 @@ class Helper {
         db.update(tableName, updatedValues, where, new String[]{userName});
     }
 
+
     public int getChildNumber(String childID, String userName) {
         Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE USERNAME='" + userName + "' ", null);
         if (cursor.getCount() < 1) // UserName Not Exist
@@ -124,18 +121,18 @@ class Helper {
 
         if (childID1.equals(childID)) {
             cursor.close();
-            Log.d("getChildNumber", 1+"");
+            Log.d("getChildNumber", 1 + "");
             return 1;
         } else if (childID2.equals(childID)) {
             cursor.close();
-            Log.d("getChildNumber", 2+"");
+            Log.d("getChildNumber", 2 + "");
             return 2;
         } else if (childID3.equals(childID)) {
             cursor.close();
-            Log.d("getChildNumber", 3+"");
+            Log.d("getChildNumber", 3 + "");
             return 3;
         } else {
-            Log.d("getChildNumber", 0+"");
+            Log.d("getChildNumber", 0 + "");
 
             return 0;
         }
@@ -187,5 +184,57 @@ class Helper {
 
     }
 
+    void shiftingChildIDs(String userName, int childID) {
+        //Cursor cursor = db.query("LOGIN", null, where, new String[]{userName}, null, null, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + tableName + " WHERE USERNAME='" + userName + "' ", null);
+        if (cursor.getCount() < 1) // UserName Not Exist
+        {
+            Log.d("getChildIDs", "jfgdx");
+            cursor.close();
+        }
+        cursor.moveToFirst();
+        Log.d("getChildIDs", userName);
+        String childID1 = cursor.getString(cursor.getColumnIndex("CHILD_1"));
+        String childID2 = cursor.getString(cursor.getColumnIndex("CHILD_2"));
+        String childID3 = cursor.getString(cursor.getColumnIndex("CHILD_3"));
+
+        if (childID1.equals(childID + "")) {
+
+            ContentValues updatedValues = new ContentValues();
+
+            updatedValues.put("CHILD_1", childID2);
+            updatedValues.put("CHILD_2", childID3);
+            updatedValues.put("CHILD_3", "-");
+
+            String where = "USERNAME = ?";
+
+            db.update(tableName, updatedValues, where, new String[]{userName});
+
+
+            cursor.close();
+        } else if (childID2.equals(childID + "")) {
+            ContentValues updatedValues = new ContentValues();
+
+            updatedValues.put("CHILD_2", childID3);
+            updatedValues.put("CHILD_3", "-");
+
+            String where = "USERNAME = ?";
+
+            db.update(tableName, updatedValues, where, new String[]{userName});
+
+            cursor.close();
+        }else if (childID3.equals(childID + "")) {
+            ContentValues updatedValues = new ContentValues();
+
+            updatedValues.put("CHILD_3", "-");
+
+            String where = "USERNAME = ?";
+
+            db.update(tableName, updatedValues, where, new String[]{userName});
+
+            cursor.close();
+        }
+
+    }
 
 }

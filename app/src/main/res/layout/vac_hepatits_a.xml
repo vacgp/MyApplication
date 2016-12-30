@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="HEPATITIS A VACCINE"
+        android:text="@string/hepatitis_a_vaccine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -21,7 +21,7 @@
         android:layout_marginStart="8dp"
         android:textSize="14sp"
         android:textColor="@color/darkGrey"
-        android:text="The hepatitis A vaccine is used to prevent hepatitis A."/>
+        android:text="@string/the_hepatitis_a_vaccine_is_used_to_prevent_hepatitis_a"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,11 +30,11 @@
         android:layout_marginStart="8dp"
         android:textSize="14sp"
         android:textColor="#424d52"
-        android:text="Before the vaccine, every year about 70 people died from hepatitis A infections."
+        android:text="@string/before_the_vaccine_every_year_about_70_people_died_from_hepatitis_a_infections"
         android:textStyle="bold|italic"
         />
     <TextView
-        android:text="TYPE OF VACCINE"
+        android:text="@string/type_of_vaccine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -51,9 +51,9 @@
         android:layout_marginStart="8dp"
         android:textSize="14sp"
         android:textColor="#424d52"
-        android:text="The hepatitis A vaccine is a killed viral vaccine."/>
+        android:text="@string/the_hepatitis_a_vaccine_is_a_killed_viral_vaccine"/>
     <TextView
-        android:text="VACCINE SIDE EFFECTS"
+        android:text="@string/vaccine_side_effects"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -70,13 +70,9 @@
         android:layout_marginStart="8dp"
         android:textSize="14sp"
         android:textColor="#424d52"
-        android:text=" • Pain, redness and tenderness at the injection site.\n
-• Headache.\n
-• Mild fever.\n
-• Feeling out of sorts.\n
-• Fatigue."/>
+        android:text="@string/pain_redness_and_tenderness_at_the_injection_site_n_headache_n_mild_fever_n_feeling_out_of_sorts_n_fatigue"/>
     <TextView
-        android:text="REASONS TO GET THE HEPATITIS A VACCINE"
+        android:text="@string/reasons_to_get_the_hepatitis_a_vaccine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -93,10 +89,6 @@
         android:layout_marginStart="8dp"
         android:textSize="14sp"
         android:textColor="#424d52"
-        android:text=" • It's hard to know who's contagious.\n
-• Eating at a restaurant can lead to hepatitis A infection.\n
-• Hepatitis A infections can be long-lasting.\n
-• Hepatitis A infections can cause death.\n
-• The hepatitis A vaccine is safe."/>
+        android:text="@string/it_s_hard_to_know_who_s_contagious_n_eating_at_a_restaurant_can_lead_to_hepatitis_a_infection_n_hepatitis_a_infections_can_be_long_lasting_n_hepatitis_a_infections_can_cause_death_n_the_hepatitis_a_vaccine_is_safe"/>
 
 </LinearLayout>

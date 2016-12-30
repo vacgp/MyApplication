@@ -19,7 +19,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="Child Image:"
+            android:text="@string/child_image"
             android:textColor="@color/darkGrey"
             android:textSize="16sp" />
 
@@ -127,10 +127,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:text="Female"
+                android:text="@string/female"
                 android:textColor="@color/darkGrey"
                 android:textSize="15sp"
-                android:buttonTint="@color/darkGrey"
                 />
 
             <RadioButton
@@ -140,9 +139,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginStart="10dp"
                 android:fontFamily="sans-serif"
-                android:text="Male"
+                android:text="@string/male"
                 android:textColor="@color/darkGrey"
-                android:buttonTint="@color/darkGrey"
                 android:textSize="15sp" />
         </RadioGroup>
     </LinearLayout>
@@ -159,7 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CANCEL"
+            android:text="@string/cancel"
             android:textColor="@color/purple"
             style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:onClick="cancel"/>
@@ -172,7 +170,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="Done"
-            android:text="DONE" />
+            android:text="@string/done" />
     </LinearLayout>
 
 

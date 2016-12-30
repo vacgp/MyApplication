@@ -1,0 +1,243 @@
+<resources>
+    <string name="app_name">تطعيمة الطفل</string>
+    <string name="gender">الجنس:</string>
+    <string name="birthdate">تاريخ الميلاد:</string>
+    <string name="child_name">اسم الطفل:</string>
+    <string name="register_label">التسجيل</string>
+    <string name="enter_username">ادخل اسم المستخدم:</string>
+    <string name="enter_password">ادخل كلمة المرور:</string>
+    <string name="confirm_password">تأكيد كلمة المرور:</string>
+    <string name="password_must_be_6_digits_or_more">كلمة المرور يجب أن تتكون من 6 خانات أو أكثر</string>
+    <string name="passwords_don_t_match">كلمات المرور لا تتطابق</string>
+    <string name="register">تسجيل</string>
+    <string name="log_in">تسجيل دخول</string>
+    <string name="health_is_wealth_let_us_help_protect_your_children">صحة أطفالك هي الأهم. دعنا نتعاون لتحقيق ذلك.</string>
+    <string name="childvaccine">تطعيمة الطفل</string>
+    <string name="child_image">صورة الطفل:</string>
+    <string name="female">أنثى</string>
+    <string name="male">ذكر</string>
+    <string name="cancel">إلغاء</string>
+    <string name="done">تم</string>
+    <string name="vaccines_left">تطعيمات متبقية</string>
+    <string name="expired_vaccines">تطعيمات منتهية</string>
+    <string name="pinned_vaccines">تطعيمات معلقة</string>
+    <string name="are_you_sure_you_want_to_delete_this_record">هل أنت متأكد من رغبتك بحذف هذا السجل؟</string>
+    <string name="no">لا</string>
+    <string name="yes">نعم</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="password">كلمة المرور</string>
+    <string name="are_you_sure_you_want_to_log_out">هل أنت متأكد من رغبتك بتسجيل الخروج؟</string>
+    <string name="add_a_new_record">أضف سجل جديد</string>
+    <string name="world_immunization_coverage">نسبة تغطية التطعيمات بالعالم:</string>
+    <string name="causes_of_child_deaths_in_low_income_countries">أسباب وفاة الأطفال في الدول ذات الدخل المحدود:</string>
+    <string name="aboutw">تطعيمة الطفل هو تطبيق يساعدك على تعقب تطعيمات طفلك مع تزويدك بمعلومات مفصلة للتطعيمات، وموضوعات السلامة وإحصاءات التحصين. تطعيمة الطفل ينبهك بتذكير للقاحات اللازمة لطفلك في كل مرة يبلغ الطفل السن المطلوب. يمكنك أيضا اسشارة أطباء مختصين إذا رغبت في ذلك. تطعيمة الطفل يتوفر باللغتين الإنجليزية والعربية.</string>
+    <string name="Click_to_see_vaccines">اضغط هنا لرؤية التطعيمات المتطلبة لطفلك.</string>
+    <string name="edit_record">تعديل السجل</string>
+
+    <string name="bcg_vac">الدرن</string>
+    <string name="hep_b_1">الالتهاب الكبدي ب #1</string>
+    <string name="hep_b_2">الالتهاب الكبدي ب #2</string>
+    <string name="rotavirus_1">فيروس الروتا #1</string>
+    <string name="dtap_1">الثلاثي البكتيري</string>
+    <string name="hib_1">المستدمية النزلية</string>
+    <string name="pneumococcal_1">المكورات الرئوية</string>
+    <string name="polio_1">شلل الأطفال</string>
+    <string name="hep_b_3">الالتهاب الكبدي ب #3</string>
+    <string name="rotavirus_2">فيروس الروتا</string>
+    <string name="dtap_2">الثلاثي البكتيري</string>
+    <string name="hib_2">المستدمية النزلية</string>
+    <string name="Pneumococcal_2">المكورات الرئوية</string>
+    <string name="Polio_2">شلل الأطفال</string>
+    <string name="hep_b_4">الالتهاب الكبدي ب #4</string>
+    <string name="polio_3">شلل الأطفال</string>
+    <string name="dtap_3">الثلاثي البكتيري</string>
+    <string name="hib_3">المستدمية النزلية</string>
+    <string name="Pneumococcal_3">المكورات الرئوية</string>
+    <string name="mmr_1">الثلاثي الفيروسي</string>
+    <string name="MCV4_1">الحمى الشوكية</string>
+    <string name="Pneumococcal_4">المكورات الرئوية</string>
+    <string name="MCV4_2">الحمى الشوكية</string>
+    <string name="mmr_2">الثلاثي الفيروسي</string>
+    <string name="polio_4">شلل الأطفال</string>
+    <string name="polio_5">شلل الأطفال</string>
+    <string name="mmr_3">الثلاثي الفيروسي</string>
+    <string name="dtap_4">الثلاثي البكتيري</string>
+    <string name="Chickenpox">الجدري</string>
+    <string name="hib_4">المستدمية النزلية</string>
+    <string name="hep_a_1">الالتهاب الكبدي أ</string>
+    <string name="hep_a_2">الالتهاب الكبدي أ</string>
+
+    <string name="born_today">ولد اليوم</string>
+    <string name="month">شهر</string>
+    <string name="month_">شهر،</string>
+    <string name="day"> يوم</string>
+    <string name="days"> يوم</string>
+    <string name="months"> أشهر</string>
+    <string name="months_"> أشهر،</string>
+
+    <string name="allergies_and_asthma">الحساسية والربو</string>
+    <string name="safety1">لأن اللقاحات لا تمنع معظم حالات العدوى في مرحلة الطفولة، فهي ليست عرضة للتغيير توازن الخلايا التي تتوسط استجابات حساسية. في الواقع، أظهرت عدة دراسات كبيرة مدروسة بشكل جيد أن الأطفال الذين يتلقون اللقاحات ليسوا في خطر أكبر من وجود الحساسية أو الربو.</string>
+    <string name="sick_children">الأطفال المرضى</string>
+    <string name="safety2">الأطفال الذين يعانون من أمراض خفيفة، مثل الحمى والإسهال والتهابات الأذن أو التهابات الجهاز التنفسي العلوي يكونون عادة قادرين على الحصول على اللقاحات. وقد أظهرت الدراسات أن الأطفال الذين يعانون من أمراض خفيفة ليسوا في خطر أكبر للتعرض للآثار الجانبية من الأطفال الأصحاء الذين يأخذون اللقاحات ومستوى الحماية التي يوفرها التحصين متعادل. في المقابل، لا ينبغي تطعيم الأطفال الذين يعانون من أمراض خطيرة لتجنب الأسئلة المتعلقة بالأعراض التي قد تحدث.</string>
+    <string name="autism">مرض التوحد</string>
+    <string name="safety3">لقد اتهم لقاح الثلاثي الفيروسي، ثيمروسل في اللقاحات وأخذ الكثير من اللقاحات في وقت واحد بالتسبب في مرض التوحد. ومع ذلك، فقد أظهرت العديد من الدراسات العلمية الكبيرة المدروسة جيدا أن الأطفال الذين يحصلون على لقاح الثلاثي الفيروسي ليسوا  في خطر متزايد بالإصابة بمرض التوحد. فرصة الإصابة بمرض التوحد  في الأطفال الذين تلقوا اللقاحات التي تحتوي على ثيميروسال هي نفسها في الأطفال الذين تلقوا لقاحات بدونه. صنع جدول تطعيم بديل لن يقلل من خطر الإصابة بمرض التوحد. وقد أثبتت هذه الدراسات أن التوحد لا ينتج عن لقاح الثلاثي الفيروسي والثيمروسل في اللقاحات أو تلقي العديد من اللقاحات في وقت واحد.</string>
+    <string name="chronic_diseases">الأمراض المزمنة</string>
+    <string name="safety4">وقد أشار البعض إلى أن اللقاحات تسبب الأمراض المزمنة، مثل السكري والتصلب المتعدد أو التهاب المفاصل. مع ذلك، اللقاحات لا تحفز استجابة مناعية قوية بما يكفي لتسبب مناعة ذاتية. وقد أظهرت الدراسات عدم وجود صلة بين اللقاحات ومرض السكري، والتصلب المتعدد، والتهاب المفاصل، أو أمراض المناعة الذاتية الأخرى.</string>
+
+
+    <string name="chickenpox_varicella_vaccine">تطعيمة الجدري</string>
+    <string name="the_chickenpox_vaccine_is_used_to_prevent_chickenpox">تطعيمة الجدري تقي من مرض الجدري.</string>
+    <string name="before_the_chickenpox_vaccine_one_or_two_children_in_the_u_s_died_every_week_from_chickenpox">قبل وجود تطعيمة الجدري طفل أو طفلان يموتان يوميًا في الولايات المتحدة.</string>
+    <string name="type_of_vaccine">نوع التطعيمة</string>
+    <string name="the_chickenpox_vaccine_is_a_live_weakened_viral_vaccine">تطعيمة الجدري من النوع الموهن الفيروسي.</string>
+    <string name="vaccine_side_effects">الأعراض الجانبية للتطعيمة</string>
+    <string name="chickenpoxinfo">ألم، احمرار، تورم أو وجع عند منطقة الحقنة, حمى منخفضة, طفح جلدي حول منطقة الحقنة أو بأجزاء أخرى من الجسم.</string>
+    <string name="reasons_to_get_the_chickenpox_vaccine">الأسباب الدافعة لأخذ تطعيمة الجدري</string>
+    <string name="chickenpox_still_exists_n_chickenpox_can_sometimes_cause_severe_complications_and_even_death_n_some_people_can_t_get_the_chickenpox_vaccine_and_require_protection_from_others_n_getting_the_chickenpox_vaccine_can_offer_protection_from_shingles_as_an_adult_n_the_chickenpox_vaccine_is_safe">مرض الجدري لا يزال موجودا. مرض الجدري يمكن أن يسبب أحيانا مضاعفات خطيرة إلى حد الوفاة. بعض الأشخاص لا يستطيعون الحصول على تطعيمة الجدري، فلذلك تتطلب الحماية من الآخرين. الحصول على تطعيمة الجدري يمكن أن يوفر الحماية من القوباء المنطقية كشخص بالغ. تطعيمة الجدري آمنة.</string>
+
+    <string name="diphtheria_tetanus_and_pertussis_vaccines">تطعيمة الثلاثي البكتيري</string>
+    <string name="the_diphtheria_tetanus_and_pertussis_vaccines_are_used_to_prevent_these_diseases_and_are_typically_given_in_the_u_s_in_combined_formulations">.تطعيمة الثلاثي البكتيري تقي من الأمراض الثلاثة البكتيرية: الدفتيريا، والتيتانوس، والسعال الديكي</string>
+    <string name="before_these_vaccines_about_1_800_people_died_from_diphtheria_about_500_died_from_tetanus_and_about_8_000_died_from_pertussis_every_year">قبل تواجد التطعيمة قرابة ألف وثمان مئة شخص توفوا بسبب الدفتيريا, خمس مئة بسبب التيتانوس و ثمان مئة بسبب السعال الديكي سنويًا.</string>
+    <string name="the_diphtheria_tetanus_and_pertussis_vaccines_are_all_inactivated_toxoid_vaccines">تطعيمة الثلاثي البكتيري من النوع الخامل.</string>
+    <string name="pain_redness_or_swelling_at_the_injection_site_n_low_grade_fever_n_drowsiness_or_crankiness">الألم، واحمرار أو تورم في مكان الحقن. حمى منخفضة. النعاس أو النزعة الغريبة.</string>
+    <string name="reasons_to_get_the_diphtheria_tetanus_pertussis_vaccines">الأسباب الدافعة لأخذ تطعيمة الثلاثي البكتيري</string>
+    <string name="chickenpoxinfo2">المرض الذي يسببه الدفتيريا يمكنه العودة. لا تنتقل الكزاز من شخص إلى شخص، بل تنتقل من التربة، لذلك حتى لو تم تحصين كل من حولك، فرصتك في الحصول على الكزاز لا تقل. السعال الديكي شائع جدا، وغالبا ما يشخص بشكل خاطئ. تطعيمة السعال الديكي تحمي الأطفال الذين هم أصغر من أن يتم تحصينهم ولمن يكون هذا المرض قاتل لهم. تطعيمة الثلاثي البكتيري آمنة.</string>
+
+    <string name="hepatitis_a_vaccine"> تطعيمة الإلتهاب الكبدي أ</string>
+    <string name="the_hepatitis_a_vaccine_is_used_to_prevent_hepatitis_a">تطعيمة الإلتهاب الكبدي أ تقي من مرض الإلتهاب الكبدي أ.</string>
+    <string name="before_the_vaccine_every_year_about_70_people_died_from_hepatitis_a_infections">قبل وجود التطعيمة قرابة سبعين شخصا توفوا سنويًا بسبب عدوى الإلتهاب الكبدي أ.</string>
+    <string name="the_hepatitis_a_vaccine_is_a_killed_viral_vaccine">تطعيمة الإلتهاب الكبدي أ من النوع الخامل الفيروسي.</string>
+    <string name="pain_redness_and_tenderness_at_the_injection_site_n_headache_n_mild_fever_n_feeling_out_of_sorts_n_fatigue">احمرار وألم في موقع الحقن. صداع الراس. حمى خفيفة. شعور من نوع ما. التعب.</string>
+    <string name="reasons_to_get_the_hepatitis_a_vaccine">الأسباب الدافعة لأخذ تطعيمة الإلتهاب الكبدي أ</string>
+    <string name="it_s_hard_to_know_who_s_contagious_n_eating_at_a_restaurant_can_lead_to_hepatitis_a_infection_n_hepatitis_a_infections_can_be_long_lasting_n_hepatitis_a_infections_can_cause_death_n_the_hepatitis_a_vaccine_is_safe">من الصعب أن تعرف من المصاب بعدوى هذا المرض. تناول الطعام في مطعم يمكن أن يؤدي إلى عدوى الإلتهاب الكبدي أ. عدوى الإلتهاب الكبدي أ طويلة الأمد.  عدوى الإلتهاب الكبدي أ يمكن أن يسبب الموت. تطعيمة الإلتهاب الكبدي أ آمنة.</string>
+
+    <string name="hepatitis_b_vaccine">تطعيمة الإلتهاب الكبدي ب</string>
+    <string name="the_hepatitis_b_vaccine_is_used_to_prevent_hepatitis_b">تطعيمة الإلتهاب الكبدي ب تقي من مرض الإلتهاب الكبدي ب.</string>
+    <string name="hepbinfo">قبل تواجد التطعيمة قرابة ثمان عشرة ألف طفل أصيبوا بمرض الإلتهاب الكبدي ب سنويًا.</string>
+    <string name="the_hepatitis_b_vaccine_is_a_recombinant_vaccine">تطعيمة الإلتهاب الكبدي ب من نوع الوحدات.</string>
+    <string name="pain_or_soreness_at_the_injection_site_n_headache_n_mild_fever_n_irritability_n_fatigue">ألم أو وجع في موقع الحقن. صداع الراس. حمى خفيفة. التهيج. التعب.</string>
+    <string name="reasons_to_get_the_hepatitis_b_vaccine">الأسباب الدافعة لأخذ تطعيمة الإلتهاب الكبدي ب</string>
+    <string name="hepbinfo2">فيروس الإلتهاب الكبدي ب لا يزال يصيب حوالي مائة ألف شخص في الولايات المتحدة سنويًا. كثير من الناس لا يعرفون أنهم مصابون بفيروس الإلتهاب الكبدي ب. عواقب الإلتهاب الكبدي ب تميل لتكون أسوأ في الأشخاص الأصغر سنًا. يمكنك الإصابة بالإلتهاب الكبدي ب عن طريق المخالطة العارضة مع شخص مصاب، مثل تقاسم فرشاة الأسنان أو شفرات الحلاقة. تطعيمة الإلتهاب الكبدي ب آمنة.</string>
+
+    <string name="hib_vaccine">تطعيمة المستدمية النزلية</string>
+    <string name="the_hib_vaccine_is_used_to_prevent_haemophilus_influenzae_type_b_hib">تطعيمة المستدمية النزلية تقي من مرض المستدمية النزلية.</string>
+    <string name="before_the_hib_vaccine_every_year_about_20_000_children_would_get_serious_and_sometimes_fatal_infections_with_hib">قبل لقاح المستدمية النزلية حوالي عشرون ألف طفل سنويًا يصابون بعدوى مستدمية منزلية خطيرة، ومميتة في بعض الأحيان.</string>
+    <string name="the_hib_vaccine_is_a_conjugate_vaccine">تطعيمة المستدمية النزلية من النوع المتقارن.</string>
+    <string name="pain_or_soreness_at_the_injection_site_n_low_grade_fever_n_loss_of_appetite_n_irritability">ألم أو وجع في موقع الحقن. حمى منخفضة. فقدان الشهية. التهيج.</string>
+    <string name="reasons_to_get_the_hib_vaccine">الأسباب الدافعة لأخذ تطعيمة المستدمية النزلية</string>
+    <string name="hibinfo">مرض المستدمية النزلية لا يزال موجودا. الرضع والأطفال الصغار هم الأكثر عرضة للمرض. الأطفال غير المطعمين أو المطعمين بشكل غير كامل معرضين لخطر أكبر للاصابة بأمراض تسببها المستدمية النزلية. لقاح المستدمية النزلية يقلل من عدد ناقلات المرض في عدد السكان. لقاح المستدمية النزلية آمن.</string>
+
+    <string name="mmr_vaccine">تطعيمة الثلاثي الفيروسي</string>
+    <string name="the_mmr_vaccine_is_only_available_in_the_u_s_as_a_combination_vaccine_and_is_used_to_prevent_measles_mumps_and_rubella">تطعيمة الثلاثي الفيروسي تقي من ثلاثة أمراض: الحصبة, النكاف والحصبة الألمانية.</string>
+    <string name="before_the_vaccines_measles_mumps_and_rubella_were_very_damaging_to_pregnant_women">قبل تواجد التطعيمة كانت الحصبة والنكاف والحصبة الألمانية مضرة جدا للنساء الحوامل.</string>
+    <string name="the_mmr_vaccine_is_a_live_weakened_viral_vaccine">تطعيمة الثلاثي الفيروسي من النوع الموهن الفيروسي.</string>
+    <string name="low_grade_fever_n_non_contagious_measles_like_rash_n_fever_above_103_f_n_short_lived_arthritis_or_joint_inflammation">حمى منخفضة. حصبة غير معدية مثل الطفح الجلدي. حمى فوق مائة وثلاث درجة فهرنهايت. التهاب مفاصل قصير الأجل أو التهاب المفاصل.</string>
+    <string name="reasons_to_get_the_mmr_vaccine">الأسباب الدافعة لأخذ تطعيمة الثلاثي الفيروسي</string>
+    <string name="mmrinfo">أمراض الحصبة والنكاف لا تزال تحدث في الولايات المتحدة. النكاف يمكن أن يسبب الصمم وفي حالات نادرة العقم عند الذكور. تشمل المضاعفات الناجمة عن الحصبة التهاب الدماغ الشامل المصلب واضطراب عصبي متقدم مميت نادرًا. الحصبة والنكاف والحصبة الألمانية يمكن أن تكون ضارة على الجنين إذا كانت مصابة بالنساء الحوامل. لقاح الثلاثي الفيروسي آمن.</string>
+
+    <string name="pneumococcal_vaccine">تطعيمة المكورات الرئوية</string>
+    <string name="the_pneumococcal_vaccine_is_used_to_prevent_pneumococcus">تطعيمة المكورات الرئوية تقي من مرض المكورات الرئوية.</string>
+    <string name="before_the_vaccine_pneumococcus_caused_about_700_cases_of_meningitis_17_000_cases_of_sepsis_and_71_000_cases_of_pneumonia_each_year">قبل تواجد التطعيمة تسبب المكورات الرئوية حوالي سبع مائة حالة التهاب سحايا، سبعة عشر ألف حالة إنتان، وواحد وسبعون ألف حالة التهاب رئوي سنويًا.</string>
+    <string name="the_pneumococcal_vaccine_is_a_conjugate_vaccine">تطعيمة المكورات الرئوية من النوع المتقارن.</string>
+    <string name="pain_and_swelling_at_the_injection_site_n_fever_greater_than_100_4_f_n_high_fever_greater_than_102_f_n_decreased_appetite_irritability">ألم وتورم في مكان الحقن. حمى بدرجة أعلى من مائة درجة فهرنهايت. ارتفاع في درجة الحرارة أكثر من مائة واثنان درجة فهرنهايت. قلة الشهية والتهيج.</string>
+    <string name="reasons_to_get_the_pneumococcal_vaccine">الأسباب الدافعة لأخذ تطعيمة المكورات الرئوية</string>
+    <string name="pninfo">مرض المكورات الرئوية يسبب العدوى سنويًا في الولايات المتحدة. التهابات المكورات الرئوية يمكن أن يعقد غيره من الأمراض. بعض الالتهابات الرئوية لا تستجيب للمضادات الحيوية. لقاح المكورات الرئوية آمن.</string>
+
+    <string name="polio_vaccine">تطعيمة شلل الأطفال</string>
+    <string name="the_polio_vaccine_is_used_to_prevent_polio">تطعيمة شلل الأطفال تقي من مرض شلل الأطفال.</string>
+    <string name="before_the_polio_vaccine_every_year_in_the_u_s_polio_caused_paralysis_in_tens_of_thousands_of_people_and_led_to_thousands_of_deaths">قبل تواجد التطعيمة تسبب شلل الأطفال في الولايات المتحدة شلل في عشرات الآلاف من الناس سنويًا وأدى إلى سقوط آلاف الموتى.</string>
+    <string name="the_polio_vaccine_used_in_the_u_s_is_given_as_a_shot_it_is_a_killed_viral_vaccine_in_some_countries_an_oral_polio_vaccine_is_used_and_is_a_live_weakened_viral_vaccine">يتم إعطاء لقاح شلل الأطفال في الولايات المتحدة على شكل حقنة من النوع الخامل الفيروسي. في بعض البلدان يتم استخدام لقاح شلل الأطفال عن طريق الفم وهو من النوع الموهن الفيروسي.</string>
+    <string name="redness_hardness_and_pain_at_the_injection_site_n_fever_greater_than_102_f">احمرار، تصلب وألم في موقع الحقن. حمى أكثر من مائة درجة فهرنهايت.</string>
+    <string name="reasons_to_get_the_polio_vaccine">الأسباب الدافعة لأخذ تطعيمة شلل الأطفال</string>
+    <string name="polioinfo">شلل الأطفال لا يزال موجودا. شلل الأطفال مرض معد للغاية. شلل الأطفال مرض شديد ومدمر، قد يحدث. من الممكن أن تحدث متلازمة تعرف باسم متلازمة ما بعد شلل الأطفال في وقت لاحق في حياة الأشخاص المصابين سابقا بشلل الأطفال. لقاح شلل الأطفال آمن.</string>
+
+    <string name="rotavirus_vaccine">تطعيمة فيروس الروتا</string>
+    <string name="the_rotavirus_vaccine_is_used_to_prevent_rotavirus">تطعيمة فيروس الروتا تقي من فيروس الروتا.</string>
+    <string name="before_the_vaccine_rotavirus_caused_illness_in_2_7_million_children_every_year_and_virtually_every_child_had_a_rotavirus_infection_by_5_years_of_age">قبل تواجد اللقاح تسبب فيروس الروتا المرض بأكثر من مليونا طفل سنويا، وتقريبا كان كل طفل يصاب بعدوى فيروس الروتا قبل خمس سنوات من عمره.</string>
+    <string name="there_are_two_rotavirus_vaccines_and_both_are_live_weakened_viral_vaccines">تطعيمة فيروس الروتا من النوع الموهن الفيروسي.</string>
+    <string name="vomiting_n_diarrhea_n_fever_n_irritability">تقيؤ. إسهال. حمى. تهيج.</string>
+    <string name="reasons_to_get_the_rotavirus_vaccine">الأسباب الدافعة لأخذ تطعيمة فيروس الروتا</string>
+    <string name="rotainfo">كل طفل سوف يكون مصاب  بفيروس الروتا قبل خمس سنوات من عمره. بعض عدوى فيروس الروتا يمكن أن يؤدي إلى دخول المستشفى. يحدث فيروس الروتا في جميع أنحاء العالم، بغض النظر عن مستوى الصرف الصحي. لقاح فيروس الروتا آمنة.</string>
+
+    <string name="bcg_vaccine">تطعيمة الدرن</string>
+    <string name="bcg_vaccine_is_a_vaccine_primarily_used_against_tuberculosis">تطعيمة الدرن تقي من مرض السل.</string>
+    <string name="among_children_it_prevents_about_20_from_getting_infected_and_among_those_who_do_get_infected_it_protects_half_from_developing_disease">يقي لقاح الدرن حوالي عشرون بالمائة من الأطفال من الإصابة بالعدوى وبين أولئك الذين أصيبوا بالعدوى يحميهم من تطور المرض بهم.</string>
+    <string name="the_bcg_vaccine_is_made_from_a_weakened_strain_of_tb_bacteria">تطعيمة الدرن تصنع من سلالة موهنة من بكتيريا السل.</string>
+    <string name="injection_scar_n_allergy_to_the_bcg_vaccine">ندبة بعد الحقن. حساسية للقاح.</string>
+    <string name="reasons_to_get_the_bcg_vaccine">الأسباب الدافعة لأخذ تطعيمة الدرن</string>
+    <string name="bcginfo">التباين الوراثي في سلالات الدرن. الاختلاف الجيني في السكان. تدخل المتفطرات اللاسلية. تدخل عن طريق العدوى الطفيلية المتزامنة.</string>
+
+    <string name="reasons_to_get_the_mcv4_vaccine">الأسباب الدافعة لأخذ تطعيمة الحمى الشوكية</string>
+    <string name="mcv4info">غالبا ما يحدث مرض المكورات السحائية دون سابق إنذار حتى بين الناس الذين يتمتعون بصحة جيدة. مرض التهاب السحايا يمكن أن ينتشر من شخص إلى آخر عن طريق الاتصال المباشر.</string>
+    <string name="sudden_high_fever_n_headache_n_stiff_neck_n_fatigue">ارتفاع درجة الحرارة المفاجئ. صداع الراس. تصلب الرقبة. التعب.</string>
+    <string name="meningococcal_polysaccharide_vaccine_is_given_as_an_injection_into_the_fatty_tissue_of_the_upper_arm">يعطى لقاح المكورات السحائية عديد السكاريد كحقنة في الأنسجة الدهنية من الجزء العلوي من الذراع.</string>
+    <string name="even_when_it_is_treated_meningococcal_disease_kills_10_to_15_infected_people_out_of_100">مرض التهاب السحايا يقتل من عشرة إلى خمسة عشر شخصا مصاب من أصل مائة حتى عندما يتم التعامل معه.</string>
+    <string name="mcv4_vaccine_is_used_to_prevent_meningococcal_disease">تطعيمة الحمى الشوكية تقي من مرض الحمى الشوكية.</string>
+    <string name="mcv4_vaccine">تطعيمة الحمى الشوكية</string>
+
+    <string name="home_label">الرئيسية</string>
+    <string name="records_label">السجلات</string>
+    <string name="new_record_label">سجل جديد</string>
+    <string name="child_record_label">سجل الطفل</string>
+    <string name="safety_label">وقاية</string>
+    <string name="about_label">حول التطبيق</string>
+    <string name="vaccines_label">التطعيمات</string>
+    <string name="vac_info_label">معلومات التطعيمة</string>
+    <string name="stat_label">إحصائيات</string>
+    <string name="log_out">تسجيل خروج</string>
+
+
+    <string-array name="vaccines">
+        <item>الدرن</item>
+        <item>الالتهاب الكبدي ب #1</item>
+
+        <item>شلل الأطفال</item>
+        <item>الثلاثي البكتيري</item>
+        <item>الالتهاب الكبدي ب #2</item>
+        <item>المستدمية النزلية</item>
+        <item>المكورات الرئوية</item>
+        <item>فيروس الروتا</item>
+
+        <item>شلل الأطفال</item>
+        <item>الثلاثي البكتيري</item>
+        <item>الالتهاب الكبدي ب #3</item>
+        <item>المستدمية النزلية</item>
+        <item>المكورات الرئوية</item>
+        <item>فيروس الروتا</item>
+
+        <item>شلل الأطفال</item>
+        <item>الثلاثي البكتيري</item>
+        <item>الالتهاب الكبدي ب #4</item>
+        <item>المستدمية النزلية</item>
+        <item>المكورات الرئوية</item>
+
+        <item>الثلاثي الفيروسي</item>
+        <item>الحمى الشوكية</item>
+
+        <item>شلل الأطفال</item>
+        <item>الثلاثي الفيروسي</item>
+        <item>المكورات الرئوية</item>
+        <item>الحمى الشوكية</item>
+
+        <item>شلل الأطفال</item>
+        <item>الثلاثي البكتيري</item>
+        <item>المستدمية النزلية</item>
+        <item>الثلاثي الفيروسي</item>
+        <item>الالتهاب الكبدي أ</item>
+        <item>الجدري</item>
+
+        <item>الالتهاب الكبدي أ</item>
+    </string-array>
+
+    <string-array name="vaccines_headers">
+        <item>عند الولادة</item>
+        <item>شهران</item>
+        <item>4 أشهر</item>
+        <item>6 أشهر</item>
+        <item>9 أشهر</item>
+        <item>12 شهر</item>
+        <item>18 شهر</item>
+        <item>24 شهر</item>
+    </string-array>
+
+</resources>

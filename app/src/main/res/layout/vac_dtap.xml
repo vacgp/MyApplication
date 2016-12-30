@@ -17,7 +17,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
-            android:text="DIPHTHERIA, TETANUS AND PERTUSSIS VACCINES"
+            android:text="@string/diphtheria_tetanus_and_pertussis_vaccines"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -27,7 +27,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The diphtheria, tetanus and pertussis vaccines are used to prevent these diseases and are typically given in the U.S. in combined formulations."
+android:text="@string/the_diphtheria_tetanus_and_pertussis_vaccines_are_used_to_prevent_these_diseases_and_are_typically_given_in_the_u_s_in_combined_formulations"
             android:textColor="@color/darkGrey"
             android:textSize="14sp" />
 
@@ -39,7 +39,7 @@ android:text="The diphtheria, tetanus and pertussis vaccines are used to prevent
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="Before these vaccines, about 1,800 people died from diphtheria, about 500 died from tetanus and about 8,000 died from pertussis every year."
+android:text="@string/before_these_vaccines_about_1_800_people_died_from_diphtheria_about_500_died_from_tetanus_and_about_8_000_died_from_pertussis_every_year"
             android:textColor="#424d52"
             android:textSize="14sp"
             android:textStyle="bold|italic" />
@@ -51,7 +51,7 @@ android:text="Before these vaccines, about 1,800 people died from diphtheria, ab
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="TYPE OF VACCINE"
+            android:text="@string/type_of_vaccine"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -61,7 +61,7 @@ android:text="Before these vaccines, about 1,800 people died from diphtheria, ab
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-android:text="The diphtheria, tetanus and pertussis vaccines are all inactivated toxoid vaccines."
+android:text="@string/the_diphtheria_tetanus_and_pertussis_vaccines_are_all_inactivated_toxoid_vaccines"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -72,7 +72,7 @@ android:text="The diphtheria, tetanus and pertussis vaccines are all inactivated
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-            android:text="VACCINE SIDE EFFECTS"
+            android:text="@string/vaccine_side_effects"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -82,9 +82,7 @@ android:text="The diphtheria, tetanus and pertussis vaccines are all inactivated
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:text=" • Pain, redness or swelling at the injection site.\n
-• Low-grade fever.\n
-• Drowsiness or crankiness ."
+            android:text="@string/pain_redness_or_swelling_at_the_injection_site_n_low_grade_fever_n_drowsiness_or_crankiness"
             android:textColor="#424d52"
             android:textSize="14sp" />
 
@@ -95,7 +93,7 @@ android:text="The diphtheria, tetanus and pertussis vaccines are all inactivated
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"
-android:text="REASONS TO GET THE DIPHTHERIA – TETANUS – PERTUSSIS VACCINES"
+android:text="@string/reasons_to_get_the_diphtheria_tetanus_pertussis_vaccines"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -108,11 +106,7 @@ android:text="REASONS TO GET THE DIPHTHERIA – TETANUS – PERTUSSIS VACCINES"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
-            android:text=" • Disease caused by diphtheria can make a comeback.\n
-• Tetanus is not transmitted from person-to-person, but rather from the soil, so even if everyone around you is immunized, your chance of getting tetanus does not decrease.\n
-• Pertussis is very common and often misdiagnosed or underdiagnosed.\n
-• Pertussis immunization protects babies who are too young to have been immunized and for whom the disease can be fatal.\n
-• The vaccines are safe."
+            android:text="@string/chickenpoxinfo2"
             android:textColor="#424d52"
             android:textSize="14sp" />
     </LinearLayout>

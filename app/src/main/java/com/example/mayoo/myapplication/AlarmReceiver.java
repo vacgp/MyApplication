@@ -3,7 +3,6 @@ package com.example.mayoo.myapplication;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +15,6 @@ import android.util.Log;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -81,7 +79,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
 
         Notification notification = builder.setContentTitle(child_info.get(0) + " is " + childAge + " " + (childAge == 1 ? "month" : "months") + " now!")
-                .setContentText("Click to see vaccines needed")
+                .setContentText(context.getString(R.string.Click_to_see_vaccines))
                 .setTicker("New Message Alert!")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(imageBitmap_fromByte)

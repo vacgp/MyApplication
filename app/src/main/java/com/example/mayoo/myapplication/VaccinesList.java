@@ -1,7 +1,5 @@
 package com.example.mayoo.myapplication;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -17,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by mayoo on 12/10/2016.
@@ -127,68 +126,111 @@ public class VaccinesList extends AppCompatActivity {
 
                 Intent intent_to = new Intent(VaccinesList.this, VacInfo.class);
 
-                switch (vacNames[(int)row_id]) {
-                    case "Hepatitis B #1":
-                    case "Hepatitis B #2":
-                    case "Hepatitis B #3":
-                    case "Hepatitis B #4":
-                        intent_to.putExtra("layoutID", R.layout.vac_hepatits_b);
-                        break;
-                    case "Rotavirus #1":
-                    case "Rotavirus #2":
-                        intent_to.putExtra("layoutID", R.layout.vac_rotavirus);
-                        break;
-                    case "Diphtheria/Tetanus/Pertussis (DTaP) #1":
-                    case "Diphtheria/Tetanus/Pertussis (DTaP) #2":
-                    case "Diphtheria/Tetanus/Pertussis (DTaP) #3":
-                    case "Diphtheria/Tetanus/Pertussis (DTaP) #4":
-                        intent_to.putExtra("layoutID", R.layout.vac_dtap);
-                        break;
-                    case "Haemophilus influenzae type b #1":
-                    case "Haemophilus influenzae type b #2":
-                    case "Haemophilus influenzae type b #3":
-                    case "Haemophilus influenzae type b #4":
-                        intent_to.putExtra("layoutID", R.layout.vac_hib);
-                        break;
-                    case "Pneumococcal #1":
-                    case "Pneumococcal #2":
-                    case "Pneumococcal #3":
-                    case "Pneumococcal #4":
-                        intent_to.putExtra("layoutID", R.layout.vac_pneumococcal);
-                        break;
-                    case "Polio #1":
-                    case "Polio #2":
-                    case "Polio #3":
-                    case "Polio #4":
-                    case "Polio #5":
-                        intent_to.putExtra("layoutID", R.layout.vac_polio);
-                        break;
-                    case "Measles/Mumps/Rubella #1":
-                    case "Measles/Mumps/Rubella #2":
-                    case "Measles/Mumps/Rubella #3":
+                Locale locale = Locale.getDefault();
+                if (locale.toString().startsWith("ar")){
+                    switch (vacNames[(int)row_id]) {
+                        case "الالتهاب الكبدي ب":
+                            intent_to.putExtra("layoutID", R.layout.vac_hepatits_b);
+                            break;
+                        case "فيروس الروتا":
+                            intent_to.putExtra("layoutID", R.layout.vac_rotavirus);
+                            break;
+                        case "الثلاثي البكتيري":
+                            intent_to.putExtra("layoutID", R.layout.vac_dtap);
+                            break;
+                        case "المستدمية النزلية":
+                            intent_to.putExtra("layoutID", R.layout.vac_hib);
+                            break;
+                        case "المكورات الرئوية":
+                            intent_to.putExtra("layoutID", R.layout.vac_pneumococcal);
+                            break;
+                        case "شلل الأطفال":
+                            intent_to.putExtra("layoutID", R.layout.vac_polio);
+                            break;
+                        case "الثلاثي الفيروسي":
+                            intent_to.putExtra("layoutID", R.layout.vac_mmr);
+                            break;
+                        case "الجدري":
+                            intent_to.putExtra("layoutID", R.layout.vac_chickenpox);
+                            break;
+                        case "الالتهاب الكبدي أ":
+                            intent_to.putExtra("layoutID", R.layout.vac_hepatits_a);
+                            break;
 
-                        intent_to.putExtra("layoutID", R.layout.vac_mmr);
-                        break;
-                    case "Chickenpox":
-                        intent_to.putExtra("layoutID", R.layout.vac_chickenpox);
-                        break;
-                    case "Hepatitis A #1":
-                    case "Hepatitis A #2":
-                        intent_to.putExtra("layoutID", R.layout.vac_hepatits_a);
-                        break;
+                        case "الدرن":
+                            intent_to.putExtra("layoutID", R.layout.vac_bcg);
+                            break;
+                        case "الحمى الشوكية":
+                            intent_to.putExtra("layoutID", R.layout.vac_mcv4);
+                            break;
 
-                    //// TODO: 12/28/2016
-                    case "BCG":
-                        intent_to.putExtra("layoutID", R.layout.vac_influenza);
-                        break;
-                    case "MCV4 #1":
-                    case "MCV4 #2":
-                        intent_to.putExtra("layoutID", R.layout.vac_influenza);
-                        break;
+                        default:
+                            break;
+                    }
+                } else {
+                    switch (vacNames[(int)row_id]) {
+                        case "Hepatitis B #1":
+                        case "Hepatitis B #2":
+                        case "Hepatitis B #3":
+                        case "Hepatitis B #4":
+                            intent_to.putExtra("layoutID", R.layout.vac_hepatits_b);
+                            break;
+                        case "Rotavirus #1":
+                        case "Rotavirus #2":
+                            intent_to.putExtra("layoutID", R.layout.vac_rotavirus);
+                            break;
+                        case "Diphtheria/Tetanus/Pertussis (DTaP) #1":
+                        case "Diphtheria/Tetanus/Pertussis (DTaP) #2":
+                        case "Diphtheria/Tetanus/Pertussis (DTaP) #3":
+                        case "Diphtheria/Tetanus/Pertussis (DTaP) #4":
+                            intent_to.putExtra("layoutID", R.layout.vac_dtap);
+                            break;
+                        case "Haemophilus influenzae type b #1":
+                        case "Haemophilus influenzae type b #2":
+                        case "Haemophilus influenzae type b #3":
+                        case "Haemophilus influenzae type b #4":
+                            intent_to.putExtra("layoutID", R.layout.vac_hib);
+                            break;
+                        case "Pneumococcal #1":
+                        case "Pneumococcal #2":
+                        case "Pneumococcal #3":
+                        case "Pneumococcal #4":
+                            intent_to.putExtra("layoutID", R.layout.vac_pneumococcal);
+                            break;
+                        case "Polio #1":
+                        case "Polio #2":
+                        case "Polio #3":
+                        case "Polio #4":
+                        case "Polio #5":
+                            intent_to.putExtra("layoutID", R.layout.vac_polio);
+                            break;
+                        case "Measles/Mumps/Rubella #1":
+                        case "Measles/Mumps/Rubella #2":
+                        case "Measles/Mumps/Rubella #3":
 
-                    default:
-                        break;
+                            intent_to.putExtra("layoutID", R.layout.vac_mmr);
+                            break;
+                        case "Chickenpox":
+                            intent_to.putExtra("layoutID", R.layout.vac_chickenpox);
+                            break;
+                        case "Hepatitis A #1":
+                        case "Hepatitis A #2":
+                            intent_to.putExtra("layoutID", R.layout.vac_hepatits_a);
+                            break;
+
+                        case "BCG":
+                            intent_to.putExtra("layoutID", R.layout.vac_bcg);
+                            break;
+                        case "MCV4 #1":
+                        case "MCV4 #2":
+                            intent_to.putExtra("layoutID", R.layout.vac_mcv4);
+                            break;
+
+                        default:
+                            break;
+                    }
                 }
+
 
                 startActivity(intent_to);
 

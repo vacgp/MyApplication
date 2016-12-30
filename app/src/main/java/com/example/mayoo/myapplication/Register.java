@@ -121,7 +121,7 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        confirm_editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        /*confirm_editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
@@ -140,6 +140,7 @@ public class Register extends AppCompatActivity {
         confirm_editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Log.d("oooooooooo", s+", "+ start+", "+ count+", "+ after);
                 if (confirm_editText.getText().toString().length() > 0) {
 
                     if (password_editText.getText().toString().equals(confirm_editText.getText().toString())) {
@@ -159,7 +160,7 @@ public class Register extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
 
             }
-        });
+        });*/
 
 
 
@@ -194,6 +195,8 @@ public class Register extends AppCompatActivity {
                         startActivity(i);
 
 
+                    }else {
+                        confirm_pw_validation.setVisibility(View.VISIBLE);
                     }
 
 
