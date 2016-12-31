@@ -129,7 +129,7 @@ public class Record extends AppCompatActivity {
                         child_1_txt.setText(child_info.get(0));
 
                         int child_img_res;
-                        if (child_info.get(2).equals("Female")) {
+                        if (child_info.get(2).equals(getString(R.string.female))) {
                             child_img_res = R.drawable.female;
                         } else {
                             child_img_res = R.drawable.male;
@@ -158,7 +158,7 @@ public class Record extends AppCompatActivity {
                         child_2_txt.setText(child_info.get(0));
 
                         int child_img_res;
-                        if (child_info.get(2).equals("Female")) {
+                        if (child_info.get(2).equals(getString(R.string.female))) {
                             child_img_res = R.drawable.female;
                         } else {
                             child_img_res = R.drawable.male;
@@ -187,7 +187,7 @@ public class Record extends AppCompatActivity {
                         child_3_txt.setText(child_info.get(0));
 
                         int child_img_res;
-                        if (child_info.get(2).equals("Female")) {
+                        if (child_info.get(2).equals(getString(R.string.female))) {
                             child_img_res = R.drawable.female;
                         } else {
                             child_img_res = R.drawable.male;

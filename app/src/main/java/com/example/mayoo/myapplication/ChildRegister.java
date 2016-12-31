@@ -113,7 +113,7 @@ public class ChildRegister extends AppCompatActivity {
 
             child_name_editText.setText(child_info.get(0));
             birth_editText.setText(child_info.get(1));
-            if (child_info.get(2).equals("Female")) {
+            if (child_info.get(2).equals(getString(R.string.female))) {
                 gender_radioGroup.check(R.id.female_radioButton);
             } else {
                 gender_radioGroup.check(R.id.male_radioButton);
@@ -274,10 +274,10 @@ public class ChildRegister extends AppCompatActivity {
 
         if(!child_name_str.isEmpty() || !birth_str.isEmpty() || checked != -1 ){
 
-            if (gender_radioBtn.getText().toString().equals("Female")) {
-                gender_srt = "Female";
+            if (gender_radioBtn.getText().toString().equals(getString(R.string.female))) {
+                gender_srt = getString(R.string.female);
             } else {
-                gender_srt = "Male";
+                gender_srt = getString(R.string.male);;
             }
             Intent from_intent = getIntent();
             String username = from_intent.getStringExtra("username");

@@ -163,35 +163,60 @@ public class ChildRecord extends AppCompatActivity {
                         case "الالتهاب الكبدي ب #4":
                             intent_to.putExtra("layoutID", R.layout.vac_hepatits_b);
                             break;
-                        case "فيروس الروتا":
+                        case "فيروس الروتا #1":
+                        case "فيروس الروتا #2":
                             intent_to.putExtra("layoutID", R.layout.vac_rotavirus);
                             break;
-                        case "الثلاثي البكتيري":
+                        case "الثلاثي البكتيري #1":
+                        case "الثلاثي البكتيري #2":
+                        case "الثلاثي البكتيري #3":
+                        case "الثلاثي البكتيري #4":
+
                             intent_to.putExtra("layoutID", R.layout.vac_dtap);
                             break;
-                        case "المستدمية النزلية":
+                        case "المستدمية النزلية #1":
+                        case "المستدمية النزلية #2":
+                        case "المستدمية النزلية #3":
+                        case "المستدمية النزلية #4":
+
                             intent_to.putExtra("layoutID", R.layout.vac_hib);
                             break;
-                        case "المكورات الرئوية":
+                        case "المكورات الرئوية #1":
+                        case "المكورات الرئوية #2":
+                        case "المكورات الرئوية #3":
+                        case "المكورات الرئوية #4":
+
                             intent_to.putExtra("layoutID", R.layout.vac_pneumococcal);
                             break;
-                        case "شلل الأطفال":
+                        case "شلل الأطفال #1":
+                        case "شلل الأطفال #2":
+                        case "شلل الأطفال#3":
+                        case "شلل الأطفال #4":
+                        case "شلل الأطفال #5":
+
                             intent_to.putExtra("layoutID", R.layout.vac_polio);
                             break;
-                        case "الثلاثي الفيروسي":
+                        case "الثلاثي الفيروسي #1":
+                        case "الثلاثي الفيروسي #2":
+                        case "الثلاثي الفيروسي #3":
+
                             intent_to.putExtra("layoutID", R.layout.vac_mmr);
                             break;
                         case "الجدري":
                             intent_to.putExtra("layoutID", R.layout.vac_chickenpox);
                             break;
-                        case "الالتهاب الكبدي أ":
+                        case "الالتهاب الكبدي أ #1":
+                        case "الالتهاب الكبدي أ #2":
+
                             intent_to.putExtra("layoutID", R.layout.vac_hepatits_a);
                             break;
 
                         case "الدرن":
                             intent_to.putExtra("layoutID", R.layout.vac_bcg);
                             break;
-                        case "الحمى الشوكية":
+                        case "الحمى الشوكية #1":
+                        case "الحمى الشوكية #2":
+
                             intent_to.putExtra("layoutID", R.layout.vac_mcv4);
                             break;
 

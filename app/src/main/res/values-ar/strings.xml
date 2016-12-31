@@ -38,34 +38,34 @@
     <string name="hep_b_1">الالتهاب الكبدي ب #1</string>
     <string name="hep_b_2">الالتهاب الكبدي ب #2</string>
     <string name="rotavirus_1">فيروس الروتا #1</string>
-    <string name="dtap_1">الثلاثي البكتيري</string>
-    <string name="hib_1">المستدمية النزلية</string>
-    <string name="pneumococcal_1">المكورات الرئوية</string>
-    <string name="polio_1">شلل الأطفال</string>
+    <string name="dtap_1">الثلاثي البكتيري #1</string>
+    <string name="hib_1">المستدمية النزلية #1</string>
+    <string name="pneumococcal_1">المكورات الرئوية #1</string>
+    <string name="polio_1">شلل الأطفال #1</string>
     <string name="hep_b_3">الالتهاب الكبدي ب #3</string>
-    <string name="rotavirus_2">فيروس الروتا</string>
-    <string name="dtap_2">الثلاثي البكتيري</string>
-    <string name="hib_2">المستدمية النزلية</string>
-    <string name="Pneumococcal_2">المكورات الرئوية</string>
-    <string name="Polio_2">شلل الأطفال</string>
+    <string name="rotavirus_2">فيروس الروتا #2</string>
+    <string name="dtap_2">الثلاثي البكتيري #2</string>
+    <string name="hib_2">المستدمية النزلية #2</string>
+    <string name="Pneumococcal_2">المكورات الرئوية #2</string>
+    <string name="Polio_2">شلل الأطفال #2</string>
     <string name="hep_b_4">الالتهاب الكبدي ب #4</string>
-    <string name="polio_3">شلل الأطفال</string>
-    <string name="dtap_3">الثلاثي البكتيري</string>
-    <string name="hib_3">المستدمية النزلية</string>
-    <string name="Pneumococcal_3">المكورات الرئوية</string>
-    <string name="mmr_1">الثلاثي الفيروسي</string>
-    <string name="MCV4_1">الحمى الشوكية</string>
-    <string name="Pneumococcal_4">المكورات الرئوية</string>
-    <string name="MCV4_2">الحمى الشوكية</string>
-    <string name="mmr_2">الثلاثي الفيروسي</string>
-    <string name="polio_4">شلل الأطفال</string>
-    <string name="polio_5">شلل الأطفال</string>
-    <string name="mmr_3">الثلاثي الفيروسي</string>
-    <string name="dtap_4">الثلاثي البكتيري</string>
+    <string name="polio_3">شلل الأطفال #3</string>
+    <string name="dtap_3">الثلاثي البكتيري #3</string>
+    <string name="hib_3">المستدمية النزلية #3</string>
+    <string name="Pneumococcal_3">المكورات الرئوية #3</string>
+    <string name="mmr_1">الثلاثي الفيروسي #1</string>
+    <string name="MCV4_1">الحمى الشوكية #1</string>
+    <string name="Pneumococcal_4">المكورات الرئوية #4</string>
+    <string name="MCV4_2">الحمى الشوكية #2</string>
+    <string name="mmr_2">الثلاثي الفيروسي #2</string>
+    <string name="polio_4">شلل الأطفال #4</string>
+    <string name="polio_5">شلل الأطفال #5</string>
+    <string name="mmr_3">الثلاثي الفيروسي #3</string>
+    <string name="dtap_4">الثلاثي البكتيري #4</string>
     <string name="Chickenpox">الجدري</string>
-    <string name="hib_4">المستدمية النزلية</string>
-    <string name="hep_a_1">الالتهاب الكبدي أ</string>
-    <string name="hep_a_2">الالتهاب الكبدي أ</string>
+    <string name="hib_4">المستدمية النزلية #4</string>
+    <string name="hep_a_1">الالتهاب الكبدي أ #1</string>
+    <string name="hep_a_2">الالتهاب الكبدي أ #2</string>
 
     <string name="born_today">ولد اليوم</string>
     <string name="month">شهر</string>
@@ -74,6 +74,8 @@
     <string name="days"> يوم</string>
     <string name="months"> أشهر</string>
     <string name="months_"> أشهر،</string>
+    <string name="is">بلغ</string>
+    <string name="now">للتو!</string>
 
     <string name="allergies_and_asthma">الحساسية والربو</string>
     <string name="safety1">لأن اللقاحات لا تمنع معظم حالات العدوى في مرحلة الطفولة، فهي ليست عرضة للتغيير توازن الخلايا التي تتوسط استجابات حساسية. في الواقع، أظهرت عدة دراسات كبيرة مدروسة بشكل جيد أن الأطفال الذين يتلقون اللقاحات ليسوا في خطر أكبر من وجود الحساسية أو الربو.</string>
@@ -191,42 +193,42 @@
         <item>الدرن</item>
         <item>الالتهاب الكبدي ب #1</item>
 
-        <item>شلل الأطفال</item>
-        <item>الثلاثي البكتيري</item>
+        <item>شلل الأطفال #1</item>
+        <item>الثلاثي البكتيري #1</item>
         <item>الالتهاب الكبدي ب #2</item>
-        <item>المستدمية النزلية</item>
-        <item>المكورات الرئوية</item>
-        <item>فيروس الروتا</item>
+        <item>المستدمية النزلية #1</item>
+        <item>المكورات الرئوية #1</item>
+        <item>فيروس الروتا #1</item>
 
-        <item>شلل الأطفال</item>
-        <item>الثلاثي البكتيري</item>
+        <item>شلل الأطفال #2</item>
+        <item>الثلاثي البكتيري #2</item>
         <item>الالتهاب الكبدي ب #3</item>
-        <item>المستدمية النزلية</item>
-        <item>المكورات الرئوية</item>
-        <item>فيروس الروتا</item>
+        <item>المستدمية النزلية #2</item>
+        <item>المكورات الرئوية #2</item>
+        <item>فيروس الروتا #2</item>
 
-        <item>شلل الأطفال</item>
-        <item>الثلاثي البكتيري</item>
+        <item>شلل الأطفال #3</item>
+        <item>الثلاثي البكتيري #3</item>
         <item>الالتهاب الكبدي ب #4</item>
-        <item>المستدمية النزلية</item>
-        <item>المكورات الرئوية</item>
+        <item>المستدمية النزلية #3</item>
+        <item>المكورات الرئوية #3</item>
 
-        <item>الثلاثي الفيروسي</item>
-        <item>الحمى الشوكية</item>
+        <item>الثلاثي الفيروسي #1</item>
+        <item>الحمى الشوكية #1</item>
 
-        <item>شلل الأطفال</item>
-        <item>الثلاثي الفيروسي</item>
-        <item>المكورات الرئوية</item>
-        <item>الحمى الشوكية</item>
+        <item>شلل الأطفال #4</item>
+        <item>الثلاثي الفيروسي #2</item>
+        <item>المكورات الرئوية #4</item>
+        <item>الحمى الشوكية #2</item>
 
-        <item>شلل الأطفال</item>
-        <item>الثلاثي البكتيري</item>
-        <item>المستدمية النزلية</item>
-        <item>الثلاثي الفيروسي</item>
-        <item>الالتهاب الكبدي أ</item>
+        <item>شلل الأطفال #5</item>
+        <item>الثلاثي البكتيري #4</item>
+        <item>المستدمية النزلية #4</item>
+        <item>الثلاثي الفيروسي #3</item>
+        <item>الالتهاب الكبدي أ #1</item>
         <item>الجدري</item>
 
-        <item>الالتهاب الكبدي أ</item>
+        <item>الالتهاب الكبدي أ #2</item>
     </string-array>
 
     <string-array name="vaccines_headers">

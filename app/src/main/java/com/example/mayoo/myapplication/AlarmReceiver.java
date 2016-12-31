@@ -78,7 +78,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         InputStream inputStream = new ByteArrayInputStream(imageByte_toDB);
         imageBitmap_fromByte = BitmapFactory.decodeStream(inputStream);
 
-        Notification notification = builder.setContentTitle(child_info.get(0) + " is " + childAge + " " + (childAge == 1 ? "month" : "months") + " now!")
+        Notification notification = builder.setContentTitle(child_info.get(0) + context.getString(R.string.is) + childAge + " " + (childAge == 1 ? context.getString(R.string.month) : context.getString(R.string.months)) + context.getString(R.string.now))
                 .setContentText(context.getString(R.string.Click_to_see_vaccines))
                 .setTicker("New Message Alert!")
                 .setSmallIcon(R.mipmap.ic_launcher)
