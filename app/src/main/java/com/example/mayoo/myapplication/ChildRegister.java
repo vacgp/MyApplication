@@ -231,10 +231,10 @@ public class ChildRegister extends AppCompatActivity {
 
 
             } else {
-                Toast.makeText(this, "You haven't picked a photo", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.you_havent_picked_photo, Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.Something_went_wrong, Toast.LENGTH_LONG).show();
         }
 
     }

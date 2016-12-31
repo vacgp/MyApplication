@@ -17,6 +17,7 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -142,8 +143,16 @@ public class Home extends AppCompatActivity {
     }
 
     public void ask_a_doctor(View view) {
-        Intent intent_browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.chop.edu/centers-programs/vaccine-education-center/contact-ask-the-vec"));
-        startActivity(intent_browser);
+        Locale locale = Locale.getDefault();
+        if (locale.toString().startsWith("ar")){
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.altibbi.com/ask-question/choose")));
+
+
+        } else {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.chop.edu/centers-programs/vaccine-education-center/contact-ask-the-vec")));
+
+        }
+
 
     }
 

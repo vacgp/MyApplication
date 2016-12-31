@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -46,7 +47,7 @@ public class Register extends AppCompatActivity {
 
                         if (userName_editText.getText().toString().length() < 3) {
                             username_validation.setVisibility(View.VISIBLE);
-                            username_validation.setText("Username must be 3 or more letters");
+                            username_validation.setText(R.string.Username_must_be_3_or_more_letters);
                         } else {
                             username_validation.setVisibility(View.GONE);
 
@@ -121,7 +122,7 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        /*confirm_editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        confirm_editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
@@ -137,6 +138,7 @@ public class Register extends AppCompatActivity {
             }
         });
 
+/*
         confirm_editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -168,6 +170,13 @@ public class Register extends AppCompatActivity {
     }
 
     public void register(View view) {
+
+        Button buttonRegister = (Button) findViewById(R.id.register_btn);
+        buttonRegister.requestFocus();
+        userName_editText.clearFocus();
+        password_editText.clearFocus();
+        confirm_editText.clearFocus();
+
         final String userName_str = userName_editText.getText().toString();
 
         final String password_str = password_editText.getText().toString();
@@ -202,7 +211,7 @@ public class Register extends AppCompatActivity {
 
                 } else {
                     username_validation.setVisibility(View.VISIBLE);
-                    username_validation.setText("Username already exists");                }
+                    username_validation.setText(R.string.Username_already_exists);                }
 
             }
 

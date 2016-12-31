@@ -68,14 +68,18 @@
     <string name="hep_a_2">الالتهاب الكبدي أ #2</string>
 
     <string name="born_today">ولد اليوم</string>
-    <string name="month">شهر</string>
-    <string name="month_">شهر،</string>
+    <string name="month"> شهر</string>
+    <string name="month_"> شهر، </string>
     <string name="day"> يوم</string>
     <string name="days"> يوم</string>
     <string name="months"> أشهر</string>
-    <string name="months_"> أشهر،</string>
-    <string name="is">بلغ</string>
-    <string name="now">للتو!</string>
+    <string name="months_"> أشهر، </string>
+    <string name="is"> بلغ </string>
+    <string name="now"> للتو!</string>
+    <string name="Username_must_be_3_or_more_letters">اسم المستخدم يجب أن يتكون من 3 أحرف أو أكثر</string>
+    <string name="Username_already_exists">اسم المستخدم موجود مسبقًا</string>
+    <string name="you_havent_picked_photo">لم تختر صورة لطفلك</string>
+    <string name="Something_went_wrong">حدث خطأ ما</string>
 
     <string name="allergies_and_asthma">الحساسية والربو</string>
     <string name="safety1">لأن اللقاحات لا تمنع معظم حالات العدوى في مرحلة الطفولة، فهي ليست عرضة للتغيير توازن الخلايا التي تتوسط استجابات حساسية. في الواقع، أظهرت عدة دراسات كبيرة مدروسة بشكل جيد أن الأطفال الذين يتلقون اللقاحات ليسوا في خطر أكبر من وجود الحساسية أو الربو.</string>

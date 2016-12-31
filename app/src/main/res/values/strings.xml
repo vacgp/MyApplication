@@ -181,6 +181,10 @@
     <string name="months_">" months, "</string>
     <string name="is">" is "</string>
     <string name="now">" now!"</string>
+    <string name="Username_must_be_3_or_more_letters">Username must be 3 or more letters</string>
+    <string name="Username_already_exists">Username already exists</string>
+    <string name="you_havent_picked_photo">You haven\'t picked a photo</string>
+    <string name="Something_went_wrong">Something went wrong</string>
 
     <string-array name="vaccines">
         <item>BCG</item>

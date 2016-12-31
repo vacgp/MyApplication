@@ -156,7 +156,12 @@
             android:layout_marginTop="30dp"
             android:background="#00FFFFFF"
             android:onClick="new_record"
-            app:srcCompat="@drawable/addh" />
+            app:srcCompat="@drawable/addh"
+            android:paddingLeft="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"/>
 
         <TextView
             android:layout_width="70dp"
@@ -166,7 +171,7 @@
             android:text="@string/add_a_new_record"
             android:textAlignment="center"
             android:textColor="@color/addGrey"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:textStyle="italic"
             android:layout_gravity="center"
             android:gravity="center"/>
